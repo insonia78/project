@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=x\ y\ cursor
+comment0.target=LeftButton(int,\ int,\ Cursor)
+comment1.params=lastPoint
+comment1.target=java.awt.Point\ computeNextPoint(java.awt.Point)
+numComments=2

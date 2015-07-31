@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=stringToTest
+comment0.target=boolean\ isPalindrome(java.lang.String)
+comment1.params=string
+comment1.target=java.lang.String\ removeJunk(java.lang.String)
+comment2.params=string
+comment2.target=java.lang.String\ reverse(java.lang.String)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=arrives
+comment0.target=Customer(int)
+comment1.params=
+comment1.target=int\ getArrivalTime()
+comment2.params=departs
+comment2.target=void\ setDepartureTime(int)
+comment3.params=
+comment3.target=int\ getDepartureTime()
+comment4.params=
+comment4.target=int\ totalTime()
+numComments=5

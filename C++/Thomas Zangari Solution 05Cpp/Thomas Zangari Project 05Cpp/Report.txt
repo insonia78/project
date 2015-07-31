@@ -1,0 +1,16 @@
+
+Patient Number:1111
+The total charges are: $ 24.00
+
+Patient Number:1111
+The total charges are: $ 6.00
+
+Patient Number:1111
+The total charges are: $ 8.00
+
+Patient Number:2222
+The total charges are: $ 3.00
+
+Number of Patients:             4
+Total charges:     $        41.00
+Average charges:   $        10.25

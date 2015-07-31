@@ -1,0 +1,34 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:my="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+       
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication2.MainWindow"
+        Title="MainWindow" Height="700" Width="1300">
+
+
+
+    <Canvas Background="#FF939292">
+        <Grid >
+            <UniformGrid x:Name="board" Margin="334,10,122,-70"  Height=" 500" Width="700" Grid.ZIndex = "2" Background="White" Loaded="Board_Loaded" RenderTransformOrigin="0.496,0.647" />
+            <ListBox Name ="menu" HorizontalAlignment="Left" Height="337" Margin="10,26,0,0" VerticalAlignment="Top" Width="402" SelectionChanged="ListBox_SelectionChanged">
+                <ComboBox Width="65" RenderTransformOrigin="0.449,0.455" Height="112">
+                    <ComboBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-89.368"/>
+                            <TranslateTransform X="15.067" Y="-13.481"/>
+                        </TransformGroup>
+                    </ComboBox.RenderTransform>
+                    <Button Content="Button" Height="100" Width="75"/>
+                    <Button Content="Button" Height="100" Width="75"/>
+                </ComboBox>
+            </ListBox>
+
+        </Grid>
+        <Image Name="Image"  HorizontalAlignment="Left" Height="177" VerticalAlignment="Top" Width="166" Canvas.Left="1088" Canvas.Top="31" />
+        <Ellipse Fill="#FFF4F4F5" Height="100" Canvas.Left="715" Stroke="Black" Canvas.Top="534" Width="100"/>
+    </Canvas>
+</Window>

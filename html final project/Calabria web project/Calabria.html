@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+   <!--
+      
+
+      Calabria Home Page
+      Author: Thomas Zangari	
+      Date:   09/18/2013
+
+      Filename:         Calabria.html
+      Supporting files: food/capicollo.jpg,CipolleDiTropea.jpg,Nduia.jpg,oliodoliva.jpg,pancetta.jpg,
+                         olive.jpg,peperoncino.jpg,porcini.jpg,sorpressata.jpg./
+                         images/image1.jpg,image2.jpg,image3.jpg,image4.jpg,image5.jpg,image6.jpg,image7.jpg
+                         image7.jpg,image8.jpg./
+                         verticaNav/logoProvinciaReggio.jpg,ProvinciaDiCatanzaro.jpg,ProvinciaDiCrotone.jpg,regioneLogo.jpg,ViboVagabondo.jpg./
+						 Stemma.jpg,calabria.png.
+						 modernizr-1.5.js, ca_layout.css, 
+                        
+   -->
+
+      <meta charset="UTF-8" />
+	  <meta name="author" content="Thomas Zangari" />
+	  <meta name="description" content="A site that gives information about Calabria and 
+                                        provinces" />
+      <meta name="keywords" content="Calabria,Catanzaro,Cosenza,Reggio Calabria,Vibo Valentia,Crotone" />										
+      <title>Calabria</title>
+      <script src="modernizr-1.5.js"></script>
+	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	  <script type="text/javascript" src="js/lightbox.js"></script>
+	  <link href="lightbox.css" type="text/css" rel="stylesheet">
+	  <script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>
+	  
+
+	  <link href="ca_styles.css" rel="stylesheet" type="text/css" />
+	  <script type="text/javascript">
+      $(document).ready(function () {
+        var carousel = $("#carousel").hide().fadeIn(2000).waterwheelCarousel({
+          flankingItems: 3,
+          movingToCenter: function ($item) {
+            $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedToCenter: function ($item) {
+            $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movingFromCenter: function ($item) {
+            $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedFromCenter: function ($item) {
+            $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          clickedCenter: function ($item) {
+            $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+          }
+        });
+
+        $('#prev').bind('click', function () {
+          carousel.prev();
+          return false
+        });
+
+        $('#next').bind('click', function () {
+          carousel.next();
+          return false;
+        });
+
+        $('#reload').bind('click', function () {
+          newOptions = eval("(" + $('#newoptions').val() + ")");
+          carousel.reload(newOptions);
+          return false;
+        });
+
+      });
+    </script>
+	<style>
+	  #carousel {
+        width:760px;
+        
+        height:200px;
+        position:relative;
+        clear:both;
+        overflow:hidden;
+        background:#FFF;
+      }
+      #carousel img {
+        visibility:hidden; /* hide images until carousel can handle them */
+        cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+      }
+
+      .split-left {
+        width:450px;
+        float:left;
+      }
+      .split-right {
+        width:400px;
+        float:left;
+        margin-left:10px;
+      }
+      #callback-output {
+        height:250px;
+        overflow:scroll;
+      }
+      textarea#newoptions {
+        width:430px;
+      }
+	  </style>
+	  			
+
+
+   </head>
+
+   <body>
+     <section>
+
+       <header>
+         
+            <img src="Stemma.jpg" alt="Stemma" />
+	   
+		<nav class="vertical">
+			
+			<h2>Some Sites You Can Visit</h2> 
+			
+			 <a href="http://www.turiscalabria.it" target="new">  <img src="verticalNav/regioneLogo.jpg" alt="" /></a>
+			 <a href="http://turismo.provincia.rc.it/" target="new"><img src="verticalNav/logoProvinciaReggio.jpg" alt=""/></a>
+			 <a href="http://www.provincia.vibovalentia.it/" target="new"><img src="verticalNav/ViboVagabondo.png" alt="" /></a>
+			 <a href="http://www.turismoprovinciacatanzaro.com/" target="new"><img src="verticalNav/ProvinciaDiCatanzaro.jpg" alt=""/></a>
+             <a href="http://www.provincia.crotone.it/" target="new" ><img src="verticalNav/ProvinciaDiCrotone.jpg" alt=""/></a>
+			 <a href="https://www.facebook.com/groups/171537926319874/?fref=ts" target = "new"><img src = "facebook icon.jpg" alt="" /></a>
+		</nav>
+		</header>
+		<script type="text/javascript">
+     	$(document).ready(function() {
+        	
+			$("#img").hide().fadeIn(5000);
+    	}); 
+    </script>
+                	  
+	  <header id = "horizontalNav">
+	   <img src="header.jpg" alt="header" id ="img"/> 
+	   <nav class="horizontal">   
+        <ul>
+           
+            <li><a href="Cosenza.html">Cosenza</a></li>
+            <li><a href="Crotone.html">Crotone</a></li>
+            <li><a href="Catanzaro.html">Catanzaro</a></li>
+            <li><a href="Vibo Valentia.html">Vibo Valentia</a></li>
+			<li><a href="Reggio Calabria.html">Reggio Calabria</a></li>
+		</ul>
+       </nav>
+	  </header>
+	  
+	  <article id ="figure">
+	   
+	   <figure>
+         <div id="carousel">
+		    <a href="images/image1.jpg" rel="lightbox[vecta]" title="">
+            <img src="images/image1.jpg" alt="" /></a>
+			<a href="images/image2.jpg" rel="lightbox[vecta]" title="">
+            <img src="images/image2.jpg" alt="" /></a>
+			<a href="images/image3.jpg" rel="lightbox[vecta]" title="">
+            <img src="images/image3.jpg" alt="" /></a>
+			<a href="images/image4.jpg" rel="lightbox[vecta]" title="">
+            <img src="images/image4.jpg" alt="" /></a>
+			<a href="images/image5.jpg" rel="lightbox[vecta]" title="">
+            <img src="images/image5.jpg" alt="" /></a>
+			<a href="images/image6.jpg" rel="lightbox[vecta]" title="">
+            <img src="images/image6.jpg" alt="" /></a>
+			<a href="images/image7.jpg" rel="lightbox[vecta]" title="">
+            <img src="images/image7.jpg" alt="" /></a>
+			<a href="images/image8.jpg" rel="lightbox[vecta]" title="">
+            <img src="images/image8.jpg" alt="" /></a>
+         </div>
+	    </figure>
+	  </article >
+	  
+	  
+	  
+	  <article id="main">
+          <aside>
+              <img src="calabria.png" alt="calabria" id="promoimage" />
+		 </aside>	
+         
+         <h1> Welcome to Calabria</h1>		 
+         <p>   
+            Calabria consists of 5 provinces; <a href= "Cosenza.html">Cosenza</a>,<a href="Catanzaro">Catanzaro</a>,<a href="Crotone">Crotone</a>, <a href="Vibo Valentia">Vibo Valentia</a> 
+			and <a href="Reggio Calabria">Reggio Calabria</a>. Prior to 1991 there were only 3 provinces. In 1991 Catanzaro 
+			Province was split into 3 provinces and Vibo Valentia and Crotone Provinces were born. 
+			Calabria is home to several different terrains and landscapes. 
+			The east and west is bordered by the Ionian and Tyrrhenian seas. 
+			To the north Calabria is separated from Basilicata with a natural border of the Sila mountain range. 
+			In between are rugged mountains and fertile valleys and villages that offer a different 
+			culture and language (dialect) than the rest of Italy. 
+			There is a national park located in the Sila Mountains in Cosenza Province. 
+			There are numerous mountains scattered throughout the region namely the Sila, Pollino and Aspromonte and of course, 
+			beautiful seaside villages. This region has been influenced by 
+			the Greeks, the Romans, Albanians, Austrians, Germans, Spanish, the Byzantines, the Normans and The Ottoman Empire. 
+			Buildings and ruins throughout the region still show signs of these influences. The Calabrian region has always been 
+			more isolated from the rest of the regions of Italy, however today it is not isolated. 
+			In the past it was separated by dialects, traditions and it's rugged terrain. 
+			It was very different than the rest of Italy. Much of the culture and traditions in Calabria are unique to the region.
+			Today, Calabria is very modern, however shadows of the past can been seen everywhere in 
+			it's older buildings, churches, traditions and churches. It is connected to the other regions of Italy through 
+			the autostrada (highways), trains and an airport in Lamazia Terme.
+         </p>
+		 <h2>Some History</h2>
+		 <p>Calabria was first settled by Italic Oscan-speaking tribes. Two of these tribes were the Oenotrians 
+		   (roughly translated into the "vine-cultivators") and the Itali.Greek contact with the latter resulted in Calabria taking 
+		   the name of the tribe and was the first region to be called Italy (Italia).Greeks settled heavily along the coast at an 
+		   early date and several of their settlements, including the first Italian city called Rhégion (Reggio di Calabria), 
+		   and the next ones Sybaris, Kroton (Crotone), a settlement where the mathematician Pythagoras later resided, and Locri, 
+		   were numbered among the leading cities of Magna Graecia during the 6th and 5th centuries BC.
+		 </p>  
+
+        </article> 
+      
+	  <aside>
+          
+		  
+		 
+         <figure>
+          <dl>
+		    <dd><h2>Tipical Products</h2></dd>
+            <dd><img src="food/CipolleDiTropea.jpg" alt="" /></dd>
+			<figcaption>Cipolle di Tropea</figcaption>
+		    <dd><img src="food/sopressata.jpg" alt="" /></dd>
+			<figcaption>Sopressata</figcaption>
+           <dd> <img src="food/peperoncino.jpg" alt="" /></dd>
+		   <figcaption>Peperoncino</figcaption>
+            <dd><img src="food/Nduia.jpg" alt="" /></dd>
+			<figcaption>Nduia</figcaption>
+           <dd> <img src="food/capicollo.jpg" alt="" /></dd>
+		   <figcaption>Capicollo</figcaption>
+           <dd> <img src="food/pancetta.jpg" alt="" /></dd>
+		   <figcaption>Pancetta</figcaption>
+           <dd><img src="food/porcini.jpg" alt="" /></dd>
+		   <figcaption>Funghi Porcini</figcaption>
+           <dd><img src="food/oliodoliva.jpg" alt="" /></dd>
+		   <figcaption>Olio d'Oliva</figcaption>
+         </dl>
+		 </figure>
+	  
+      </aside>
+	  
+	 
+	  <footer>
+	     <span>
+	        <a href="Cosenza.html">Cosenza</a>
+            <a href="Crotone.html">Crotone</a>
+            <a href="Catanzaro.html">Catanzaro</a>
+            <a href="Vibo Valentia.html">Vibo Valentia</a>
+			<a href="Reggio Calabria.html">Reggio Calabria</a>
+    	</span> 
+	       
+		  <p>&bull; For futher information contact me at<a href="mailto:tomsa78@hotmail.it"> tomsa78@hotmail.it</a> &bull;</br>
+	         Calabria &copy 2014 English (us).</p>   
+			
+	 </footer>
+    </section>
+    	  
+   </body>
+   
+
+</html>

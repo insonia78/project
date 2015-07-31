@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=mySnowman
+comment0.target=Hat(Snowman)
+comment1.params=c
+comment1.target=void\ setColor(java.awt.Color)
+comment2.params=w\ h
+comment2.target=void\ setSize(int,\ int)
+comment3.params=x\ y
+comment3.target=void\ setLocation(int,\ int)
+numComments=4

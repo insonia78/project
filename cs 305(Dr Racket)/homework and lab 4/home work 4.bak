@@ -1,0 +1,71 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname |home work 4|) (read-case-sensitive #t) (teachpacks ((lib "image.rkt" "teachpack" "2htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "image.rkt" "teachpack" "2htdp")))))
+;; Hw 4 Thomas Zangari
+;;signature 
+;;purpose
+
+
+(define-struct person(name age address phone))
+;; Person is a structure(name age address phone)
+;;interp. name, the age, the address, the phone
+
+(define-struct address(street city state zip))
+;;Address is a structure(street city state zip)
+;;interp. the street name , the city name, the state , the zip
+
+(define-struct phone(area-code number))
+;;Phone is a structure (area-code number)
+;;interp. the area code, and a 7 digit number
+ 
+ 
+  
+;; mass-senior?: person -> boolean
+;; consumes a person, and produces true if the person is a senior citizen (age >= 65) living in 
+;; Massachusetts, or false otherwise.
+;test
+(check-expect(mass-senior? person1) false)
+(check-expect(mass-senior? person2) true)
+(check-expect(mass-senior? person3) false)
+(check-expect(mass-senior? person4) "Invalid Entry")
+;definition different addresses
+(define address1(make-address "horseshow" "Springfield" "Massachussetts" "02892"))
+(define address2(make-address "horseshow" "Springfield" "Massachu" "02892"))
+
+;definition phone
+(define phone1(make-phone 123 "1234567"))
+
+;definition different person object
+(define person1(make-person "thomas"  63 address1 phone1))
+(define person2(make-person "antonio" 65 address1 phone1))
+(define person3(make-person "Giuseppe" 65 address2 phone1))
+(define person4(make-person "thomas" -63 address1 phone1))
+
+(define (mass-senior? p)
+  (cond[(< (person-age p) 0) "Invalid Entry"]
+       [(< (person-age p) 65) false]
+       [else (state p)]))
+
+
+(define (state p)
+  (if(string=?(address-state (addrs p))"Massachussetts") true false))
+;; getting the address object
+(define (addrs p)
+   (person-address p))
+
+;; change-area-code: person number -> person
+;test
+(check-expect (change-area-code person5  234)(make-person (person-name person5)(person-age person5)address5 (make-phone 234 (phone-area-code phone5)))) 
+(check-expect (change-area-code person5 123)person5)
+;define
+(define phone5(make-phone 123 "1234567"))
+(define address5(make-address "horseshow" "Springfield" "Massachu" "02892"))
+;define
+(define person5(make-person "thomas"  63 address5 phone5))
+;defintion
+
+(define (change-area-code pers area-code)
+ (if(= (phone-area-code (area pers)) area-code) pers (make-person (person-name pers)(person-age pers) (person-address pers) (make-phone area-code (phone-area-code phone5)))))
+
+(define (area p)
+  (person-phone p))

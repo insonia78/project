@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=noun\ noun2\ verb\ suffix\ title
+comment0.target=java.lang.String\ getStory(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+numComments=1

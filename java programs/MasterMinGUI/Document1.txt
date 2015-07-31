@@ -1,0 +1,27 @@
+public void setColor(){
+		    if(red.isSelected())
+			{
+				board[row][col].setBackground(Color.RED);
+			}
+			if(blue.isSelected())
+			{
+				board[row][col].setBackground(Color.BLUE);
+			}
+			if(orange.isSelected())
+			{
+				board[row][col].setBackground(Color.ORANGE);
+			}
+			if(pink.isSelected())
+			{
+				board[row][col].setBackground(Color.PINK);
+			}
+			if(green.isSelected())
+			{
+				board[row][col].setBackground(Color.GREEN);
+			}
+			if(yellow.isSelected())
+			{
+				board[row][col].setBackground(Color.YELLOW);
+			}
+			this.repaint();
+		}

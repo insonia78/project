@@ -1,0 +1,25 @@
+/*
+   New Perspectives on XML
+   Tutorial 5
+   Tutorial Case
+
+   Tour Nation Bicycles Style Sheet
+   Author: thomas zangari
+   Date:   
+
+   Filename:         bike.css
+   Supporting Files: 
+
+*/
+
+*           {display:block}
+document    {width:720px}
+author      {display:none}
+date        {position: absolute; top:0px; left:660px;}
+title       {border-bottom: 2px solid purple}
+model       {margin: 10px; border:7px outset rgb(255,128,255); padding:7px}
+name        {border-bottom:1px solid black; color: white; background-image:url(back.jpg)}
+description {width:400px;float:right}
+features    {width:250px; color:blue;background-color: ivory; border:2px solid purple; padding:5px;} 
+feature     {display:list-item;list-style: square inside}
+fName       {display:inline;color:red} 

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=data\ array
+comment1.target=void\ makeTestArray(java.lang.Integer[],\ java.lang.Integer[])
+comment2.params=title\ data
+comment2.target=void\ print(java.lang.String,\ java.lang.Integer[])
+comment3.params=data1\ sortedArray1
+comment3.target=void\ timing(java.lang.Integer[],\ java.lang.Integer[])
+comment4.params=data
+comment4.target=java.lang.Integer[]\ initSorted(java.lang.Integer[])
+numComments=5

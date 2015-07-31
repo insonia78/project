@@ -1,0 +1,6 @@
+C:\Users\thomas\Desktop\ric\programming languages 325\program 1 part 2\Program1\Program1\bin\Debug\Program1.exe.config
+C:\Users\thomas\Desktop\ric\programming languages 325\program 1 part 2\Program1\Program1\obj\Debug\Program1.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Desktop\ric\programming languages 325\program 1 part 2\Program1\Program1\bin\Debug\Program1.exe
+C:\Users\thomas\Desktop\ric\programming languages 325\program 1 part 2\Program1\Program1\bin\Debug\Program1.pdb
+C:\Users\thomas\Desktop\ric\programming languages 325\program 1 part 2\Program1\Program1\obj\Debug\Program1.exe
+C:\Users\thomas\Desktop\ric\programming languages 325\program 1 part 2\Program1\Program1\obj\Debug\Program1.pdb

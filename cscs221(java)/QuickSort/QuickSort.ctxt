@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=array
+comment1.target=void\ quickSort(int[])
+comment2.params=array\ start\ end
+comment2.target=void\ doQuickSort(int[],\ int,\ int)
+comment3.params=array\ start\ end
+comment3.target=int\ partition(int[],\ int,\ int)
+comment4.params=array
+comment4.target=void\ printArray(int[])
+comment4.text=\ \ \ for(int\ scan\ \=\ start\ +\ 1;\ scan<\=end;scan++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println("inside\ the\ for\ loop");\r\n\ \ \ \ \ \ \ \ \ \ \ \ printArray(array);\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.print("index"+scan+"\ array[start]"+array[scan]);\r\n\ \ \ \ \ \ \ \ \ \ \ \ if(array[scan]<pivotValue){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println("Inside\ the\ if\ statment");\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printArray(array);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endOfLeftList++;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print("\ endOfLeftList"+\ endOfLeftList+"scan"+scan);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println("swap");\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ swap(array,endOfLeftList,scan);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printArray(array);\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ swap(array,start,endOfLeftList);\r\n\ \ \ \ \ \ \ \ printArray(array);\r\n\ \ \ \ \ \ \ \ return\ endOfLeftList;\r\n\ \ \ \ }\r\n\ \ \ \ private\ static\ void\ swap(int[]\ array,int\ a,\ int\ b){\r\n\ \ \ \ \ \ \ \ System.out.println("Inside\ the\ first\ swap");\r\n\ \ \ \ \ \ \ \ int\ temp;\r\n\ \ \ \ \ \ \ \ temp\ \=\ array[a];\r\n\ \ \ \ \ \ \ \ System.out.print("temp"+temp+"\ ");\r\n\ \ \ \ \ \ \ \ printArray(array);\r\n\ \ \ \ \ \ \ \ array[a]\=array[b];\r\n\ \ \ \ \ \ \ \ System.out.print("\ array[a]"+array[a]+"\ ");\r\n\ \ \ \ \ \ \ \ printArray(array);\r\n\ \ \ \ \ \ \ \ array[b]\=temp;\r\n\ \ \ \ \ \ \ \ System.out.println("\ array[b]"+array[b]+"\ ");\r\n\ \ \ \ \ \ \ \ printArray(array);\r\n\ \ \ \ }\r\n
+numComments=5

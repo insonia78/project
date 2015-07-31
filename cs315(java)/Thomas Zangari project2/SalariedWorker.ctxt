@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=name\ id\ salary
+comment0.target=SalariedWorker(java.lang.String,\ java.lang.String,\ double)
+comment0.text=\r\n\ Constructor\ \r\n\ @param\ name\r\n\ @param\ id\r\n\ @param\ salary\r\n
+comment1.params=
+comment1.target=double\ getSalary()
+comment1.text=\r\n\ gets\ the\ salary\r\n\ @return\ salary\r\n
+comment2.params=salary
+comment2.target=void\ setSalary(double)
+comment2.text=\r\n\ sets\ the\ salary\r\n\ @param\ salary\r\n
+comment3.params=
+comment3.target=double\ FindSalary()
+comment3.text=\r\n\ Finds\ the\ weekly\ salary\r\n\ @return\ weeklySalary\r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\r\n\ ToString()\r\n\ @return\ print\r\n
+numComments=5

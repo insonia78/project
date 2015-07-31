@@ -1,0 +1,12 @@
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Debug\ValidationData.csprojResolveAssemblyReference.cache
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\program6b\ValidationData\ValidationData\bin\Debug\ValidationData.exe.config
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\program6b\ValidationData\ValidationData\obj\Debug\ValidationData.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\program6b\ValidationData\ValidationData\obj\Debug\ValidationData.pdb
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter6\program6b\ValidationData\ValidationData\bin\Debug\ValidationData.exe.config
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter6\program6b\ValidationData\ValidationData\obj\Debug\ValidationData.exe
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter6\program6b\ValidationData\ValidationData\obj\Debug\ValidationData.pdb

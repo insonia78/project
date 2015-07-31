@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=quickSort()
+comment0.text=\r\n\ Empty\ Constructor\r\n
+comment1.params=dataBase\ index
+comment1.target=Employee[]\ quickSort(Employee[],\ int)
+comment1.text=\r\n\ starts\ the\ quicksort\ alghoritm\ \r\n\ @parm\ database\r\n\ @param\ index\r\n\ @return\ doQuickSort\ method\r\n
+comment2.params=dataBase\ start\ end
+comment2.target=Employee[]\ doQuickSort(Employee[],\ int,\ int)
+comment2.text=\r\n\ It\ sorts\ the\ two\ halfs\ of\ the\ array\ \r\n\ @param\ dataBase\r\n\ @param\ start\r\n\ @param\ end\r\n\ @return\ dataBase\r\n\ \r\n
+comment3.params=dataBase\ start\ end
+comment3.target=int\ partition(Employee[],\ int,\ int)
+comment3.text=\r\n\ it\ partition\ the\ two\ halfs\ of\ the\ array\r\n\ and\ uses\ the\ swamo\ method\ to\ swap\ the\ elements\ \r\n\ @param\ dataBase\r\n\ @param\ start\r\n\ @param\ end\r\n\ @return\ endOflist\r\n
+comment4.params=dataBase\ a\ b
+comment4.target=void\ swap(Employee[],\ int,\ int)
+comment4.text=\r\n\ swaps\ the\ elements\ of\ the\ database\r\n\ @param\ dataBase\r\n\ @param\ a\r\n\ @param\ b\r\n
+numComments=5

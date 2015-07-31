@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MadLibView()
+comment1.params=
+comment1.target=void\ setIntro()
+comment2.params=
+comment2.target=char\ getUserChoice()
+comment3.params=
+comment3.target=void\ setInput()
+comment4.params=
+comment4.target=void\ printStory()
+comment5.params=
+comment5.target=java.lang.String\ getUserInput()
+numComments=6

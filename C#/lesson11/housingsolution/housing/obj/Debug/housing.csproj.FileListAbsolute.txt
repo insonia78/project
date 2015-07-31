@@ -1,0 +1,13 @@
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\bin\Debug\housing.exe.config
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\housing.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\housing.csproj.GenerateResource.Cache
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\bin\Debug\housing.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\bin\Debug\housing.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\HousingProgram.HousingManager.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\housing.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\housing.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\HousingProgram.Viue.resources
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\lesson11\housingsolution\housing\bin\Debug\housing.exe.config
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\housing.exe
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\lesson11\housingsolution\housing\obj\Debug\housing.pdb

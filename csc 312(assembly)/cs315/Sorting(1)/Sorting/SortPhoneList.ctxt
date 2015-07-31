@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ Creates\ an\ array\ of\ Contact\ objects,\ sorts\ them,\ then\ prints\r\n\ them.\r\n
+comment1.params=friends
+comment1.target=Contact[]\ reset(Contact[])
+comment2.params=title\ friends
+comment2.target=void\ print(java.lang.String,\ Contact[])
+numComments=3

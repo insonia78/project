@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Cursor()
+comment1.params=point
+comment1.target=void\ setLocation(java.awt.Point)
+comment2.params=
+comment2.target=java.awt.Point\ getLocation()
+numComments=3

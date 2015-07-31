@@ -1,0 +1,25 @@
+"CONCAT(last_name, ', ', first_name)","TIMESTAMPDIFF(YEAR, birth, death)"
+"Washington, George",67
+"Adams, John",90
+"Jefferson, Thomas",83
+"Madison, James",85
+"Monroe, James",73
+"Adams, John Quincy",80
+"Jackson, Andrew",78
+"Van Buren, Martin",79
+"Harrison, William H.",68
+"Tyler, John",71
+"Fillmore, Millard",74
+"Buchanan, James",77
+"Johnson, Andrew",66
+"Hayes, Rutherford B.",70
+"Cleveland, Grover",71
+"Harrison, Benjamin",67
+"Taft, William H.",72
+"Wilson, Woodrow",67
+"Hoover, Herbert C.",90
+"Truman, Harry S",88
+"Eisenhower, Dwight D.",78
+"Nixon, Richard M.",81
+"Ford, Gerald R.",93
+"Reagan, Ronald W.",93

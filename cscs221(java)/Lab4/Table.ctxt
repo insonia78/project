@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=rows\ columns
+comment0.target=Table(int,\ int)
+comment1.params=
+comment1.target=int[]\ rowSums()
+comment2.params=
+comment2.target=int[]\ colSums()
+comment3.params=
+comment3.target=int[][]\ get2DimArrayFromTable()
+comment4.params=fileName
+comment4.target=void\ ReadTablefromFile(java.lang.String)
+comment5.params=fileName
+comment5.target=void\ printTableSumstoFile(java.lang.String)
+comment6.params=atable1\ atable2
+comment6.target=Table\ addTables(Table,\ Table)
+numComments=7

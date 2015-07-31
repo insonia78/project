@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=aColor\ aColorable\ aGroup\ isSelected
+comment0.target=ColorButton(java.awt.Color,\ Colorable,\ javax.swing.ButtonGroup,\ boolean)
+comment1.params=aColor
+comment1.target=java.lang.String\ getColorName(java.awt.Color)
+numComments=2

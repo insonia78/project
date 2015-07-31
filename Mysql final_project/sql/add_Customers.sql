@@ -1,0 +1,10 @@
+DELETE FROM customer;
+INSERT INTO customer VALUES (1,'Thomas','Zangari','Rhode Island');
+INSERT INTO customer VALUES (2,'Antonio','Zangari','Germany');
+INSERT INTO customer VALUES (3,'Francesco','Iosi','Italy');
+INSERT INTO customer VALUES (4,'Mariel','Zangari','Rhode Island');
+INSERT INTO customer VALUES (5,'Giuseppe','Aloi','France');
+INSERT INTO customer VALUES (6,'Davide','Mangiardi','Spain');
+INSERT INTO customer VALUES (8,'Agostino','Gallace','Austria');
+INSERT INTO customer VALUES (9,'Vito Anotonio','Fiumara','Greece');
+INSERT INTO customer VALUES (10,'James','Iorfida','Rhode Island');

@@ -1,0 +1,65 @@
+Thomas Zangari
+
+Sales rep:1
+Gross sales:             5100.00
+Commision rate (%):         5.25
+Pay:                      317.75
+
+
+Sales rep:2
+Gross sales:            12500.00
+Commision rate (%):         6.00
+Pay:                      875.00
+
+
+Sales rep:3
+Gross sales:             2300.00
+Commision rate (%):         4.50
+Pay:                      103.50
+
+
+Sales rep:4
+Gross sales:                0.00
+Commision rate (%):         3.00
+Pay:                        0.00
+
+
+Sales rep:5
+Gross sales:             3450.00
+Commision rate (%):         4.50
+Pay:                      155.25
+
+
+Sales rep:6
+Gross sales:              750.00
+Commision rate (%):         3.00
+Pay:                       22.50
+
+
+Sales rep:7
+Gross sales:            12500.00
+Commision rate (%):         6.00
+Pay:                      875.00
+
+
+Sales rep:8
+Gross sales:            10000.00
+Commision rate (%):         5.25
+Pay:                      575.00
+
+
+Sales rep:9
+Gross sales:             1250.00
+Commision rate (%):         4.50
+Pay:                       56.25
+
+
+Sales rep:10
+Gross sales:               10.00
+Commision rate (%):         3.00
+Pay:                        0.30
+
+
+ --------------------------- 
+Average Sales:            4786.00
+Total payed:              2980.55

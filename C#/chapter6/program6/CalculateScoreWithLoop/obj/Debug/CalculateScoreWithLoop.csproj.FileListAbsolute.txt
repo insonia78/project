@@ -1,0 +1,8 @@
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\CalculateScoreWithLoop\CalculateScoreWithLoop\bin\Debug\CalculateScoreWithLoop.exe.config
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\CalculateScoreWithLoop\CalculateScoreWithLoop\bin\Debug\CalculateScoreWithLoop.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\CalculateScoreWithLoop\CalculateScoreWithLoop\bin\Debug\CalculateScoreWithLoop.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\CalculateScoreWithLoop\CalculateScoreWithLoop\obj\Debug\CalculateScoreWithLoop.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\CalculateScoreWithLoop\CalculateScoreWithLoop\obj\Debug\CalculateScoreWithLoop.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter6\CalculateScoreWithLoop\CalculateScoreWithLoop\obj\Debug\CalculateScoreWithLoop.pdb
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter6\program6\CalculateScoreWithLoop\bin\Debug\CalculateScoreWithLoop.exe.config
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter6\program6\CalculateScoreWithLoop\obj\Debug\CalculateScoreWithLoop.exe

@@ -1,0 +1,45 @@
+last_name,first_name,birth,death,age
+Washington,George,1732-02-22,1799-12-14,67
+Adams,John,1735-10-30,1826-07-04,90
+Jefferson,Thomas,1743-04-13,1826-07-04,83
+Madison,James,1751-03-16,1836-06-28,85
+Monroe,James,1758-04-28,1831-07-04,73
+Adams,"John Quincy",1767-07-11,1848-02-23,80
+Jackson,Andrew,1767-03-15,1845-06-08,78
+"Van Buren",Martin,1782-12-05,1862-07-24,79
+Harrison,"William H.",1773-02-09,1841-04-04,68
+Tyler,John,1790-03-29,1862-01-18,71
+Polk,"James K.",1795-11-02,1849-06-15,53
+Taylor,Zachary,1784-11-24,1850-07-09,65
+Fillmore,Millard,1800-01-07,1874-03-08,74
+Pierce,Franklin,1804-11-23,1869-10-08,64
+Buchanan,James,1791-04-23,1868-06-01,77
+Lincoln,Abraham,1809-02-12,1865-04-15,56
+Johnson,Andrew,1808-12-29,1875-07-31,66
+Grant,"Ulysses S.",1822-04-27,1885-07-23,63
+Hayes,"Rutherford B.",1822-10-04,1893-01-17,70
+Garfield,"James A.",1831-11-19,1881-09-19,49
+Arthur,"Chester A.",1829-10-05,1886-11-18,57
+Cleveland,Grover,1837-03-18,1908-06-24,71
+Harrison,Benjamin,1833-08-20,1901-03-13,67
+McKinley,William,1843-01-29,1901-09-14,58
+Roosevelt,Theodore,1858-10-27,1919-01-06,60
+Taft,"William H.",1857-09-15,1930-03-08,72
+Wilson,Woodrow,1856-12-19,1924-02-03,67
+Harding,"Warren G.",1865-11-02,1923-08-02,57
+Coolidge,Calvin,1872-07-04,1933-01-05,60
+Hoover,"Herbert C.",1874-08-10,1964-10-20,90
+Roosevelt,"Franklin D.",1882-01-30,1945-04-12,63
+Truman,"Harry S",1884-05-08,1972-12-26,88
+Eisenhower,"Dwight D.",1890-10-14,1969-03-28,78
+Kennedy,"John F.",1917-05-29,1963-11-22,46
+Johnson,"Lyndon B.",1908-08-27,1973-01-22,64
+Nixon,"Richard M.",1913-01-09,1994-04-22,81
+Ford,"Gerald R.",1913-07-14,2006-12-26,93
+Carter,"James E.",1924-10-01,NULL,NULL
+Reagan,"Ronald W.",1911-02-06,2004-06-05,93
+Bush,"George H.W.",1924-06-12,NULL,NULL
+Clinton,"William J.",1946-08-19,NULL,NULL
+Bush,"George W.",1946-07-06,NULL,NULL
+Obama,"Barack H.",1961-08-04,NULL,NULL
+Obama,Barack,1961-08-04,NULL,NULL

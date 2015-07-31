@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MasterMind()
+comment1.params=
+comment1.target=void\ colorsFromComputer()
+comment2.params=
+comment2.target=void\ colorsFromUser()
+comment3.params=
+comment3.target=void\ colorCompare()
+comment3.text=\r\n\ method\ to\ make\ the\ comparison\ with\ the\ color\ you\ have\ chosen\ and\ the\ computer\ choice\r\n\ \r\n
+comment4.params=
+comment4.target=int\ displaySelection()
+comment5.params=
+comment5.target=void\ displayComputerSelection()
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7

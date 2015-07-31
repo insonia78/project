@@ -1,0 +1,7 @@
+
+Patient Number:3333
+The total charges are: $ 1100.00
+
+Number of Patients:             1
+Total charges:     $      1100.00
+Average charges:   $      1100.00

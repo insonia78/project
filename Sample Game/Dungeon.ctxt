@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=first\ second\ third\ fourth
+comment0.target=Dungeon(Character,\ Character,\ Character,\ Character)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Dungeon\r\n
+comment1.params=hOne\ hTwo\ hThree\ hFour
+comment1.target=void\ init(Character,\ Character,\ Character,\ Character)
+comment2.params=
+comment2.target=void\ battleTest()
+numComments=3

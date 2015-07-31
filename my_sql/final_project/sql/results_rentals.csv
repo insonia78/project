@@ -1,0 +1,2 @@
+customer_id,video_id,Check_out_date,Is_it_returned,Returned_date,rental_charges,due_date
+1,1,2015-03-17,Y,2015-03-28,19,2015-03-20

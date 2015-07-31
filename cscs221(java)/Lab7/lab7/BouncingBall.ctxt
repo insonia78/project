@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=aColor\ aPanel
+comment0.target=BouncingBall(java.awt.Color,\ javax.swing.JPanel)
+comment1.params=
+comment1.target=void\ move()
+comment2.params=
+comment2.target=int\ getMinBoundX()
+comment3.params=
+comment3.target=int\ getMinBoundY()
+comment4.params=
+comment4.target=int\ getMaxBoundX()
+comment5.params=
+comment5.target=int\ getMaxBoundY()
+numComments=6

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Video Store</title>
+<link rel="stylesheet" type="text/css" href="video_store.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="rental.js"></script>
+</head>
+
+<body>
+<a href="index.html">Start</a>
+<div id="content">
+    <h1>Invoice Manager</h1>
+    
+    <div class="formLayout">
+        <p>First Name:
+            <input type="text" name="first_name" id="first_name" /></p>
+        <p>Last_Name
+            <input type="text" name="last_name" id="last_name" /></p>
+        
+        <p>Video Name:
+            <input type="text" name="video_name" id="video_name" /></p>
+		<p>Check out date/Returned date:
+            <input type="date" name="date" id="date" /></p>
+        
+        
+        
+    </div>
+    
+    <p><textarea id="item_list" rows="5" cols="100"></textarea></p>
+    
+            <input type="button" id="rent"
+                value="Rent" />
+				 <input type="button" id="return"
+                value="Return" />
+</div>			
+</body>
+</html>

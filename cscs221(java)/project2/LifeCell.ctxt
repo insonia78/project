@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=b\ r\ c
+comment0.target=LifeCell(LifeCell[][],\ int,\ int)
+comment1.params=
+comment1.target=int\ countNeighbors()
+comment2.params=outfile
+comment2.target=void\ printcell(java.io.PrintWriter)
+comment3.params=
+comment3.target=boolean\ isAlive()
+comment4.params=
+comment4.target=void\ toggle()
+comment5.params=
+comment5.target=boolean\ getDead()
+numComments=6

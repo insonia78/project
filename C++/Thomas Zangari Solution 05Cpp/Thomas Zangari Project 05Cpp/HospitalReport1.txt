@@ -1,0 +1,10 @@
+
+Patient Number:1111
+The total charges are: $ 1759.85
+
+Patient Number:2222
+The total charges are: $ 1895.50
+
+Number of Patients:             2
+Total charges:     $      3655.35
+Average charges:   $      1827.68

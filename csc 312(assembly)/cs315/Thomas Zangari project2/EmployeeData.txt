@@ -1,0 +1,6 @@
+S   	Washington,George  		000001  125000
+H 	MacDonald,Ronald     	        386218  7.80    true    40
+H    	Walton,Samuel           	268517	8.21	false
+H	Thomas,David    		131313	9.45	true	38
+H	Sanders,HarlandDavid  	        277651	8.72	false
+S	Baron,James     		368535	310236

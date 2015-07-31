@@ -1,0 +1,285 @@
+/*
+  Sunny Acres Style Sheet
+  
+  Author: Thomas Zangari
+  Date: 09/18/2013
+  
+  */
+  
+  
+  /* Body Style*/
+  
+ body {
+   
+  background-color: rgb(141,182,205);
+  font-family:NobileRegular, Verdana, Geneva, sans-serif;
+  line-height: 1.4em;
+  margin: 0px auto;
+  padding: 0px;
+  width: 98%;
+   
+  }
+  /*Section styles*/
+	section {
+	background-color:white;
+	box-shadow:-10px -10px 20px #000;
+    -webkit-box-shadow:-10px -10px 20px #000;
+    -moz-box-shadow: -10px -10px 20px #000;
+	border:5px inset rgb(227,168,145);
+	position:absolute;
+	top:30px;
+	left:30px;
+	width:1200px;
+	height:2000px;
+	-moz-border-radius:25px;
+    -webkit-border-radius:25px;
+    border-radius:25px;
+	}
+  
+  /*Header Style */
+  header#frontImage  h2 img {
+  border:1px;
+  position:relative;
+  width:20%;
+  transform:scale(4.95,2.40);
+  top:48px;
+  left:480px;
+  -moz-border-radius:25px;
+  -webkit-border-radius:25px;
+   border-radius:25px;
+  
+  }
+  
+  
+  /*Heading styles*/
+  section header img{
+  position:relative;
+  top:13px;
+  border:5px inset rgb(227,168,145);
+  width:15%;
+  }
+    
+  section h1{
+      background-color: rgb(125, 186, 240);
+	  color: white;
+	  text-shadow:black 1px 1px 0px, rgba(90,127,0,0.7) 5px 5px 10px;
+	  font-size: 1.7em;
+	  letter-spacing: 0.4em;
+	  line-height: 1.8em;
+	  text-indent: lem;
+	  text-align:center;
+	}
+  
+  
+	/*Navigation list styles*/
+	section nav {
+	position:relative;
+	height:500px;
+    top:120px;
+	left:5px;
+	width: 200px;
+    float: left;
+    margin-right: 5px;
+    }
+	section nav img{
+	width:70%;
+	}
+	section nav ul{
+	        
+		 line-height: 3.5em;
+	     list-style-type: none;
+		 padding-left: 0.1em;
+		 text-align:center;
+		 color:black;
+	}
+	section nav ul li{
+	background:rgb(238,232,170);
+	border:10px groove rgb(125,180,233);
+	margin:20px 0px 20px 0px;
+	}    
+	section nav ul li:hover {
+	    background-color: rgb(83, 142, 213);
+	}
+	section nav ul li:first-of-type{
+	       text-transform: uppercase;
+    }		   
+	
+	section nav ul li a{
+	    color:black;
+		text-decoration: none;
+	}
+	/* Article Style */ 
+	article{
+	width:550px;
+	height:300px;
+	position:absolute;
+	top:220px;
+	left:230px;
+	
+	}
+	
+    article header h1 img{
+    position:relative;
+    top:13px;
+    border:5px inset rgb(227,168,145);
+    width:10%;
+   }
+    
+   article h1{
+    background-color: rgb(235, 199, 158);
+	color: white;
+	font-size: 1.7em;
+	letter-spacing: 0.4em;
+    line-height: 1.8em;
+	text-indent: lem;
+	text-align:center;
+	}
+	article img {
+    float:  right;
+    margin: 1px;
+    }
+	
+	section article p{
+	 text-align:left;
+	}
+	/* Video Styles */ 
+	section article video{
+	position:relative;
+	top:100px;
+	left:20px;
+	border:3px groove rgb(227,168,145);
+	
+	}
+    
+    
+	
+    /* Aside Styles */
+	
+	aside{
+    position:relative;
+    float:left;
+    top:200px;
+    left:600px;
+    width:390px;
+    height:1500px;
+    border-left:5px inset black; 
+   }
+   aside li{
+     margin:10px 5px 10px 5px;
+   }
+    /* Table styles */
+   
+   table.information{
+    
+    border: 10px outset rgb(238,232,170);
+	
+   }
+   table.information th{ 
+     text-align:center;
+     border: 2px solid darkblue;
+   } 
+    table.information tr td{
+	  text-align:center;
+	  border: 2px solid darblue;
+	  }
+    	
+   /*Fieldset Style */
+   fieldset{
+    position:absolute;
+    top:900px;
+     background-color: rgb(255,246,205);
+	 border: 1px solid rgb(233, 69,0);
+	 float:left;
+	 margin: 10px 0px 10px 2.5%;
+	 width: 90%;
+	 }
+	 legend{
+     position:relative;
+     left:-15px;	 
+	 background-color: rgb(233,69,0);
+	 color:white;
+	 text-indent: 5px;
+	 width:108%;
+	 text-align:center;
+	 cursor:pointer;
+	 }
+	 /*Label Style */
+	    label{
+		clear: left;
+		display:block;
+		float:left;
+		margin: 7px 5% 7px 5px;
+		width: 40%;
+		}
+				
+	  /*Input Styles */
+       input{
+      display:block;
+      float:left;
+      font-size: 0.9;
+      margin:7px 0px;
+      width:50%;
+      }
+    /*Text area styles */
+     textarea{
+	   position:relative;
+	   left: 40px;
+       
+       font-size:0.9;
+       float:left;
+       height:150px;
+       margin: 10px 0px;
+       width: 80%;
+     }	   
+    	  
+   /* Figure Style */
+   figure{
+    position:relative;
+     top:30px;
+     right:-60px;
+     width:80%;
+   }
+   figure div  {
+     overflow:auto;
+     white-space:nowrap;
+   }
+   figure div img{
+     width:80%;
+	 height:90%;
+     margin:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+     border-radius:10px; 
+   }
+    
+    	/* footer styles */
+	footer{
+      background-color:rgb(176,224,230);
+      position:absolute;
+      top:1900px;
+      height:100px;
+     width:1200px;
+     border-top: 1px solid rgb(18, 15, 22);
+     -moz-border-radius-bottomright:25px;
+     -moz-border-radius-bottomleft:25px;
+     -webkit-border-bottom-right-radius:25px;
+     -webkit-border-bottom-left-radius:25px;
+     border-bottom-right-radius:25px;
+     border-bottom-left-radius:25px;
+     text-align:center;
+  }
+  footer span{
+     position:relative;
+     top:10px;
+     margin-top:20px;
+  }
+  footer span a{
+     border: 1px dashed black;
+     text-decoration:none;
+     margin:20px 10px 10px 10px;
+     color:black;
+  }
+  footer p{
+    font-size:10px;
+  }
+	   

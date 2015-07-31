@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=element
+comment0.target=void\ enqueue(java.lang.Object)
+comment0.text=\ \ \r\n\ Adds\ one\ element\ to\ the\ rear\ of\ this\ queue.\ \r\n\ \r\n\ @param\ element\ \ the\ element\ to\ be\ added\ to\ the\ rear\ of\ this\ queue\ \ \r\n
+comment1.params=
+comment1.target=java.lang.Object\ dequeue()
+comment1.text=\ \ \r\n\ Removes\ and\ returns\ the\ element\ at\ the\ front\ of\ this\ queue.\r\n\ \r\n\ @return\ \ the\ element\ at\ the\ front\ of\ this\ queue\r\n
+comment2.params=
+comment2.target=java.lang.Object\ first()
+comment2.text=\ \ \r\n\ Returns\ without\ removing\ the\ element\ at\ the\ front\ of\ this\ queue.\r\n\r\n\ @return\ \ the\ first\ element\ in\ this\ queue\r\n
+comment3.params=
+comment3.target=boolean\ isEmpty()
+comment3.text=\ \ \r\n\ Returns\ true\ if\ this\ queue\ contains\ no\ elements.\r\n\ \r\n\ @return\ \ true\ if\ this\ queue\ is\ empty\r\n
+comment4.params=
+comment4.target=int\ size()
+comment4.text=\ \ \r\n\ Returns\ the\ number\ of\ elements\ in\ this\ queue.\ \r\n\ \r\n\ @return\ \ the\ integer\ representation\ of\ the\ size\ of\ this\ queue\r\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\ \ \r\n\ Returns\ a\ string\ representation\ of\ this\ queue.\ \r\n\r\n\ @return\ \ the\ string\ representation\ of\ this\ queue\r\n
+numComments=6

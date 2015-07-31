@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=LinearNode()
+comment0.text=\r\n\ Creates\ an\ empty\ node.\r\n
+comment1.params=elem
+comment1.target=LinearNode(java.lang.Object)
+comment1.text=\r\n\ Creates\ a\ node\ storing\ the\ specified\ element.\r\n\r\n\ @param\ elem\ \ the\ element\ to\ stored\ within\ the\ created\ node\r\n
+comment2.params=
+comment2.target=LinearNode\ getNext()
+comment2.text=\r\n\ Returns\ the\ node\ that\ follows\ this\ one.\r\n\r\n\ @return\ \ the\ node\ that\ follows\ this\ one\r\n
+comment3.params=node
+comment3.target=void\ setNext(LinearNode)
+comment3.text=\r\n\ Sets\ the\ node\ that\ follows\ this\ one.\r\n\r\n\ @param\ node\ \ the\ node\ to\ be\ set\ as\ the\ next\ node\ for\ this\ node\r\n
+comment4.params=
+comment4.target=java.lang.Object\ getElement()
+comment4.text=\r\n\ Returns\ the\ element\ stored\ in\ this\ node.\r\n\r\n\ @return\ \ the\ element\ that\ is\ stored\ within\ this\ node\r\n
+comment5.params=elem
+comment5.target=void\ setElement(java.lang.Object)
+comment5.text=\r\n\ Sets\ the\ element\ stored\ in\ this\ node.\r\n\r\n\ @param\ elem\ \ the\ element\ to\ be\ stored\ within\ this\ node\r\n
+numComments=6

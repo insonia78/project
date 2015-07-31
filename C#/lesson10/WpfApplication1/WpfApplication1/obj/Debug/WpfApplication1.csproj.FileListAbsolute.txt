@@ -1,0 +1,3 @@
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC++\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\lesson10\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\lesson10\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.config

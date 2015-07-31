@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Catalog()
+comment1.params=obj
+comment1.target=void\ insert(Item)
+comment2.params=id
+comment2.target=Item\ find(int)
+numComments=3

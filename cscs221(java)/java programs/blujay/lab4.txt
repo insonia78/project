@@ -1,0 +1,133 @@
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+Enter a number: 
+1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+The alternating sum is: 1
+----------------------------------------------------------------------
+import java.util.Scanner;
+
+/**
+ * This class manages an array of numbers
+ * with some extra methods that can total the numbers
+ * and compute an "alternating sum."
+ * @author <thomas Zangari>, modified from CS201 code
+ * @version October 23, 2013
+ */
+
+public class SmartArray {
+    private int[] _numList;
+
+    public SmartArray(int n) {
+        _numList = new int[n];// initialize the _numList as an array of size n
+         for(int i = 0; i < _numList.length; i++){
+            _numList[i]= 0;  // write a loop to put 0's in all the cells
+        }
+    }
+
+    public void addValue(int value, int location){
+        _numList[location] = value;// add a value at location n in _numList
+    }
+
+    public int getLength() {
+       return _numList.length; // return the length of the array
+        // temporary -- so code will compile
+    }
+
+    public int sum(){ // a model for the alternating sum
+        int result = 0;
+        for (int i = 0; i < _numList.length; i++) {
+            result = result + _numList[i];
+        }
+        return result;
+    }
+
+    public int alternatingSum(){
+        int sum = 0;
+        for (int i = 0; i < _numList.length; i++){
+            if ( i % 2 == 0){
+                sum += _numList[i];
+            }
+            else{
+                sum -= _numList[i];
+            }
+              
+        }     // if the elements are 1, 2, 3, 4
+        return sum; // return the value 1-2+3-4
+         // temporary -- so code will compile
+    }
+
+    public void display(){
+        for (int i = 0; i < _numList.length; i++) {
+            System.out.print(_numList[i] + " ");
+        }
+        System.out.println();
+    }
+}
+-------------------------------------------------------------------------
+// ***********************SmartArrayTester*************
+import java.util.Scanner;
+
+/**
+ * This class is designed to test the SmartArray methods,
+ * especially the alternating sum.
+ * @author <your name>, modified from CS201 code
+ * @version October 23, 2013
+ */
+
+public class SmartArrayTester {
+    private static final int LIST_SIZE = 15;
+    private SmartArray _list;
+
+    public SmartArrayTester() {
+        _list = new SmartArray(LIST_SIZE);
+    }
+    public void start(){
+        _list.display();
+        this.getUserValues();
+        _list.display();
+        int result = _list.alternatingSum();
+        System.out.println("The alternating sum is: " + result);
+    } 
+    public void getUserValues(){
+        int input;
+        Scanner kbd = new Scanner(System.in);
+        for (int i = 0; i < _list.getLength(); i++){
+            System.out.println("Enter a number: ");
+            input = kbd.nextInt();
+            _list.addValue(input, i);
+        }
+    }
+    public static void main(String[] args){
+        SmartArrayTester test = new SmartArrayTester();
+        test.start();
+    }
+}
+// ************************end of Lab 4 code ******************

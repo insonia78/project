@@ -1,0 +1,1 @@
+select state From president union select city from member;

@@ -1,0 +1,9 @@
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\bin\Debug\ProfessorRatingDemo.exe.config
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\bin\Debug\ProfessorRatingDemo.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\bin\Debug\ProfessorRatingDemo.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\obj\Debug\ProfessorRatingDemo.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\obj\Debug\ProfessorRatingDemo.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\obj\Debug\ProfessorRatingDemo.pdb
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\bin\Debug\ProfessorRatingDemo.exe.config
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\obj\Debug\ProfessorRatingDemo.exe
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter4\ProfessorRatingDemo\ProfessorRatingDemo\obj\Debug\ProfessorRatingDemo.pdb

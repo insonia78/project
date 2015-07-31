@@ -1,0 +1,15 @@
+TYPE=VIEW
+query=select `l7sampdb`.`president`.`last_name` AS `last_name`,`l7sampdb`.`president`.`first_name` AS `first_name`,`l7sampdb`.`president`.`birth` AS `birth`,`l7sampdb`.`president`.`death` AS `death`,timestampdiff(YEAR,`l7sampdb`.`president`.`birth`,`l7sampdb`.`president`.`death`) AS `age` from `l7sampdb`.`president`
+md5=c664a0f5498b08e2548c41cafe77113b
+updatable=1
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=1
+with_check_option=0
+timestamp=2015-02-09 02:28:09
+create-version=1
+source=select `president`.`last_name` AS `last_name`,`president`.`first_name` AS `first_name`,`president`.`birth` AS `birth`,`president`.`death` AS `death`,timestampdiff(YEAR,`president`.`birth`,`president`.`death`) AS `age` from `president`
+client_cs_name=utf8
+connection_cl_name=utf8_general_ci
+view_body_utf8=select `l7sampdb`.`president`.`last_name` AS `last_name`,`l7sampdb`.`president`.`first_name` AS `first_name`,`l7sampdb`.`president`.`birth` AS `birth`,`l7sampdb`.`president`.`death` AS `death`,timestampdiff(YEAR,`l7sampdb`.`president`.`birth`,`l7sampdb`.`president`.`death`) AS `age` from `l7sampdb`.`president`

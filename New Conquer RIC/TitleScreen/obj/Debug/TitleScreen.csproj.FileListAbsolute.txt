@@ -1,0 +1,50 @@
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\TitleScreen.exe.config
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\TitleScreen.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\TitleScreen.pdb
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\CharacterCreation.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\Community.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\World Map.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\GameBoard.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\CharacterCreation.pdb
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\Community.pdb
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\World Map.pdb
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\bin\Debug\GameBoard.pdb
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\Images.baml
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\MainWindow.baml
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreenPage.baml
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\MainWindow.g.cs
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreenPage.g.cs
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\App.g.cs
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen_Content.g.cs
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen_MarkupCompile.cache
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.g.resources
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.Properties.Resources.resources
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.csproj.GenerateResource.Cache
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\TitleScreen.exe.config
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.exe
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\TitleScreen.exe
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\TitleScreen.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\CharacterCreation.exe
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\Community.exe
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\World Map.exe
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\GameBoard.exe
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\CharacterCreation.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\Community.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\World Map.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\bin\Debug\GameBoard.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\Images.baml
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\MainWindow.baml
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreenPage.baml
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\MainWindow.g.cs
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreenPage.g.cs
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\App.g.cs
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen_Content.g.cs
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen_MarkupCompile.cache
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.g.resources
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.Properties.Resources.resources
+C:\Users\thomas\Desktop\New Conquer RIC\TitleScreen\obj\Debug\TitleScreen.csproj.GenerateResource.Cache

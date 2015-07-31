@@ -1,0 +1,15 @@
+TYPE=VIEW
+query=select `sampdb`.`president`.`last_name` AS `last_name`,`sampdb`.`president`.`first_name` AS `first_name`,`sampdb`.`president`.`birth` AS `birth`,`sampdb`.`president`.`death` AS `death`,timestampdiff(YEAR,`sampdb`.`president`.`birth`,`sampdb`.`president`.`death`) AS `age` from `sampdb`.`president`
+md5=de36ee1731ce15129e46ffb21a85b0bf
+updatable=1
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=1
+with_check_option=0
+timestamp=2015-02-09 02:23:05
+create-version=1
+source=select `president`.`last_name` AS `last_name`,`president`.`first_name` AS `first_name`,`president`.`birth` AS `birth`,`president`.`death` AS `death`,timestampdiff(YEAR,`president`.`birth`,`president`.`death`) AS `age` from `president`
+client_cs_name=utf8
+connection_cl_name=utf8_general_ci
+view_body_utf8=select `sampdb`.`president`.`last_name` AS `last_name`,`sampdb`.`president`.`first_name` AS `first_name`,`sampdb`.`president`.`birth` AS `birth`,`sampdb`.`president`.`death` AS `death`,timestampdiff(YEAR,`sampdb`.`president`.`birth`,`sampdb`.`president`.`death`) AS `age` from `sampdb`.`president`

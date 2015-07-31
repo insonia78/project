@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=newItem
+comment0.target=Node(java.lang.Object)
+comment1.params=newItem\ nextNode
+comment1.target=Node(java.lang.Object,\ Node)
+numComments=2

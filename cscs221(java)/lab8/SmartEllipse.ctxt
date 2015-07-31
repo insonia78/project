@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=aColor
+comment0.target=SmartEllipse(java.awt.Color)
+comment1.params=aColor
+comment1.target=void\ setBorderColor(java.awt.Color)
+comment2.params=aColor
+comment2.target=void\ setFillColor(java.awt.Color)
+comment3.params=aColor
+comment3.target=void\ setColor(java.awt.Color)
+comment4.params=aRotation
+comment4.target=void\ setRotation(int)
+comment5.params=x\ y
+comment5.target=void\ setLocation(double,\ double)
+comment6.params=aWidth\ aHeight
+comment6.target=void\ setSize(int,\ int)
+comment7.params=aBrush
+comment7.target=void\ fill(java.awt.Graphics2D)
+comment8.params=aBrush
+comment8.target=void\ draw(java.awt.Graphics2D)
+numComments=9

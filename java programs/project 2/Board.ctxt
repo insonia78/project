@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=width\ height
+comment0.target=Board(int,\ int)
+comment1.params=infile
+comment1.target=void\ createInitialBoard(java.util.Scanner)
+comment2.params=
+comment2.target=void\ updateBoard()
+comment3.params=
+comment3.target=void\ copyBoard()
+comment4.params=outfile
+comment4.target=void\ printBoard(java.io.PrintWriter)
+numComments=5

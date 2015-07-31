@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=anOrientation\ anAccelerator\ aMinSpeed\ aMaxSpeed\ aCurrentSpeed
+comment0.target=SpeedSlider(int,\ Accelerator,\ int,\ int,\ int)
+numComments=1

@@ -1,0 +1,22 @@
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Account_info.resources
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Intro.resources
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\Bank_Account_Program.csproj.GenerateResource.Cache
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\Bank_Account_Program.csprojResolveAssemblyReference.cache
+C:\Users\thomas\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Operations.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\bin\Debug\Bank_Account_Program.exe.config
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\bin\Debug\Bank_Account_Program.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\bin\Debug\Bank_Account_Program.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\obj\Debug\Bank_Account_Program.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\obj\Debug\WindowsFormsApplication1.Account_info.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\obj\Debug\WindowsFormsApplication1.Intro.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\obj\Debug\WindowsFormsApplication1.Operations.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\obj\Debug\Bank_Account_Program.csproj.GenerateResource.Cache
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\obj\Debug\Bank_Account_Program.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter10\Bank_Account_Program\Bank_Account_Program\obj\Debug\Bank_Account_Program.pdb

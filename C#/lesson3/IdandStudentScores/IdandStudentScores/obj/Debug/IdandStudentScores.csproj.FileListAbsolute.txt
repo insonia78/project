@@ -1,0 +1,2 @@
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter3\IdandStudentScores\IdandStudentScores\bin\Debug\IdandStudentScores.exe.config
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\lesson3\IdandStudentScores\IdandStudentScores\bin\Debug\IdandStudentScores.exe.config

@@ -1,0 +1,105 @@
+/**
+ * This class is designed to test the BankAccount class
+ * 
+ * @author Thomas Zangari
+ * @version 09/18/2013
+ */
+import java.util.Scanner;
+public class BankAccountTester
+{
+    // instance variables - replace the example below with your own
+    private Scanner _kbd;
+
+    /**
+     * Constructor for objects of class BAckAccountTester
+     */
+    public BankAccountTester()
+    {
+        // initialise instance variables
+        _kbd = new Scanner(System.in);
+        this.start();
+    }
+    public void start(){
+        this.testAccount();
+        this.testAccount();
+        this.testAccount();
+       
+    }
+    public void testAccount(){
+        double accountAmount;
+        double amount;
+        double deposit;
+        
+        System.out.print("What is your initial account: ");
+        accountAmount = _kbd.nextDouble();_kbd.nextLine();
+        BankAccount balance= new BankAccount(accountAmount);
+        System.out.println("Account Balance: " + balance.getBalance());
+        System.out.print("Amount to withdraw: ");
+        amount = _kbd.nextDouble();
+        balance.withdraw(amount);
+        System.out.printf("Account balance: %.2f", balance.getBalance());
+        System.out.println();
+        System.out.print("Amount to deposit: ");
+        deposit = _kbd.nextDouble();
+        balance.deposit(deposit);
+        System.out.printf("Account balance: %.2f", balance.getBalance());
+        System.out.println();
+        System.out.println();
+
+    }
+}
+      
+/**
+ * Write a description of class BankAccount here.
+ * 
+ * @author Thomas Zangari   
+ * @version 09/18/2013
+ */
+public class BankAccount
+{
+    // instance variables - replace the example below with your own
+    private double _balance;
+    
+
+    /**
+     * Constructor for objects of class BankAccount
+     */
+    public BankAccount(double bal)
+    {
+        // initialise instance variables
+        _balance = bal;
+    }
+
+   public void withdraw (double amount){
+       _balance = _balance - amount;
+    }
+     public void deposit (double amount){
+       _balance = _balance + amount;
+    }
+     public double getBalance(){
+       return _balance;
+    }
+}
+    
+    
+    What is your initial account: 100
+Account Balance: 100.0
+Amount to withdraw: 25.23
+Account balance: 74.77
+Amount to deposit: 50
+Account balance: 124.77
+
+What is your initial account: 0
+Account Balance: 0.0
+Amount to withdraw: 0
+Account balance: 0.00
+Amount to deposit: 0
+Account balance: 0.00
+
+What is your initial account: 50
+Account Balance: 50.0
+Amount to withdraw: 100
+Account balance: -50.00
+Amount to deposit: 86.98
+Account balance: 36.98
+  

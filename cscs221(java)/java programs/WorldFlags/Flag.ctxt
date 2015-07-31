@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=leftColor\ midColor\ rightColor\ x\ y\ width
+comment0.target=Flag(java.awt.Color,\ java.awt.Color,\ java.awt.Color,\ int,\ int,\ int)
+comment1.params=color1\ color2\ color3
+comment1.target=void\ setColor(java.awt.Color,\ java.awt.Color,\ java.awt.Color)
+comment2.params=someColor
+comment2.target=void\ setOutlineColor(java.awt.Color)
+comment3.params=width\ height
+comment3.target=void\ setSize(int,\ int)
+comment4.params=x\ y
+comment4.target=void\ setLocation(int,\ int)
+numComments=5

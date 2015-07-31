@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=a\ l\ r
+comment1.target=void\ QuickSort(int[],\ int,\ int)
+comment1.text=\r\n\ starts\ the\ quicksort\ alghoritm\ \r\n\ @parm\ database\r\n\ @param\ index\r\n\ @return\ doQuickSort\ method\r\n
+comment2.params=a\ l\ r
+comment2.target=void\ QuickSort2(int[],\ int,\ int)
+comment3.params=a\ l\ r
+comment3.target=void\ QuickSort3(int[],\ int,\ int)
+comment4.params=i
+comment4.target=void\ add(int)
+comment5.params=a\ l\ r
+comment5.target=int\ Partition(int[],\ int,\ int)
+comment6.params=a\ l\ r
+comment6.target=int\ Partition2(int[],\ int,\ int)
+comment7.params=a\ l\ r
+comment7.target=int\ partition3(int[],\ int,\ int)
+comment8.params=a\ l\ r
+comment8.target=int\ median(int[],\ int,\ int)
+comment9.params=a\ l\ r
+comment9.target=void\ swap(int[],\ int,\ int)
+comment9.text=\r\n\ swaps\ the\ elements\ of\ the\ database\r\n\ @param\ dataBase\r\n\ @param\ a\r\n\ @param\ b\r\n
+numComments=10

@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=LinkedQueue()
+comment0.text=\r\n\ Creates\ an\ empty\ queue.\r\n
+comment1.params=element
+comment1.target=void\ enqueue(java.lang.Object)
+comment1.text=\r\n\ Adds\ the\ specified\ element\ to\ the\ rear\ of\ this\ queue.\r\n\r\n\ @param\ element\ \ the\ element\ to\ be\ added\ to\ the\ rear\ of\ this\ queue\r\n
+comment2.params=
+comment2.target=java.lang.Object\ dequeue()
+comment2.text=\r\n\ Removes\ the\ element\ at\ the\ front\ of\ this\ queue\ and\ returns\ a\r\n\ reference\ to\ it.\ Throws\ an\ EmptyCollectionException\ if\ the\r\n\ queue\ is\ empty.\r\n\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ the\ element\ at\ the\ front\ of\ this\ queue\r\n\ @throws\ EmptyCollectionException\ \ if\ an\ empty\ collection\ exception\ occurs\r\n
+comment3.params=
+comment3.target=java.lang.Object\ first()
+comment3.text=\r\n\ Returns\ a\ reference\ to\ the\ element\ at\ the\ front\ of\ this\ queue.\r\n\ The\ element\ is\ not\ removed\ from\ the\ queue.\ \ Throws\ an\r\n\ EmptyCollectionException\ if\ the\ queue\ is\ empty.\ \ \r\n\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ reference\ to\ the\ first\ element\ in\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\ queue\r\n\ @throws\ EmptyCollectionsException\ \ if\ an\ empty\ collection\ exception\ occurs\r\n
+comment4.params=
+comment4.target=boolean\ isEmpty()
+comment4.text=\r\n\ Returns\ true\ if\ this\ queue\ is\ empty\ and\ false\ otherwise.\ \r\n\r\n\ @return\ \ true\ if\ this\ queue\ is\ empty\ and\ false\ if\ otherwise\r\n
+comment5.params=
+comment5.target=int\ size()
+comment5.text=\r\n\ Returns\ the\ number\ of\ elements\ currently\ in\ this\ queue.\r\n\r\n\ @return\ \ the\ integer\ representation\ of\ the\ size\ of\ this\ queue\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Returns\ a\ string\ representation\ of\ this\ queue.\ \r\n\r\n\ @return\ \ the\ string\ representation\ of\ this\ queue\r\n
+numComments=7

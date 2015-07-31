@@ -1,0 +1,215 @@
+This is a game where you are asked to enter various words by category:
+a noun, a verb, a verb in the past tense, a color, etc.
+Then the words are plugged into a pre-existing story, and you get to read the final story with the new words filled in
+– and hopefully laugh at the funny results.
+
+Do you want to play?(press 'y' to start or 'n' to quit):y
+Enter a noun: first
+Enter a noun: second
+Enter a past tense verb: went
+Enter His,Her,or Hern: his
+Enter a title: welcom
+
+
+The *first* and the *second*
+
+- Hans Christian Anderson 
+
+ONCE upon a time there was a prince who wanted to marry a *first*; but she would have to be a real *first*.
+He *went* all over the world to find one, but nowhere could he get what he wanted. There were *firstes* enough,
+but it was difficult to find out whether they were real ones. There was always something about them that was not as it should be.
+ So he came home again and was sad, for he would have liked very much to have a real *first*.
+
+One evening a terrible storm came on; there was thunder and lightning, and the rain poured down in torrents.
+Suddenly a knocking was heard at the city gate, and the old king went to open it.
+
+It was a *first* standing out there in front of the gate. But, good gracious! what a sight the rain and the wind had made his look.
+The water ran down from *went* hair and clothes; it ran down into the toes of *went* shoes and out again at the heels.
+And yet she said that she was a real *first*.
+
+'Well, we'll soon find that out,' thought the old queen. But she said nothing, went into the bed-room,
+took all the bedding off the bedstead, and laid a *second* on the bottom; then she took twenty mattresses and laid them on the *second*,
+and then twenty eider-down beds on top of the mattresses.
+
+On this the *first* had to lie all night. In the morning she was asked how she had slept.
+
+'Oh, very badly!' said she. 'I have scarcely closed my eyes all night. Heaven only knows what was in the bed,
+but I was lying on something hard, so that I am black and blue all over my body. It's horrible!'
+
+Now they knew that she was a real *first* because she had felt the *second* right through the twenty mattresses and the twenty eider-down beds.
+
+Nobody but a real *first* could be as sensitive as that.
+
+So the prince took *went* for his *welcom*,for now he knew that he had a real *first*;
+and the first was put in the museum, where it may still be seen, if no one has stolen it.
+
+There, that is a true story. 
+
+Do you want to play?(press 'y' to start or 'n' to quit):
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Write a description of class MadlibController here.
+ * This class holds the main class for executing the program.
+ * 
+ * @author (Thomas Zangari) 
+ * @version (10/15/2013)
+ */
+public class MadLibController{
+
+     private MadLibView _veiw3;
+     private char userChoice;
+
+  public MadLibController(){
+
+
+    _veiw3 = new MadLibView();
+  }
+
+
+  public void start(){
+      System.out.println("Have you ever played MadLibs?\n"+
+                         "This is a game where you are asked to enter various words by category:\n"+
+                         "a noun, a verb, a verb in the past tense, a color, etc.\n"+
+                         "Then the words are plugged into a pre-existing story, and you get to read the final story with the new words filled in\n"+
+                         "– and hopefully laugh at the funny results.");
+      System.out.println();
+      userChoice =_veiw3.getUserChoice();
+
+      while(userChoice == 'Y' || userChoice == 'y'){
+
+       _veiw3.setInput();
+       printStory();
+       System.out.println();
+       System.out.println();
+       userChoice =_veiw3.getUserChoice();
+       System.out.println();
+       System.out.println();
+  }
+}
+
+  public void printStory(){
+	   _veiw3.setOutput();
+   }
+
+
+
+  public static void main(String[] args){
+    	MadLibController begin = new MadLibController();
+    	begin.start();
+  }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Write a description of class MAdLibView here.
+ * 
+ * @author (Thomas Zangari) 
+ * @version (10/13/2013)
+ */
+import java.util.*;
+
+
+public class MadLibView
+{
+    // instance variables - replace the example below with your own
+    private MadLibGame  _view2 ;
+    private String _story;
+
+    public MadLibView() {
+		_view2 = new MadLibGame();
+	}
+
+
+    public char getUserChoice(){
+
+    String userChoice;
+    char userChoice1;
+    System.out.print("Do you want to play?(press 'y' to start or 'n' to quit):");
+    userChoice = this.getUserInput();
+
+    return userChoice1 = userChoice.charAt(0);
+
+    }
+
+    public void setInput(){
+
+        System.out.print("Enter a noun: ");
+        String noun = this.getUserInput();
+        System.out.print("Enter a noun: ");
+        String noun2 = this.getUserInput();
+        System.out.print("Enter a past tense verb: " );
+        String verb =this.getUserInput();
+        System.out.print("Enter His,Her,or Hern: ");
+        String suffix = this.getUserInput();
+        System.out.print("Enter a title: ");
+        String title = this.getUserInput();
+        System.out.println();
+        System.out.println();
+        _story = _view2.getStory(noun,noun2,verb,suffix,title);
+    }
+     public void setOutput(){
+      System.out.print( _story);
+    }
+    public String getUserInput(){
+        Scanner kbd = new Scanner(System.in);
+        return kbd.nextLine();
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Write a description of class MadLibGame here.
+ * This class hold the story of the game.
+ * 
+ * 
+ * @author (Thomas Zangari) 
+ * @version (10/15/2013)
+ */
+public class MadLibGame{
+
+
+  private String _story;
+
+		public String getStory(String noun,String noun2,String verb,String suffix,String title){
+
+
+		_story="The *" + noun + "* and the *" + noun2 +"*\n\n"+
+		        "- Hans Christian Anderson \n\n"+
+		        "ONCE upon a time there was a prince who wanted to marry a *"+ noun + "*; but she would have to be a real *" + noun +"*.\n"+
+		        "He *" + verb + "* all over the world to find one, but nowhere could he get what he wanted. There were *" + noun +"es* enough,\n"+
+		        "but it was difficult to find out whether they were real ones. There was always something about them that was not as it should be.\n "+
+		        "So he came home again and was sad, for he would have liked very much to have a real *" + noun + "*.\n\n" +
+
+		        "One evening a terrible storm came on; there was thunder and lightning, and the rain poured down in torrents.\n"+
+		        "Suddenly a knocking was heard at the city gate, and the old king went to open it.\n\n"+
+
+		        "It was a *" + noun +"* standing out there in front of the gate. But, good gracious! what a sight the rain and the wind had made his look.\n"+
+		        "The water ran down from *" +verb+ "* hair and clothes; it ran down into the toes of *"+verb+"* shoes and out again at the heels.\n"+
+		        "And yet she said that she was a real *" +noun+"*.\n\n"+
+
+		        "'Well, we'll soon find that out,' thought the old queen. But she said nothing, went into the bed-room,\n"+
+		        "took all the bedding off the bedstead, and laid a *" + noun2 + "* on the bottom; then she took twenty mattresses and laid them on the *"+noun2+"*,\n"+
+		        "and then twenty eider-down beds on top of the mattresses.\n\n"+
+
+        		"On this the *" + noun + "* had to lie all night. In the morning she was asked how she had slept.\n\n"+
+
+		        "'Oh, very badly!' said she. 'I have scarcely closed my eyes all night. Heaven only knows what was in the bed,\n"+
+		        "but I was lying on something hard, so that I am black and blue all over my body. It's horrible!'\n\n"+
+
+		        "Now they knew that she was a real *"+noun+"* because she had felt the *"+noun2+"* right through the twenty mattresses and the twenty eider-down beds.\n\n"+
+
+		        "Nobody but a real *" + noun + "* could be as sensitive as that.\n\n"+
+
+	        	"So the prince took *"+verb+"* for his *" + title +"*,for now he knew that he had a real *"+ noun+"*;\n"+
+	        	"and the first was put in the museum, where it may still be seen, if no one has stolen it.\n\n"+
+
+		        "There, that is a true story. ";
+
+
+			return _story;
+
+
+    }
+}
+

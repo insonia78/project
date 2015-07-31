@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+	<!--This doxument contains data on Jazz Warehouse special offers -->
+	<?xml-stylesheet type="text/css" href="jw.css" ?>
+<items>
+	<message>
+		<![CDATA[bla bla bla bla bla bla bla bla
+			]]>
+			
+	</message>
+	 <item>
+	 	<title>Kind of Blues</title>
+	 	<priceus>US: $11.99</priceus>
+	 	<priceuk>UK: &#163;8.39</priceuk>
+	 	<artist>Miles Davis</artist>
+	    <tracks>
+	       <track length="9:22">So What</track>
+	       <track length="9:22">Freddie Freeloader</track>
+	       <track length="9:22">Blue in Green</track>
+	       <track length="9:22">All Blues</track>
+	       <track length="9:22">Flamenco Sketches</track>
+	    </tracks> 		
+	 	
+	 </item>
+	 <item>
+	 	<title>Cookin'</title>
+	 	<priceus>US: $11.99</priceus>
+	 	<priceuk>UK: &#163;8.39</priceuk>
+	 	<artist>Miles Davis</artist>
+	    <tracks>
+	       <track length="9:22">My funny Valentine</track>
+	       <track length="9:22">Blues by Five</track>
+	       <track length="9:22">Airegin</track>
+	       <track length="9:22">Tune-Up</track>
+	    </tracks> 		
+	  </item>
+	  <item>
+	 	<title>Blue Train</title>
+	 	<priceus>US: $11.99</priceus>
+	 	<priceuk>UK: &#163;8.39</priceuk>
+	 	<artist>John Coltrane</artist>
+	    <tracks>
+	       <track length="9:22">Blue Train</track>
+	       <track length="9:22">Moments Notice</track>
+	       <track length="9:22">Blue in Green</track>
+	       <track length="9:22">Locomotion</track>
+	       <track length="9:22">I'm Old Fashion</track>
+	       <track length="9:22">Lazy Bird</track>
+	    </tracks> 		
+	  </item>
+</items>

@@ -1,0 +1,14 @@
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\Emial_Finder\Email Finder\Email Finder\bin\Debug\Email Finder.exe.config
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\Emial_Finder\Email Finder\Email Finder\bin\Debug\Email Finder.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\Emial_Finder\Email Finder\Email Finder\bin\Debug\Email Finder.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\Emial_Finder\Email Finder\Email Finder\obj\Debug\Email Finder.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\Emial_Finder\Email Finder\Email Finder\obj\Debug\Email Finder.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\Emial_Finder\Email Finder\Email Finder\obj\Debug\Email Finder.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Desktop\rio salado\ProjectsC#\Emial_Finder\Email Finder\Email Finder\bin\Debug\Email Finder.exe.config
+C:\Users\thomas\Desktop\rio salado\ProjectsC#\Emial_Finder\Email Finder\Email Finder\obj\Debug\Email Finder.exe
+C:\Users\thomas\Desktop\rio salado\ProjectsC#\Emial_Finder\Email Finder\Email Finder\obj\Debug\Email Finder.pdb

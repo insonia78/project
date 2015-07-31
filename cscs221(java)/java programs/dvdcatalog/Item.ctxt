@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Item()
+comment1.params=s\ playingTime
+comment1.target=Item(java.lang.String,\ int)
+comment2.params=s\ time
+comment2.target=Item(java.lang.String,\ java.lang.String)
+comment3.params=answer
+comment3.target=void\ setOwn(int)
+comment4.params=
+comment4.target=void\ print()
+comment5.params=
+comment5.target=int\ getUserInput()
+numComments=6

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GeometryMaster()
+comment1.params=radius
+comment1.target=double\ computeCircleArea(int)
+comment2.params=lenght\ width
+comment2.target=double\ computeRectangleArea(int,\ int)
+comment3.params=base\ height
+comment3.target=double\ computeTriangleArea(int,\ int)
+comment4.params=
+comment4.target=java.lang.String\ getName()
+numComments=5

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=n
+comment0.target=SmartArray(int)
+comment1.params=value\ location
+comment1.target=void\ addValue(int,\ int)
+comment2.params=
+comment2.target=int\ getLength()
+comment3.params=
+comment3.target=int\ sum()
+comment4.params=
+comment4.target=int\ alternatingSum()
+comment5.params=
+comment5.target=void\ display()
+comment6.params=toFind
+comment6.target=int\ linearSearch(int)
+comment7.params=
+comment7.target=char\ getUserChoice()
+comment8.params=
+comment8.target=int\ getMaxValue()
+comment9.params=
+comment9.target=int\ getMinValue()
+numComments=10

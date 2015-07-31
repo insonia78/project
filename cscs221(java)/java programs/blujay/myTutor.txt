@@ -1,0 +1,168 @@
+Whit this program you are going to lear some basic Italian phrases.
+press 1 to learn how to say 'Good Morning'.
+press 2 to learn how to say 'Good Night'.
+press 3 to learn how to say 'Hello how are you doing?'
+Do you want to learn?(press 'y' to start or 'n' to quit):y
+Enter your choice (1-3): 1
+You have chosen how to say 'Good Morning'
+The answer is:Buon Giorno.
+
+Do you want to learn more?(press 'y' to start or 'n' to quit):y
+Enter your choice (1-3): 2
+You have chosen how to say 'Good Night'
+The answer is:Buona Notte.
+
+Do you want to learn more?(press 'y' to start or 'n' to quit):y
+Enter your choice (1-3): 3
+You have chosen how to say 'Hello! how are you doing?'
+The answer is:Ciao! how are you doing?
+
+Do you want to learn more?(press 'y' to start or 'n' to quit):y
+Enter your choice (1-3): 4
+Invalid input. Try again.
+
+Do you want to learn more?(press 'y' to start or 'n' to quit):y
+Enter your choice (1-3): 5
+Invalid input. Try again.
+
+Do you want to learn more?(press 'y' to start or 'n' to quit):n
+Goodbye. Thanks for playing!
+-------------------------------------------------------------------
+/**
+ * cs201: Lab 3 geometryTutor: Thomas Zangari.
+ * This is the Controller class. It gets the program started
+ * @author Thomas Zangari
+ * @version 10/02/2013
+ */
+public class Controller
+{
+    // instance variables - replace the example below with your own
+    
+
+    /**
+     * Constructor for objects of class geometryTutor
+     */
+    public static void main(String[] args)
+    {
+        ItalianView view = new ItalianView();
+        view.start();
+        
+    }
+
+ }
+-----------------------------------------------------------------------
+/**
+ * cs201: lab 3  Geometry Tutor: thomas Zangari.
+ * This is the GeometryView class. Its job is to handle all communication with
+ * the user. It gives the user a menu of options.
+ * It also communicates with the GeometryMaster.
+ * @author (Thomas Zangari) 
+ * @version (10/02/2013)
+ */
+import java.util.*;
+
+public class ItalianView
+{
+   private ItalianMaster master;
+   private int userChoice;
+   private String answer;
+   private char userAnswer;
+    /**
+     * Constructor for objects of class GeometryView
+     */
+    public ItalianView()
+    {
+        // initialise instance variables
+        master = new ItalianMaster();
+        userChoice= -1;
+        answer = "";
+    }
+
+    public void start()
+    {
+      System.out.println("Whit this program you are going to lear some basic Italian phrases.");
+      System.out.println("press 1 to learn how to say 'Good Morning'.");
+      System.out.println("press 2 to learn how to say 'Good Night'.");
+      System.out.println("press 3 to learn how to say 'Hello how are you doing?'");
+      System.out.print("Do you want to learn?(press 'y' to start or 'n' to quit):");
+      userAnswer = this.getUserInput();
+      while(userAnswer == 'Y' || userAnswer == 'y'){
+      System.out.print("Enter your choice (1-3): ");
+      userChoice = this.getUserChoice();  
+      if (userChoice == 1){
+          System.out.println("You have chosen how to say 'Good Morning'");
+          answer = master.computerGoodMorning();
+          System.out.println("The answer is:" + answer);
+        }else if (userChoice == 2) {
+            System.out.println("You have chosen how to say 'Good Night'");
+            answer=master.computerGoodNight();
+            System.out.println("The answer is:"+answer);
+           
+        }else if (userChoice == 3){
+            System.out.println("You have chosen how to say 'Hello! how are you doing?'");
+            answer = master.computerHelloHaYDoing() ;
+            System.out.println("The answer is:"+answer);
+        }else{
+            System.out.println("Invalid input. Try again.");
+        }
+        System.out.println();
+        System.out.print("Do you want to learn more?(press 'y' to start or 'n' to quit):");
+        userAnswer = this.getUserInput();
+       
+    }
+    System.out.println("Goodbye. Thanks for playing!");
+}
+
+        public char getUserInput(){
+               String userChoice;
+               char userChoice1;
+               
+               Scanner kbd = new Scanner(System.in);
+               userChoice = kbd.nextLine();
+               return userChoice1 = userChoice.charAt(0);
+           
+    }
+    public int getUserChoice(){
+               Scanner kbd = new Scanner(System.in);
+               return kbd.nextInt();
+   }
+}
+            
+            
+    
+
+---------------------------------------------------------------------------------
+/**
+ * LAb 3: Geometry Tutor: Thomas Zangari
+ * This class is the GeometryMaster. Its job is to solve the problems.
+ * @author Thomas Zangari 
+ * @version 
+ */
+public class ItalianMaster
+{
+    // instance variables - replace the example below with your own
+    private String answer;
+    
+
+    
+    public ItalianMaster()
+    {
+      answer ="";
+    }
+
+    public String computerGoodMorning()
+    {
+         answer = "Buon Giorno.";
+        return answer;
+    }
+    public String computerGoodNight()
+    {
+        return answer = "Buona Notte.";
+    }
+    public String computerHelloHaYDoing ()
+    {
+        return  answer = "Ciao! how are you doing?";
+    }
+    
+}
+--------------------------------------------------------------------------------

@@ -1,0 +1,12 @@
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\bin\Debug\Program9A.exe.config
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\obj\Debug\Program9A.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\obj\Debug\Program9.program9_design.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\obj\Debug\Program9A.csproj.GenerateResource.Cache
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\bin\Debug\Program9A.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\bin\Debug\Program9A.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\obj\Debug\Program9A.exe
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter9\Program9A\Program9A\obj\Debug\Program9A.pdb
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter9\Program9A\Program9A\bin\Debug\Program9A.exe.config
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter9\Program9A\Program9A\obj\Debug\Program9A.exe
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter9\Program9A\Program9A\obj\Debug\Program9A.pdb

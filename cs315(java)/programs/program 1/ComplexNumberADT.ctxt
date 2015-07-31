@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int\ getReal()
+comment1.params=
+comment1.target=int\ getImaginary()
+comment2.params=r
+comment2.target=void\ setReal(int)
+comment3.params=i
+comment3.target=void\ setImaginary(int)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment5.params=C
+comment5.target=Complex\ add(Complex)
+comment6.params=C
+comment6.target=Complex\ subtract(Complex)
+comment7.params=C
+comment7.target=Complex\ multiply(Complex)
+comment8.params=C
+comment8.target=boolean\ equals(Complex)
+comment9.params=
+comment9.target=double\ findMagnitude()
+numComments=10

@@ -1,0 +1,34 @@
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\bin\Debug\World Map.exe.config
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\bin\Debug\World Map.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\bin\Debug\World Map.pdb
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\bin\Debug\Community.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\bin\Debug\GameBoard.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\bin\Debug\Community.pdb
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\bin\Debug\GameBoard.pdb
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\World Map.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\MainWindow.baml
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\MainWindow.g.cs
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\App.g.cs
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\World Map_MarkupCompile.cache
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\World Map.g.resources
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\World_Map.Properties.Resources.resources
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\World Map.csproj.GenerateResource.Cache
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\World Map.exe
+C:\Users\thomas\Documents\GitHub\csci-401-project\New Conquer RIC\World Map\obj\Debug\World Map.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\bin\Debug\World Map.exe.config
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\bin\Debug\World Map.exe
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\bin\Debug\World Map.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\bin\Debug\Community.exe
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\bin\Debug\GameBoard.exe
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\bin\Debug\Community.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\bin\Debug\GameBoard.pdb
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\World Map.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\MainWindow.baml
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\MainWindow.g.cs
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\App.g.cs
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\World Map_MarkupCompile.cache
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\World Map.g.resources
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\World_Map.Properties.Resources.resources
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\World Map.csproj.GenerateResource.Cache
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\World Map.exe
+C:\Users\thomas\Desktop\New Conquer RIC\World Map\obj\Debug\World Map.pdb

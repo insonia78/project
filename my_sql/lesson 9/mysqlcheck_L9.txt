@@ -1,0 +1,300 @@
+  --histignore=name   A colon-separated list of patterns to keep statements
+                      from getting logged into mysql history.
+  --binary-mode       By default, ASCII '\0' is disallowed and '\r\n' is
+                      translated to '\n'. This switch turns off both features,
+                      and also turns off parsing of all clientcommands except
+                      \C and DELIMITER, in non-interactive mode (for input
+                      piped to mysql or loaded using the 'source' command).
+                      This is necessary when processing output from mysqlbinlog
+                      that may contain blobs.
+  --connect-expired-password
+                      Notify the server that this client is prepared to handle
+                      expired password sandbox mode.
+
+Default options are read from the following files in the given order:
+C:\WINDOWS\my.ini C:\WINDOWS\my.cnf C:\my.ini C:\my.cnf C:\Program Files\MYSQL\M
+YSQL Server 5.6\my.ini C:\Program Files\MYSQL\MYSQL Server 5.6\my.cnf
+The following groups are read: mysql client
+The following options may be given as the first argument:
+--print-defaults        Print the program argument list and exit.
+--no-defaults           Don't read default options from any option file,
+                        except for login file.
+--defaults-file=#       Only read default options from the given file #.
+--defaults-extra-file=# Read this file after the global files are read.
+--defaults-group-suffix=#
+                        Also read groups with concat(group, suffix)
+--login-path=#          Read this path from the login file.
+
+Variables (--variable-name=value)
+and boolean options {FALSE|TRUE}  Value (after reading options)
+--------------------------------- ----------------------------------------
+auto-rehash                       TRUE
+auto-vertical-output              FALSE
+bind-address                      (No default value)
+character-sets-dir                (No default value)
+column-type-info                  FALSE
+comments                          FALSE
+compress                          FALSE
+debug-check                       FALSE
+debug-info                        FALSE
+database                          (No default value)
+default-character-set             auto
+delimiter                         ;
+enable-cleartext-plugin           FALSE
+vertical                          FALSE
+force                             FALSE
+named-commands                    FALSE
+ignore-spaces                     FALSE
+init-command                      (No default value)
+local-infile                      FALSE
+no-beep                           FALSE
+host                              (No default value)
+html                              FALSE
+xml                               FALSE
+line-numbers                      TRUE
+unbuffered                        FALSE
+column-names                      TRUE
+sigint-ignore                     FALSE
+port                              0
+prompt                            mysql>
+quick                             FALSE
+raw                               FALSE
+reconnect                         TRUE
+shared-memory-base-name           (No default value)
+socket                            (No default value)
+ssl                               FALSE
+ssl-ca                            (No default value)
+ssl-capath                        (No default value)
+ssl-cert                          (No default value)
+ssl-cipher                        (No default value)
+ssl-key                           (No default value)
+ssl-crl                           (No default value)
+ssl-crlpath                       (No default value)
+ssl-verify-server-cert            FALSE
+table                             FALSE
+user                              (No default value)
+safe-updates                      FALSE
+i-am-a-dummy                      FALSE
+connect-timeout                   0
+max-allowed-packet                16777216
+net-buffer-length                 16384
+select-limit                      1000
+max-join-size                     1000000
+secure-auth                       TRUE
+show-warnings                     FALSE
+plugin-dir                        (No default value)
+default-auth                      (No default value)
+histignore                        (No default value)
+binary-mode                       FALSE
+connect-expired-password          FALSE
+
+C:\Program Files (x86)\Microsoft Visual Studio 11.0>cd..
+
+C:\Program Files (x86)>cd..
+
+C:\>C:\xampp\mysql\bin
+'C:\xampp\mysql\bin' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\>xampp\mysql
+'xampp\mysql' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\>dir
+ Volume in drive C is TI10657300E
+ Volume Serial Number is 4AA7-D4EF
+
+ Directory of C:\
+
+01/15/2015  07:15 AM    <DIR>          048c727fd5ba2e98cc977aa2b5
+03/14/2014  01:04 AM    <DIR>          apache2.2
+07/12/2014  05:17 PM    <DIR>          Course Technology
+09/01/2014  01:20 AM                 0 email.txt
+07/13/2014  10:18 PM                 0 empty.txt
+03/07/2014  06:43 PM                 0 END
+11/07/2007  07:00 AM            17,734 eula.1028.txt
+11/07/2007  07:00 AM            17,734 eula.1031.txt
+11/07/2007  07:00 AM            10,134 eula.1033.txt
+11/07/2007  07:00 AM            17,734 eula.1036.txt
+11/07/2007  07:00 AM            17,734 eula.1040.txt
+11/07/2007  07:00 AM               118 eula.1041.txt
+11/07/2007  07:00 AM            17,734 eula.1042.txt
+11/07/2007  07:00 AM            17,734 eula.2052.txt
+11/07/2007  07:00 AM            17,734 eula.3082.txt
+11/07/2007  07:00 AM             1,110 globdata.ini
+07/13/2014  10:19 PM               117 GradeData.txt
+09/28/2014  11:01 PM    <DIR>          inetpub
+11/07/2007  07:03 AM           562,688 install.exe
+11/07/2007  07:00 AM               843 install.ini
+11/07/2007  07:03 AM            76,304 install.res.1028.dll
+11/07/2007  07:03 AM            96,272 install.res.1031.dll
+11/07/2007  07:03 AM            91,152 install.res.1033.dll
+11/07/2007  07:03 AM            97,296 install.res.1036.dll
+11/07/2007  07:03 AM            95,248 install.res.1040.dll
+11/07/2007  07:03 AM            81,424 install.res.1041.dll
+11/07/2007  07:03 AM            79,888 install.res.1042.dll
+11/07/2007  07:03 AM            75,792 install.res.2052.dll
+11/07/2007  07:03 AM            96,272 install.res.3082.dll
+06/11/2013  09:50 PM    <DIR>          Intel
+07/26/2014  01:06 PM    <DIR>          Murach
+02/18/2015  02:50 AM    <DIR>          newdata
+08/22/2013  07:22 AM    <DIR>          PerfLogs
+01/20/2015  03:32 PM    <DIR>          PHP
+02/01/2015  02:53 AM    <DIR>          Program Files
+02/22/2015  07:22 PM    <DIR>          Program Files (x86)
+01/03/2015  12:28 PM    <DIR>          Python34
+03/14/2013  05:07 AM    <DIR>          TOSHIBA
+03/13/2014  11:13 PM    <DIR>          Users
+05/09/2014  07:33 PM    <DIR>          VB 2012
+11/07/2007  07:00 AM             5,686 vcredist.bmp
+11/07/2007  07:09 AM         1,442,522 VC_RED.cab
+11/07/2007  07:12 AM           232,960 VC_RED.MSI
+12/13/2014  01:53 AM    <DIR>          VSPath
+12/12/2014  10:41 PM    <DIR>          wamp
+02/05/2015  04:32 PM    <DIR>          Windows
+09/11/2014  04:15 AM    <DIR>          xampp
+              28 File(s)      3,169,964 bytes
+              19 Dir(s)  504,844,525,568 bytes free
+
+C:\>cd xampp
+
+C:\xampp>cd mysql
+
+C:\xampp\mysql>cd bin
+
+C:\xampp\mysql\bin>
+C:\xampp\mysql\bin>cd..
+
+C:\xampp\mysql>cd..
+
+C:\xampp>cd..
+
+C:\>path C:\xampp\mysql
+
+C:\>>mysqlcheck --user=backupUser --password=bkpUser123#@! --all-databa
+Access is denied.
+
+C:\>mysqlcheck --user=backupUser --password=bkpUser123#@! --all-databases
+'mysqlcheck' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\>path C:\xampp\mysql
+
+C:\>mysqlcheck --user=backupUser --password=bkpUser123#@! --all-databases
+'mysqlcheck' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\>path c:\xampp\mysql\bin
+
+C:\>mysqlcheck --user=backupUser --password=bkpUser123#@! --all-databases
+Warning: Using a password on the command line interface can be insecure.
+mysqlcheck: Got error: 1045: Access denied for user 'backupUser'@'localhost' (us
+ing password: YES) when trying to connect
+
+C:\>path c:\xampp|mysql\bin
+The system cannot find the path specified.
+
+C:\>
+C:\>
+C:\>
+C:\>ss
+'ss' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\>s
+'s' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\>path c:\xampp\mysql\bin
+
+C:\>mysqlcheck --user=backupUser --password=bkpUser123#@! --all-databases
+Warning: Using a password on the command line interface can be insecure.
+mysqlcheck: Got error: 2003: Can't connect to MySQL server on 'localhost' (10061
+) when trying to connect
+
+C:\>path c:\xampp\mysql\bin
+
+C:\>mysqlcheck --user=backupUser --password=bkpUser123#@! --all-databases
+Warning: Using a password on the command line interface can be insecure.
+cdcol.cds                                          OK
+database_name.users                                OK
+mysql.columns_priv                                 OK
+mysql.db
+warning  : 1 client is using or hasn't closed the table properly
+warning  : Size of indexfile is: 5804      Should be: 5120
+warning  : Size of datafile is: 1772       Should be: 1320
+error    : got error: 137 when reading datafile at record: 2
+error    : Corrupt
+mysql.event                                        OK
+mysql.func                                         OK
+mysql.general_log                                  OK
+mysql.help_category                                OK
+mysql.help_keyword                                 OK
+mysql.help_relation                                OK
+mysql.help_topic                                   OK
+mysql.innodb_index_stats                           OK
+mysql.innodb_table_stats                           OK
+mysql.ndb_binlog_index                             OK
+mysql.plugin                                       OK
+mysql.proc
+warning  : 2 clients are using or haven't closed the table properly
+status   : OK
+mysql.procs_priv
+warning  : Size of datafile is: 230       Should be: 0
+error    : got error: 0 when reading datafile at record: 0
+error    : Corrupt
+mysql.proxies_priv
+warning  : Size of indexfile is: 5348      Should be: 5120
+status   : OK
+mysql.servers                                      OK
+mysql.slave_master_info                            OK
+mysql.slave_relay_log_info                         OK
+mysql.slave_worker_info                            OK
+mysql.slow_log                                     OK
+mysql.tables_priv                                  OK
+mysql.time_zone                                    OK
+mysql.time_zone_leap_second                        OK
+mysql.time_zone_name                               OK
+mysql.time_zone_transition                         OK
+mysql.time_zone_transition_type                    OK
+mysql.user
+warning  : 5 clients are using or haven't closed the table properly
+warning  : Size of indexfile is: 4063      Should be: 2048
+warning  : Size of datafile is: 1180       Should be: 512
+error    : Wrong bytesec: 53-32-54 at linkstart: 512
+error    : Corrupt
+phpmyadmin.pma_bookmark                            OK
+phpmyadmin.pma_column_info
+warning  : 1 client is using or hasn't closed the table properly
+status   : OK
+phpmyadmin.pma_designer_coords                     OK
+phpmyadmin.pma_history                             OK
+phpmyadmin.pma_navigationhiding                    OK
+phpmyadmin.pma_pdf_pages                           OK
+phpmyadmin.pma_recent
+warning  : 2 clients are using or haven't closed the table properly
+status   : OK
+phpmyadmin.pma_relation                            OK
+phpmyadmin.pma_savedsearches                       OK
+phpmyadmin.pma_table_coords                        OK
+phpmyadmin.pma_table_info                          OK
+phpmyadmin.pma_table_uiprefs
+warning  : 1 client is using or hasn't closed the table properly
+status   : OK
+phpmyadmin.pma_tracking                            OK
+phpmyadmin.pma_userconfig
+warning  : 1 client is using or hasn't closed the table properly
+status   : OK
+phpmyadmin.pma_usergroups                          OK
+phpmyadmin.pma_users                               OK
+sampdb.absence                                     OK
+sampdb.apothegm                                    OK
+sampdb.grade_event                                 OK
+sampdb.member                                      OK
+sampdb.pres_term                                   OK
+sampdb.president                                   OK
+sampdb.score                                       OK
+sampdb.student                                     OK
+webauth.user_pwd                                   OK
+
+C:\>

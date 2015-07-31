@@ -1,0 +1,82 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname lab5) (read-case-sensitive #t) (teachpacks ((lib "image.rkt" "teachpack" "2htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "image.rkt" "teachpack" "2htdp")))))
+; Scheme definition of a checking account:
+(define-struct checking-account(name current-balance monthly-interest-rate))
+
+; Data definition of a checking account:
+; a checking-account is a 
+;; (make-checking )
+; Scheme definition of a savings account:
+(define-struct savings-account(name current-balance number-of-withdrawls fee-over-the-limit limit-of-withdrawls-before-paying-fee))
+; Data definition of a savings account:
+; a checking-account is a 
+;; (make-savings )
+;definition for checking account
+(define monthly-int-rate 0.015) 
+(define checking-account1(make-checking-account "Thomas" 10000 monthly-int-rate))
+ 
+;definition for savings-account
+(define fee-over-the-lim 0.010)
+(define limit-of-withdrawls-before-paying 20)
+(define savings-account1(make-savings-account "Antonio" 10000  15 fee-over-the-lim limit-of-withdrawls-before-paying )) 
+;template
+; (define (fun-for-account an-account)
+; (cond
+; [(checking? an-account) 
+; (checking-name an-account......)
+; (checking-balance an-account...)
+; (checking-rate an-account...)]
+; [(savings? an-account)
+; (savings-name an-account...)
+; (savings-balance an-account...)
+; (savings-withdrawals an-account...)
+; (savings-fee an-account....)
+; (savings-limit an-account....]
+
+;signature account -> account 
+;purpose:
+;checking-account it increases the amount of the balance
+;savings-account it sets the number of withdrawls to 0
+  ;test
+  (check-expect (start-month checking-account1)(make-checking-account (checking-account-name checking-account1) 10150 monthly-int-rate))
+  (check-expect (start-month savings-account1)(make-savings-account (savings-account-name savings-account1) (savings-account-current-balance savings-account1)
+                     0 fee-over-the-lim limit-of-withdrawls-before-paying))
+  ;definition
+ (define (start-month anaccount)
+   (cond[(checking-account? anaccount)(make-checking-account (checking-account-name anaccount)
+            (+(*(checking-account-current-balance anaccount)monthly-int-rate)(checking-account-current-balance anaccount)) 
+            monthly-int-rate)]
+        [(savings-account? anaccount)(make-savings-account (savings-account-name anaccount) (savings-account-current-balance anaccount)
+                     (*(savings-account-number-of-withdrawls anaccount)0) fee-over-the-lim limit-of-withdrawls-before-paying)]))
+
+;signature account number -> boolean
+;purpose:
+;checking-account? it checks if their is enough amount to withdraw
+;savings-account? it checks if their is enough amount to withdraw and adds if applaiable the fee for limit of withdraws
+
+(define checking-account2(make-checking-account "Thomas" 10000 monthly-int-rate))
+(define savings-account2(make-savings-account "Antonio" 10000  15 fee-over-the-lim limit-of-withdrawls-before-paying ))
+(define savings-account3(make-savings-account "Antonio" 10000  21 fee-over-the-lim limit-of-withdrawls-before-paying ))
+
+;test
+(check-expect(enough-funds checking-account2 50000)false)
+(check-expect(enough-funds checking-account2 5000)true)
+(check-expect(enough-funds savings-account2  50000) false)
+(check-expect(enough-funds savings-account2  5000) true)
+(check-expect(enough-funds savings-account3  5000) true)
+(check-expect(enough-funds savings-account3  50000) false)
+;define
+ 
+(define(enough-funds anaccount amount)
+  (cond[(checking-account? anaccount)(if(>= (checking-account-current-balance anaccount)amount) true false)]
+       [(savings-account? anaccount) (check-for-avaiability anaccount amount)]))
+
+(define(check-for-avaiability anaccount amount)
+  (if (>=(savings-account-current-balance anaccount)(+ amount (check-withdraw-status anaccount amount))) true false))
+(define(check-withdraw-status anaccount amount)
+  (if(> (savings-account-number-of-withdrawls anaccount) limit-of-withdrawls-before-paying) (* amount fee-over-the-lim)0))
+
+;;signature 
+;purpose
+

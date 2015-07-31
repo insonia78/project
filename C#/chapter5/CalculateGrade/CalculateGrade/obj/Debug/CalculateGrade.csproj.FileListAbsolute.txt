@@ -1,0 +1,8 @@
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Debug\CalculateGrade.csprojResolveAssemblyReference.cache
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\thomas\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\thomas\Documents\Visual Studio 2012\ProjectsC#\chapter5\CalculateGrade\CalculateGrade\bin\Debug\CalculateGrade.exe.config
+C:\Users\thomas\Desktop\rio_salado\ProjectsC#\chapter5\CalculateGrade\CalculateGrade\bin\Debug\CalculateGrade.exe.config

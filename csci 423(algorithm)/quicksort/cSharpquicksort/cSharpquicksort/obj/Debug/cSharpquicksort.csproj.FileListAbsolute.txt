@@ -1,0 +1,6 @@
+C:\Users\thomas\Desktop\ric\csci 423\quicksort\cSharpquicksort\cSharpquicksort\bin\Debug\cSharpquicksort.exe.config
+C:\Users\thomas\Desktop\ric\csci 423\quicksort\cSharpquicksort\cSharpquicksort\bin\Debug\cSharpquicksort.exe
+C:\Users\thomas\Desktop\ric\csci 423\quicksort\cSharpquicksort\cSharpquicksort\bin\Debug\cSharpquicksort.pdb
+C:\Users\thomas\Desktop\ric\csci 423\quicksort\cSharpquicksort\cSharpquicksort\obj\Debug\cSharpquicksort.csprojResolveAssemblyReference.cache
+C:\Users\thomas\Desktop\ric\csci 423\quicksort\cSharpquicksort\cSharpquicksort\obj\Debug\cSharpquicksort.exe
+C:\Users\thomas\Desktop\ric\csci 423\quicksort\cSharpquicksort\cSharpquicksort\obj\Debug\cSharpquicksort.pdb
