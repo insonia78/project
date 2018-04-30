@@ -38,8 +38,10 @@
             this.date_of_birth_txt = new System.Windows.Forms.TextBox();
             this.phone_txt_box = new System.Windows.Forms.TextBox();
             this.age_txt_box = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.save = new System.Windows.Forms.Button();
+            this.dataSet1 = new System.Data.DataSet();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,15 +133,6 @@
             this.age_txt_box.TabIndex = 9;
             this.age_txt_box.TextChanged += new System.EventHandler(this.age_txt_box_TextChanged);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 138);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(664, 287);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // save
             // 
             this.save.Location = new System.Drawing.Point(747, 195);
@@ -150,13 +143,27 @@
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 137);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
             // amazing_charts_sample_application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 450);
-            this.Controls.Add(this.save);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.age_txt_box);
             this.Controls.Add(this.phone_txt_box);
             this.Controls.Add(this.date_of_birth_txt);
@@ -171,6 +178,7 @@
             this.Name = "amazing_charts_sample_application";
             this.Text = global::Amazing_charts_sample_program.Properties.Settings.Default.Application;
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,8 +197,9 @@
         private System.Windows.Forms.TextBox date_of_birth_txt;
         private System.Windows.Forms.TextBox phone_txt_box;
         private System.Windows.Forms.TextBox age_txt_box;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button save;
+        private System.Data.DataSet dataSet1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

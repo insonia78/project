@@ -70,6 +70,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\amazing_charts_sample_application.datasource" />
+    <None Include="Properties\DataSources\Amazing_charts_sample_program.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Amazing_charts_sample_program.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\DateOfBirth.datasource" />
+    <None Include="Properties\DataSources\FirstNameClass.datasource" />
+    <None Include="Properties\DataSources\Helper_Classes_namespace.DataBaseHelperClass.datasource" />
+    <None Include="Properties\DataSources\Helper_Classes_namespace.HelperClass.datasource" />
+    <None Include="Properties\DataSources\Helper_Classes_namespace.PerformWriteToFileAction.datasource" />
+    <None Include="Properties\DataSources\LastNameClass.datasource" />
+    <None Include="Properties\DataSources\PhoneClass.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

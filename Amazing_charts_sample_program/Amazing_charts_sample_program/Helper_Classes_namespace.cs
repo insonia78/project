@@ -4,10 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
-
-
-
+using System.Windows.Forms;
 namespace Helper_Classes_namespace
 {
     
@@ -17,7 +14,13 @@ namespace Helper_Classes_namespace
         {
             SqlCommand command = new SqlCommand(query, SqlConnectionClass.getConn());
             SqlConnectionClass.getConn().Open();
-            
+            System.Data.ConnectionState state = SqlConnectionClass.getConn().State;
+            if (!(state == System.Data.ConnectionState.Open))
+            {
+                MessageBox.Show(" Sorry no Db Connection !!!!!!! ");
+                return null;
+            }
+
             return command;
         }
         public static void SettingDbConnection(String connectionString)
@@ -29,6 +32,14 @@ namespace Helper_Classes_namespace
         {
             SqlCommand command = new SqlCommand(query, SqlConnectionClass.getConn());
             SqlConnectionClass.getConn().Open();
+            System.Data.ConnectionState state = SqlConnectionClass.getConn().State;            
+            if (!(state == System.Data.ConnectionState.Open))
+            {
+                MessageBox.Show(" Sorry no Db Connection !!!!!!! ");
+                return null;
+            }
+
+            command.ExecuteNonQuery();
             return command;
         }
         public static void ClosePerformQuery()
@@ -58,12 +69,11 @@ namespace Helper_Classes_namespace
             return 1;
         }
     }
-    public static class HelperClass
-    {
-        static DateTime UTCNow = DateTime.UtcNow;
+    public static class HelperClass    {
+        
         private static int getDaysInaMonth(int month)
-        {      
-          return DateTime.DaysInMonth(UTCNow.Year, month);
+        {            
+            return DateTime.DaysInMonth(getSystemDateTime().Year, month);
         }
         public static int getDaysUptoMonth(int month)
         {
@@ -73,6 +83,31 @@ namespace Helper_Classes_namespace
                 totalDays += getDaysInaMonth(i);
             }
             return totalDays;
+        }
+        public static DateTime getSystemDateTime()
+        {
+            DateTime UTCNow = DateTime.UtcNow;
+            return UTCNow;
+        }
+        public static bool CompareDate(string date)
+        {
+            string[] words = date.Split('/');
+            int userYear = Int32.Parse(words[words.Length - 1]);
+            int userMonth = Int32.Parse(words[words.Length - 3]);
+            int userDay = Int32.Parse(words[words.Length - 2]);
+            if (getSystemDateTime().Year < userYear)
+                return false;
+            if(getSystemDateTime().Year == userYear)
+            {
+                if (getSystemDateTime().Month < userMonth)
+                    return false;
+                if(getSystemDateTime().Month == userMonth)
+                {
+                    if (getSystemDateTime().Day < userDay)
+                        return false;
+                }
+            }
+            return true;
         }
     }
 }
