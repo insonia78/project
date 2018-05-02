@@ -78,26 +78,27 @@ namespace Amazing_charts_sample_program
         {
             if (date == "")
             {
-                MessageBox.Show("Date of birth is empty");
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage("Date of birth is empty",false);
                 return false;
             }
             if (!Regex.Match(date, @"\d{2}/\d{2}/\d{4}").Success)
-            {
-                MessageBox.Show("mm/dd/yyyy Invalid birth format ");
+            {                
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage("mm/dd/yyyy Invalid birth format ", false);
                 return false;
-            }
-            if (!Helper_Classes_namespace.HelperClass.CompareDate(date))
-            {
-                MessageBox.Show(" Invalid birth range date is over current date");
-                return false;
-            }
+            }            
             try
             {
                 DateTime dt = DateTime.Parse(date);
             }
             catch
             {
-                MessageBox.Show(" Invalid birth format range");
+               
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Invalid birth format range ", false);
+                return false;
+            }
+            if (!Helper_Classes_namespace.HelperClass.CompareDate(date))
+            {
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Invalid birth range date is over current date", false);
                 return false;
             }
             return true;

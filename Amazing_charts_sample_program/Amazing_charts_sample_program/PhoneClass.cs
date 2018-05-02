@@ -21,12 +21,12 @@ namespace Amazing_charts_sample_program
         {
             if (phone == "")
             {
-                MessageBox.Show("phone is empty");
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage("phone is empty", false);
                 return false;
             }
             if (!Regex.Match(phone, @"^\d{3}-\d{3}-\d{4}$").Success)
             {
-                MessageBox.Show("xxx-xxx-xxxx phone number format is invalid!!!!!!! ");
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage("xxx-xxx-xxxx phone number format is invalid!!!!!!! ", false);                
                 return false;
             }
             return true;

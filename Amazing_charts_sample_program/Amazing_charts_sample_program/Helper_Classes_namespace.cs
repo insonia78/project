@@ -18,7 +18,7 @@ namespace Helper_Classes_namespace
             System.Data.ConnectionState state = SqlConnectionClass.getConn().State;
             if (!(state == System.Data.ConnectionState.Open))
             {
-                MessageBox.Show(" Sorry no Db Connection !!!!!!! ");
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Sorry no Db Connection !!!!!!! ",true);
                 return null;
             }
 
@@ -36,7 +36,7 @@ namespace Helper_Classes_namespace
             System.Data.ConnectionState state = SqlConnectionClass.getConn().State;            
             if (!(state == System.Data.ConnectionState.Open))
             {
-                MessageBox.Show(" Sorry no Db Connection !!!!!!! ");
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Sorry no Db Connection !!!!!!! ", true);
                 return null;
             }
 
@@ -57,7 +57,6 @@ namespace Helper_Classes_namespace
     }
     public static class PerformWriteToFileAction 
     {
-        static System.IO.StreamWriter file = new System.IO.StreamWriter(@"../../../WriteLines2.txt", true);
         public static int createPatientFile(String filename,String data)
         {
             File.Create(filename).Dispose();
@@ -192,6 +191,22 @@ namespace Helper_Classes_namespace
             }
             return true;
         }
+    }
+    public static class ErrorMessages
+    {
+
+        private static string errorMessageString = "";
+        public static void setErrorMessage(string errorMessage,bool writeToLog)
+        {
+            if(writeToLog)
+               PerformWriteToFileAction.writeToLogFile(errorMessage + " " + Helper_Classes_namespace.HelperClass.getSystemDateTime().ToLocalTime().ToString());
+            errorMessageString = errorMessage;
+        }
+        public static string getErrorMessage()
+        {
+            return errorMessageString;
+        }
+
     }
 }
 

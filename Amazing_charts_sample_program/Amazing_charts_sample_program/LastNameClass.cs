@@ -46,12 +46,12 @@ namespace Amazing_charts_sample_program
         {
             if (lastName == "")
             {
-                MessageBox.Show("Last Name is empty");
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Last Name is empty ", false);                
                 return false;
             }
             if (!Regex.Match(lastName, @"^[a-zA-Z'.]{1,40}$").Success)
             {
-                MessageBox.Show(" Invalid last name ");
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Invalid last name ", false);                
                 return false;
             }
             return true;

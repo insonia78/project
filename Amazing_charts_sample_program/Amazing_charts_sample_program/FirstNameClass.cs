@@ -44,13 +44,13 @@ namespace Amazing_charts_sample_program
         public bool testFirstName(string  firstName)
         {
             if (firstName == "")
-            {
-                MessageBox.Show("firstName is empty");
+            {               
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage("firstName is empty", false);
                 return false;
             }
-            if (!Regex.Match(firstName, @"^[a-zA-Z'.]{1,40}$").Success)
-            {
-                MessageBox.Show("Invalid first name");
+            if (!Regex.Match(firstName, @"^[a-zA-Z'.]{1,40}$").Success)            {
+               
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage("Invalid first name", false);
                 return false;
             }
             return true;
