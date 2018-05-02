@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 namespace Helper_Classes_namespace
 {
     
@@ -56,16 +57,42 @@ namespace Helper_Classes_namespace
     }
     public static class PerformWriteToFileAction 
     {
-        static System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true);
+        static System.IO.StreamWriter file = new System.IO.StreamWriter(@"../../../WriteLines2.txt", true);
         public static int createPatientFile(String filename,String data)
         {
-            System.IO.File.WriteAllText(@filename, data);
+            File.Create(filename).Dispose();
+            using (TextWriter tw = new StreamWriter(filename))
+            {
+                tw.WriteLine(data);
+                tw.Close();
+            }
+           
             return 1;
         }
 
         public static int writeToLogFile(String data)
         {
-            file.WriteLine(data);
+            string filePath = @"../../../logFile.txt";
+            if (File.Exists(filePath))
+            {
+                using (StreamWriter sw = File.AppendText(filePath))
+                {
+                    sw.WriteLine(data);
+                    sw.Close();
+                }
+
+            }
+            else
+            {
+                File.Create(filePath).Dispose();
+                using (TextWriter tw = new StreamWriter(filePath))
+                {
+                    tw.WriteLine(data);
+                    tw.Close();
+                }
+
+            }
+            
             return 1;
         }
     }
@@ -74,6 +101,39 @@ namespace Helper_Classes_namespace
         private static int getDaysInaMonth(int month)
         {            
             return DateTime.DaysInMonth(getSystemDateTime().Year, month);
+        }
+        public static string getTotAge(string userDate,string systemDate)
+        {
+            string[] words = userDate.Split('/');
+            int userYear = Int32.Parse(words[words.Length - 1]);
+            int userMonth = Int32.Parse(words[words.Length - 3]);
+            int userDay = Int32.Parse(words[words.Length - 2]);
+            string[] words1 = systemDate.Split('/');
+            int systemDateYear = Int32.Parse(words1[words.Length - 1]);
+            int systemDateMonth = Int32.Parse(words1[words.Length - 3]);
+            int systemDateDay = Int32.Parse(words1[words.Length - 2]);
+            int totalDays = 0;
+            
+            for (int i = systemDateMonth; systemDateMonth > 0 && systemDateYear >= userYear;i--)
+            {
+                if (i == 0)
+                {
+                    i = 12;
+                    systemDateYear--;
+                }
+                if (i == userMonth && systemDateYear == userYear)
+                    break;                
+                totalDays += getDaysInaMonth(i);
+            }
+
+
+            totalDays -= userDay;
+            int remaning_days = totalDays % 7;
+            int weeks = totalDays / 7;
+            int totalYears = weeks / 52;
+            int totalWeeks = weeks % 52;           
+            return totalYears.ToString() + " years " + totalWeeks.ToString() + " weeks " + remaning_days.ToString() + " days ";
+            
         }
         public static int getDaysUptoMonth(int month)
         {

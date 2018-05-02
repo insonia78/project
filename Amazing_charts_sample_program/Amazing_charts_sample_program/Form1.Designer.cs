@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.first_name_label = new System.Windows.Forms.Label();
             this.last_name_label = new System.Windows.Forms.Label();
             this.date_of_birth_label = new System.Windows.Forms.Label();
@@ -40,9 +41,14 @@
             this.age_txt_box = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
             this.dataSet1 = new System.Data.DataSet();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataSetView = new System.Windows.Forms.DataGridView();
+            this.eventLog1 = new System.Diagnostics.EventLog();
+            this.eventLogDisplay = new System.Windows.Forms.RichTextBox();
+            this.performWriteToFileActionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.performWriteToFileActionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // first_name_label
@@ -135,7 +141,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(747, 195);
+            this.save.Location = new System.Drawing.Point(747, 164);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 12;
@@ -147,22 +153,40 @@
             // 
             this.dataSet1.DataSetName = "NewDataSet";
             // 
-            // dataGridView1
+            // dataSetView
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 137);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 13;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dataSetView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSetView.Location = new System.Drawing.Point(37, 164);
+            this.dataSetView.Name = "dataSetView";
+            this.dataSetView.Size = new System.Drawing.Size(631, 261);
+            this.dataSetView.TabIndex = 13;
+            this.dataSetView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick_2);
+            // 
+            // eventLog1
+            // 
+            this.eventLog1.SynchronizingObject = this;
+            this.eventLog1.EntryWritten += new System.Diagnostics.EntryWrittenEventHandler(this.eventLog1_EntryWritten);
+            // 
+            // eventLogDisplay
+            // 
+            this.eventLogDisplay.Location = new System.Drawing.Point(696, 226);
+            this.eventLogDisplay.Name = "eventLogDisplay";
+            this.eventLogDisplay.ReadOnly = true;
+            this.eventLogDisplay.Size = new System.Drawing.Size(217, 185);
+            this.eventLogDisplay.TabIndex = 15;
+            this.eventLogDisplay.Text = "";
+            // 
+            // performWriteToFileActionBindingSource
+            // 
+            this.performWriteToFileActionBindingSource.DataSource = typeof(Helper_Classes_namespace.PerformWriteToFileAction);
             // 
             // amazing_charts_sample_application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.eventLogDisplay);
+            this.Controls.Add(this.dataSetView);
             this.Controls.Add(this.save);
             this.Controls.Add(this.age_txt_box);
             this.Controls.Add(this.phone_txt_box);
@@ -179,7 +203,9 @@
             this.Text = global::Amazing_charts_sample_program.Properties.Settings.Default.Application;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.performWriteToFileActionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,7 +225,10 @@
         private System.Windows.Forms.TextBox age_txt_box;
         private System.Windows.Forms.Button save;
         private System.Data.DataSet dataSet1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource performWriteToFileActionBindingSource;
+        private System.Windows.Forms.DataGridView dataSetView;
+        private System.Diagnostics.EventLog eventLog1;
+        private System.Windows.Forms.RichTextBox eventLogDisplay;
     }
 }
 

@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Amazing_charts_sample_program_Patient_Format.cs" />
+    <Compile Include="Patient.cs" />
     <Compile Include="PhoneClass.cs" />
     <Compile Include="DateOfBirth.cs" />
     <Compile Include="LastNameClass.cs" />
