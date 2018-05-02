@@ -227,7 +227,7 @@ namespace Helper_Classes_namespace
     public static class ErrorMessages
     {
 
-        private static string errorMessageString = "";
+        private static string errorMessageString = ""; 
         public static void setErrorMessage(string errorMessage,bool writeToLog)
         {
             if(writeToLog)
@@ -236,7 +236,9 @@ namespace Helper_Classes_namespace
         }
         public static string getErrorMessage()
         {
-            return errorMessageString;
+            string a = errorMessageString;
+            errorMessageString = "";
+            return a;
         }
 
     }

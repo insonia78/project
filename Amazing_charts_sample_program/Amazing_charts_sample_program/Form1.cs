@@ -73,6 +73,7 @@ namespace Amazing_charts_sample_program
             p.FirstName = first_name_txt.Text;
             p.LastName = last_name_txt.Text;
             p.DateOfBirth = date_of_birth_txt.Text;
+            p.PhoneNumber = phone_txt_box.Text;
             return p;
         }
         private void first_name_txt_TextChanged(object sender, EventArgs e)
