@@ -21,16 +21,20 @@ namespace Amazing_charts_sample_program
         private PhoneClass _phone = new PhoneClass();
         private DataTable table;
         private List<Amazing_charts_sample_program_Patient_Format> dataSet;
-        private bool selectedFromDatgaSet = false;
+        private bool selectedFromDatgaSet = true;
         public amazing_charts_sample_application()
         {
             InitializeComponent();
             dataSetView.CellClick += DataGridView1_CellContentClick_3;
-            setFocusOnTextBox();
+            first_name_txt.MouseDoubleClick += new MouseEventHandler(mouseDBL_Click);
+            last_name_txt.MouseDoubleClick += new MouseEventHandler(mouseDBL_Click);
+            date_of_birth_txt.MouseDoubleClick += new MouseEventHandler(mouseDBL_Click);
+            phone_txt_box.MouseDoubleClick += new MouseEventHandler(mouseDBL_Click);
             selectAllFromDataSet();
+            setFocusOnTextBox();
         }
         private void setFocusOnTextBox()
-        {
+        {            
             first_name_txt.GotFocus += OnFocus;
             last_name_txt.GotFocus += OnFocus;
             date_of_birth_txt.GotFocus += OnFocus;
@@ -46,10 +50,13 @@ namespace Amazing_charts_sample_program
         private void OnFocus(object sender, EventArgs e)
         {
             selectedFromDatgaSet = false;
-            dataSetView.CellClick += DataGridView1_CellContentClick_3;
+            dataSetView.CellClick += DataGridView1_CellContentClick_3;           
+            
+        }
+        private void mouseDBL_Click(object sender, MouseEventArgs e)
+        {            
             ClearTextBox();
             selectAllFromDataSet();
-            removeFocusOnTextBox();
         }
 
         private void ClearTextBox()
@@ -60,6 +67,13 @@ namespace Amazing_charts_sample_program
             date_of_birth_txt.Text= "";
             phone_txt_box.Text = "";
 
+        }
+        private Patient getTextBoxData(Patient p)
+        {
+            p.FirstName = first_name_txt.Text;
+            p.LastName = last_name_txt.Text;
+            p.DateOfBirth = date_of_birth_txt.Text;
+            return p;
         }
         private void first_name_txt_TextChanged(object sender, EventArgs e)
         {           
@@ -72,7 +86,8 @@ namespace Amazing_charts_sample_program
             
             if (!selectedFromDatgaSet)
             {
-                dataSet = _firstNameClass.getFirstName(new List<Amazing_charts_sample_program_Patient_Format>(), first_name_txt.Text);
+                dataSet = _firstNameClass.getFirstName(new List<Amazing_charts_sample_program_Patient_Format>(), getTextBoxData(new Patient()));
+                dataSet = _firstNameClass.QuickSortNow(dataSet, 0 , dataSet.Count - 1);
                 createDataSet(dataSet);
             }
         }
@@ -108,7 +123,8 @@ namespace Amazing_charts_sample_program
             
             if (!selectedFromDatgaSet)
             {
-                dataSet = _lastNameClass.getLastName(new List<Amazing_charts_sample_program_Patient_Format>(), last_name_txt.Text);
+                dataSet = _lastNameClass.getLastName(new List<Amazing_charts_sample_program_Patient_Format>(), getTextBoxData(new Patient()));
+                dataSet = _lastNameClass.QuickSortNow(dataSet,0,dataSet.Count - 1);
                 createDataSet(dataSet);
             }
         }
@@ -125,9 +141,7 @@ namespace Amazing_charts_sample_program
                 return ;
             }
             if (!Regex.Match(date_of_birth_txt.Text, @"\d{2}/\d{2}/\d{4}").Success)
-            {
-                if(date_of_birth_txt.Text.Length >= 10)
-                    MessageBox.Show(" Invalid birth date mm/dd/yyyy ");
+            {               
                 return;
             }            
             if (!Helper_Classes_namespace.HelperClass.CompareDate(date_of_birth_txt.Text))
@@ -152,11 +166,11 @@ namespace Amazing_charts_sample_program
             
             if (!selectedFromDatgaSet)
             {
-                dataSet = _dateOfBirth.getDateOfBirth(new List<Amazing_charts_sample_program_Patient_Format>(), date_of_birth_txt.Text);
+                dataSet = _dateOfBirth.getDateOfBirth(new List<Amazing_charts_sample_program_Patient_Format>(), getTextBoxData(new Patient()));
                 createDataSet(dataSet);
             }
-            else
-                age_txt_box.Text = _dateOfBirth.getAgeByBirthDate(date_of_birth_txt.Text);
+            age_txt_box.Text = _dateOfBirth.getAgeByBirthDate(date_of_birth_txt.Text);
+
         }
 
         private void phone_txt_box_TextChanged(object sender, EventArgs e)
@@ -227,6 +241,7 @@ namespace Amazing_charts_sample_program
 
                 }
                 Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
+               dataSet =  _lastNameClass.QuickSortNow(dataSet, 0, dataSet.Count - 1);
                 createDataSet(dataSet);
             }
         }
@@ -241,23 +256,49 @@ namespace Amazing_charts_sample_program
                             + "' AND date_of_birth = '" + date_of_birth_txt.Text +"'";
             
             SqlDataReader reader = Helper_Classes_namespace.DataBaseHelperClass.GlobalPerformQuery(query).ExecuteReader();
+            string logEvent ="";
+            
             if (reader == null)
                 return;
             else if (reader.HasRows)
+            {
                 query = "UPDATE credentials set first_name = '" + first_name_txt.Text
                             + "' ,last_name = '" + last_name_txt.Text
                             + "' ,date_of_birth = '" + date_of_birth_txt.Text
                             + "' ,phone = '" + phone_txt_box.Text
                             + "' where first_name = '" + first_name_txt.Text
                             + "' AND last_name = '" + last_name_txt.Text
-                            + "' AND date_of_birth = '" + date_of_birth_txt.Text + "'";            
+                            + "' AND date_of_birth = '" + date_of_birth_txt.Text + "'";
+                logEvent = "UPDATED \n" + first_name_txt.Text
+                            + "\n" + last_name_txt.Text
+                            + "\n" + date_of_birth_txt.Text.ToString()
+                            + "\n" + phone_txt_box.Text;
+            }
             else
-               query = "INSERT INTO credentials(first_name,last_name,date_of_birth,phone) VALUES('" + first_name_txt.Text + "','" + last_name_txt.Text + "','" + date_of_birth_txt.Text + "','" + phone_txt_box.Text + "')";
+            {
+                query = "INSERT INTO credentials(first_name,last_name,date_of_birth,phone) VALUES('" + first_name_txt.Text + "','" + last_name_txt.Text + "','" + date_of_birth_txt.Text + "','" + phone_txt_box.Text + "')";
+                logEvent = "INSERTED \n" + first_name_txt.Text
+                            + "\n" + last_name_txt.Text
+                            + "\n" + date_of_birth_txt.Text.ToString()
+                            + "\n" + phone_txt_box.Text;
+            }
+            eventLogDisplay.AppendText("\n<---------------------->\n");
+            eventLogDisplay.AppendText(logEvent);
+            Helper_Classes_namespace.PerformWriteToFileAction.writeToLogFile(logEvent.Replace('\n', ' ') + " " +Helper_Classes_namespace.HelperClass.getSystemDateTime().ToLocalTime().ToString());
             Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
             Helper_Classes_namespace.DataBaseHelperClass.GlobalPerformQuery(query);
             Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
             MessageBox.Show(" Field Inserted !!!!!!! ");
-            selectAllFromDataSet();
+            dataSetView.DataSource = "";
+            table = new DataTable();
+            table.Columns.Add("Index", typeof(int));
+            table.Columns.Add("First Name", typeof(string));
+            table.Columns.Add("Last Name", typeof(string));
+            table.Columns.Add("Date of Birth", typeof(string));
+            table.Columns.Add("Phone", typeof(string));
+            table.Rows.Add(0, first_name_txt.Text, last_name_txt.Text, date_of_birth_txt.Text, phone_txt_box.Text).CancelEdit();
+            dataSetView.DataSource = table;
+           
 
         }
 
@@ -287,18 +328,6 @@ namespace Amazing_charts_sample_program
                 date_of_birth_txt.Text = dataSet[e.RowIndex].DateOfBirth;
                 phone_txt_box.Text = dataSet[e.RowIndex].PhoneNumber;
                 age_txt_box.Text = dataSet[e.RowIndex].Age;
-                string fileName = @"../../../"+ dataSet[e.RowIndex].FirstName + "_" + dataSet[e.RowIndex].LastName + "_" + dataSet[e.RowIndex].DateOfBirth.Replace('/','-') +"_" + Helper_Classes_namespace.HelperClass.getSystemDateTime().ToLocalTime().ToString().Replace('/','-').Replace(' ','_').Replace(':','-') + ".txt";
-                string contactInformation = "First Name : " + dataSet[e.RowIndex].FirstName + "\r\n"
-                                            + "Last Name : " + dataSet[e.RowIndex].LastName + "\r\n"
-                                            + "Date Of Birth : " + dataSet[e.RowIndex].DateOfBirth + "\r\n"
-                                            + "Phone :" + dataSet[e.RowIndex].PhoneNumber;
-
-
-                Helper_Classes_namespace.PerformWriteToFileAction.createPatientFile(fileName, contactInformation);
-                string logEvent = " >> created file " + dataSet[e.RowIndex].FirstName + "_" + dataSet[e.RowIndex].LastName + "_" + dataSet[e.RowIndex].DateOfBirth.Replace('/', '-') + ".txt on " + Helper_Classes_namespace.HelperClass.getSystemDateTime().ToLocalTime();
-                eventLogDisplay.AppendText("<text >"+ logEvent + "</text>");
-                
-                Helper_Classes_namespace.PerformWriteToFileAction.writeToLogFile(logEvent);
                 dataSetView.DataSource = "";
                 table = new DataTable();
                 table.Columns.Add("Index", typeof(int));
@@ -318,6 +347,45 @@ namespace Amazing_charts_sample_program
         private void eventLog1_EntryWritten(object sender, System.Diagnostics.EntryWrittenEventArgs e)
         {
 
+        }
+
+        private void create_file_Click(object sender, EventArgs e)
+        {
+            if (!_firstNameClass.testFirstName(first_name_txt.Text)) return;
+            if (!_lastNameClass.testLastName(last_name_txt.Text)) return;
+            if (!_dateOfBirth.testDate(date_of_birth_txt.Text)) return;
+            if (!_phone.testPhoneFormat(phone_txt_box.Text)) return;
+            string query = "SELECT * from credentials where first_name = '" + first_name_txt.Text
+                            + "' AND last_name = '" + last_name_txt.Text
+                            + "' AND date_of_birth = '" + date_of_birth_txt.Text + "'";
+
+            SqlDataReader reader = Helper_Classes_namespace.DataBaseHelperClass.GlobalPerformQuery(query).ExecuteReader();
+            
+            if (reader == null)
+            {
+                Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
+                return;
+            }
+            else if (!reader.HasRows)
+            {
+                MessageBox.Show(" Patient is not Saved!!!!!!");
+                Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
+                return;
+            }
+            Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
+
+
+            string fileName = @"../../../" + first_name_txt.Text + "_" + last_name_txt.Text + "_" + date_of_birth_txt.Text.Replace('/', '-') + "_" + Helper_Classes_namespace.HelperClass.getSystemDateTime().ToLocalTime().ToString().Replace('/', '-').Replace(' ', '_').Replace(':', '-') + ".txt";
+            string contactInformation = "First Name : " + first_name_txt.Text + "\r\n"
+                                        + "Last Name : " + last_name_txt.Text + "\r\n"
+                                        + "Date Of Birth : " + date_of_birth_txt.Text + "\r\n"
+                                        + "Phone :" + phone_txt_box.Text;
+            string logEvent = " >> created file " + first_name_txt.Text + "_" + last_name_txt.Text + "_" + date_of_birth_txt.Text.Replace('/', '-') + ".txt on " + Helper_Classes_namespace.HelperClass.getSystemDateTime().ToLocalTime();
+            eventLogDisplay.AppendText("\n<---------------------->\n");
+            eventLogDisplay.AppendText(logEvent);
+            Helper_Classes_namespace.PerformWriteToFileAction.writeToLogFile(logEvent);
+            Helper_Classes_namespace.PerformWriteToFileAction.createPatientFile(fileName, contactInformation);
+            MessageBox.Show(" File Created ");
         }
     }
 }

@@ -15,9 +15,13 @@ namespace Amazing_charts_sample_program
 
         public LastNameClass() { } 
         public string LastName { get; set; }
-        public List<Amazing_charts_sample_program_Patient_Format> getLastName(List<Amazing_charts_sample_program_Patient_Format> dataSet, string lastName)
+        public List<Amazing_charts_sample_program_Patient_Format> getLastName(List<Amazing_charts_sample_program_Patient_Format> dataSet, Patient _patient)
         {
-            string query = "SELECT * from credentials where last_name  like '" + lastName + "%'";
+            string query = "SELECT * from credentials where last_name  like '" + _patient.LastName + "%'";            
+            if (_patient.FirstName.Length > 0)
+                query += " AND first_name like '" + _patient.FirstName + "%'";
+            if (_patient.DateOfBirth.Length > 0)
+                query += " AND date_of_birth like '" + _patient.DateOfBirth + "%'";
             var response = this.PerformQuery(query);
             if (response == null) return null;
             SqlDataReader reader = response.ExecuteReader();
@@ -52,5 +56,38 @@ namespace Amazing_charts_sample_program
             }
             return true;
         }
+        public List<Amazing_charts_sample_program_Patient_Format> QuickSortNow(List<Amazing_charts_sample_program_Patient_Format> iInput, int start, int end)
+        {
+            if (start < end)
+            {
+                int pivot = Partition(iInput, start, end);
+                QuickSortNow(iInput, start, pivot - 1);
+                QuickSortNow(iInput, pivot + 1, end);
+            }
+            return iInput;
+        }
+
+        public int Partition(List<Amazing_charts_sample_program_Patient_Format> iInput, int start, int end)
+        {
+            string pivot = iInput[end].LastName;
+            int pIndex = start;
+
+            for (int i = start; i < end; i++)
+            {
+                if (iInput[i].LastName.CompareTo(pivot) < 0 || iInput[i].LastName.CompareTo(pivot) == 0)
+                {
+                    Patient temp = (Patient)iInput[i];
+                    iInput[i] = iInput[pIndex];
+                    iInput[pIndex] = temp;
+                    pIndex++;
+                }
+            }
+
+            Patient anotherTemp = (Patient)iInput[pIndex];
+            iInput[pIndex] = iInput[end];
+            iInput[end] = anotherTemp;
+            return pIndex;
+        }
     }
 }
+

@@ -131,8 +131,31 @@ namespace Helper_Classes_namespace
             int remaning_days = totalDays % 7;
             int weeks = totalDays / 7;
             int totalYears = weeks / 52;
-            int totalWeeks = weeks % 52;           
-            return totalYears.ToString() + " years " + totalWeeks.ToString() + " weeks " + remaning_days.ToString() + " days ";
+            int totalWeeks = weeks % 52;
+            int totalReminderDays = (totalWeeks * 7) + remaning_days;
+            int months = 0;
+            int remamingTotalReminderDays = 0;
+            systemDateYear = Int32.Parse(words1[words.Length - 1]);
+            for (int i = systemDateMonth; systemDateMonth > 0 && systemDateYear >= userYear; i--)
+            {
+                if (i == 0)
+                {
+                    i = 12;
+                    systemDateYear--;
+                }               
+                totalReminderDays -= getDaysInaMonth(i);
+                if (totalReminderDays < 0 )
+                {
+                    remamingTotalReminderDays = getDaysInaMonth(i) - (totalReminderDays * -1);
+                    break;
+                }
+                else
+                    months++;
+
+            }
+            totalWeeks = remamingTotalReminderDays / 7;
+            remaning_days = remamingTotalReminderDays % 7;
+            return totalYears.ToString() + " years " + months + " months " + totalWeeks.ToString() + " weeks " + remaning_days.ToString() + " days ";
             
         }
         public static int getDaysUptoMonth(int month)

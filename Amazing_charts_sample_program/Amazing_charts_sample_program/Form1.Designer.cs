@@ -45,6 +45,7 @@
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.eventLogDisplay = new System.Windows.Forms.RichTextBox();
             this.performWriteToFileActionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.create_file = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -90,7 +91,7 @@
             // age_label
             // 
             this.age_label.AutoSize = true;
-            this.age_label.Location = new System.Drawing.Point(788, 65);
+            this.age_label.Location = new System.Drawing.Point(811, 65);
             this.age_label.Name = "age_label";
             this.age_label.Size = new System.Drawing.Size(26, 13);
             this.age_label.TabIndex = 4;
@@ -132,16 +133,16 @@
             // 
             this.age_txt_box.Cursor = System.Windows.Forms.Cursors.No;
             this.age_txt_box.Enabled = false;
-            this.age_txt_box.Location = new System.Drawing.Point(747, 81);
+            this.age_txt_box.Location = new System.Drawing.Point(734, 81);
             this.age_txt_box.Name = "age_txt_box";
             this.age_txt_box.ReadOnly = true;
-            this.age_txt_box.Size = new System.Drawing.Size(128, 20);
+            this.age_txt_box.Size = new System.Drawing.Size(179, 20);
             this.age_txt_box.TabIndex = 9;
             this.age_txt_box.TextChanged += new System.EventHandler(this.age_txt_box_TextChanged);
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(747, 164);
+            this.save.Location = new System.Drawing.Point(734, 126);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 12;
@@ -180,11 +181,22 @@
             // 
             this.performWriteToFileActionBindingSource.DataSource = typeof(Helper_Classes_namespace.PerformWriteToFileAction);
             // 
+            // create_file
+            // 
+            this.create_file.Location = new System.Drawing.Point(734, 164);
+            this.create_file.Name = "create_file";
+            this.create_file.Size = new System.Drawing.Size(75, 23);
+            this.create_file.TabIndex = 16;
+            this.create_file.Text = "Create File";
+            this.create_file.UseVisualStyleBackColor = true;
+            this.create_file.Click += new System.EventHandler(this.create_file_Click);
+            // 
             // amazing_charts_sample_application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 450);
+            this.Controls.Add(this.create_file);
             this.Controls.Add(this.eventLogDisplay);
             this.Controls.Add(this.dataSetView);
             this.Controls.Add(this.save);
@@ -229,6 +241,7 @@
         private System.Windows.Forms.DataGridView dataSetView;
         private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.RichTextBox eventLogDisplay;
+        private System.Windows.Forms.Button create_file;
     }
 }
 

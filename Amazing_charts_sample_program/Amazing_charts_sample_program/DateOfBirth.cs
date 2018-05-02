@@ -24,9 +24,13 @@ namespace Amazing_charts_sample_program
             day = Helper_Classes_namespace.HelperClass.getSystemDateTime().Day.ToString();
             return "0"+ month + "/" + day + "/" + year;
         }
-        public List<Amazing_charts_sample_program_Patient_Format> getDateOfBirth(List<Amazing_charts_sample_program_Patient_Format> dataSet,string date)
+        public List<Amazing_charts_sample_program_Patient_Format> getDateOfBirth(List<Amazing_charts_sample_program_Patient_Format> dataSet, Patient _patient)
         {
-            string query = "SELECT * from credentials where date_of_birth like '" + date + "%'";
+            string query = "SELECT * from credentials where date_of_birth like '" + _patient.DateOfBirth + "%'";
+            if (_patient.FirstName.Length > 0)
+                query += " AND first_name like '" + _patient.FirstName + "%'";
+            if (_patient.LastName.Length > 0)
+                query += " AND date_of_birth like '" + _patient.LastName + "%'";
             var response = this.PerformQuery(query);
             if (response == null) return null;
             SqlDataReader reader  = response.ExecuteReader();
