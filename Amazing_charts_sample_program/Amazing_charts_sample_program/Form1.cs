@@ -87,12 +87,11 @@ namespace Amazing_charts_sample_program
             if (!selectedFromDatgaSet)
             {
                 dataSet = _firstNameClass.getFirstName(new List<Amazing_charts_sample_program_Patient_Format>(), getTextBoxData(new Patient()));
-                if (dataSet == null)
+                if (dataSet.Count == 0 && Helper_Classes_namespace.ErrorMessages.getErrorMessage().CompareTo("") != 0)
                 {
                     MessageBox.Show(Helper_Classes_namespace.ErrorMessages.getErrorMessage());
                     return;
                 }
-                dataSet = _firstNameClass.QuickSortNow(dataSet, 0 , dataSet.Count - 1);
                 createDataSet(dataSet);
             }
         }
@@ -129,12 +128,11 @@ namespace Amazing_charts_sample_program
             if (!selectedFromDatgaSet)
             {
                 dataSet = _lastNameClass.getLastName(new List<Amazing_charts_sample_program_Patient_Format>(), getTextBoxData(new Patient()));
-                if (dataSet == null)
+                if (dataSet.Count == 0 && Helper_Classes_namespace.ErrorMessages.getErrorMessage().CompareTo("") != 0)
                 {
                     MessageBox.Show(Helper_Classes_namespace.ErrorMessages.getErrorMessage());
                     return;
-                }
-                dataSet = _lastNameClass.QuickSortNow(dataSet,0,dataSet.Count - 1);
+                }                
                 createDataSet(dataSet);
             }
         }
@@ -163,7 +161,7 @@ namespace Amazing_charts_sample_program
             if (!selectedFromDatgaSet)
             {
                 dataSet = _dateOfBirth.getDateOfBirth(new List<Amazing_charts_sample_program_Patient_Format>(), getTextBoxData(new Patient()));
-                if(dataSet == null)
+                if(dataSet.Count == 0)
                 {
                     MessageBox.Show(Helper_Classes_namespace.ErrorMessages.getErrorMessage());
                     return;
@@ -223,9 +221,9 @@ namespace Amazing_charts_sample_program
         {
             string query = "SELECT * from credentials";
             var response = Helper_Classes_namespace.DataBaseHelperClass.GlobalPerformQuery(query);
-            if (!(response == null))
+            if (!(response.hasErrors))
             {
-                SqlDataReader reader = response.ExecuteReader();
+                SqlDataReader reader = response.command.ExecuteReader();
                 dataSet = new List<Amazing_charts_sample_program_Patient_Format>();
                 int index = 0;
                 while (reader.Read())
@@ -242,7 +240,7 @@ namespace Amazing_charts_sample_program
 
                 }
                 Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
-               dataSet =  _lastNameClass.QuickSortNow(dataSet, 0, dataSet.Count - 1);
+                dataSet =  _lastNameClass.QuickSortNow(dataSet, 0, dataSet.Count - 1);
                 createDataSet(dataSet);
             }
             else
@@ -283,14 +281,14 @@ namespace Amazing_charts_sample_program
             
             string logEvent ="";
 
-            SqlCommand command = Helper_Classes_namespace.DataBaseHelperClass.GlobalPerformQuery(query);
-            if (command == null)
+            var response = Helper_Classes_namespace.DataBaseHelperClass.GlobalPerformQuery(query);
+            if (response.hasErrors)
             {
                 MessageBox.Show(Helper_Classes_namespace.ErrorMessages.getErrorMessage());
                 Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
                 return;
             }
-            SqlDataReader reader = command.ExecuteReader();
+            SqlDataReader reader = response.command.ExecuteReader();
             if (reader.HasRows)
             {
                 query = "UPDATE credentials set first_name = '" + first_name_txt.Text
@@ -414,14 +412,14 @@ namespace Amazing_charts_sample_program
                             + "' AND date_of_birth = '" + date_of_birth_txt.Text + "'";
             try
             {
-                SqlCommand command = Helper_Classes_namespace.DataBaseHelperClass.GlobalPerformQuery(query);
-                if (command == null)
+                var response = Helper_Classes_namespace.DataBaseHelperClass.GlobalPerformQuery(query);
+                if (response.hasErrors)
                 {
                     MessageBox.Show(Helper_Classes_namespace.ErrorMessages.getErrorMessage());
                     Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
                     return;
                 }
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = response.command.ExecuteReader();
 
                 if (!reader.HasRows)
                 {

@@ -11,11 +11,7 @@ namespace Amazing_charts_sample_program
 {
     class PhoneClass: Helper_Classes_namespace.DataBaseHelperClass
     {
-        public PhoneClass() { }
-        public void getPhoneNumberData(string data)
-        {
-            this.PerformQuery("");
-        }
+        public PhoneClass() { }        
         public string PhoneNumber { get; set; }
         public bool testPhoneFormat(string phone)
         {

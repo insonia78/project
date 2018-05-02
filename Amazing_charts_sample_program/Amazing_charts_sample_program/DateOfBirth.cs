@@ -32,8 +32,8 @@ namespace Amazing_charts_sample_program
             if (_patient.LastName.Length > 0)
                 query += " AND date_of_birth like '" + _patient.LastName + "%'";
             var response = this.PerformQuery(query);
-            if (response == null) return null;
-            SqlDataReader reader  = response.ExecuteReader();
+            if (response.hasErrors == true) return dataSet;
+            SqlDataReader reader  = response.command.ExecuteReader();
             int index = 0;
             while (reader.Read())
             {

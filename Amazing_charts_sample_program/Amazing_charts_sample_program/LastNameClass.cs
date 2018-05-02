@@ -21,10 +21,10 @@ namespace Amazing_charts_sample_program
             if (_patient.FirstName.Length > 0)
                 query += " AND first_name like '" + _patient.FirstName + "%'";
             if (_patient.DateOfBirth.Length > 0)
-                query += " AND date_of_birth like '" + _patient.DateOfBirth + "%'";
+                query += " AND date_of_birth like '" + _patient.DateOfBirth + "%'";            
             var response = this.PerformQuery(query);
-            if (response == null) return null;
-            SqlDataReader reader = response.ExecuteReader();
+            if (response.hasErrors == true) return dataSet;
+            SqlDataReader reader = response.command.ExecuteReader();
             int index = 0;
             while (reader.Read())
             {
@@ -39,7 +39,7 @@ namespace Amazing_charts_sample_program
                 index++;
             }
             Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
-            return dataSet;
+            return QuickSortNow(dataSet, 0, dataSet.Count - 1);
         }
     
         public bool testLastName(string lastName)

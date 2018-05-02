@@ -22,8 +22,8 @@ namespace Amazing_charts_sample_program
             if(_patient.DateOfBirth.Length > 0)
                 query += " AND date_of_birth like '" + _patient.DateOfBirth + "%'";
             var response = this.PerformQuery(query);
-            if (response == null) return null;
-            SqlDataReader reader = response.ExecuteReader();
+            if (response.hasErrors == true) return dataSet;
+            SqlDataReader reader = response.command.ExecuteReader();
             int index = 0;
             while (reader.Read())
             {
@@ -38,7 +38,7 @@ namespace Amazing_charts_sample_program
                 index++;
             }
             Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
-            return dataSet;
+            return QuickSortNow(dataSet,0,dataSet.Count - 1);
 
         }
         public bool testFirstName(string  firstName)
@@ -55,7 +55,7 @@ namespace Amazing_charts_sample_program
             }
             return true;
         }
-        public List<Amazing_charts_sample_program_Patient_Format> QuickSortNow(List<Amazing_charts_sample_program_Patient_Format> iInput, int start, int end)
+        private List<Amazing_charts_sample_program_Patient_Format> QuickSortNow(List<Amazing_charts_sample_program_Patient_Format> iInput, int start, int end)
         {
             if (start < end)
             {
@@ -66,7 +66,7 @@ namespace Amazing_charts_sample_program
             return iInput;
         }
 
-        public int Partition(List<Amazing_charts_sample_program_Patient_Format> iInput, int start, int end)
+        private int Partition(List<Amazing_charts_sample_program_Patient_Format> iInput, int start, int end)
         {
             string pivot = iInput[end].FirstName;
             int pIndex = start;

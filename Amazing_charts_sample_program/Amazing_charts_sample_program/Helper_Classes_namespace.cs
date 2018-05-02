@@ -11,37 +11,59 @@ namespace Helper_Classes_namespace
     
     public abstract class  DataBaseHelperClass
     {          
-        public SqlCommand PerformQuery(string query)
+        public SqlDataBaseOjectHandler PerformQuery(string query)
         {
-            SqlCommand command = new SqlCommand(query, SqlConnectionClass.getConn());
-            SqlConnectionClass.getConn().Open();
-            System.Data.ConnectionState state = SqlConnectionClass.getConn().State;
-            if (!(state == System.Data.ConnectionState.Open))
+            SqlDataBaseOjectHandler handler = new SqlDataBaseOjectHandler();
+            try
             {
-                Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Sorry no Db Connection !!!!!!! ",true);
-                return null;
-            }
+               
+                handler.command = new SqlCommand(query, SqlConnectionClass.getConn());
+                SqlConnectionClass.getConn().Open();
+                System.Data.ConnectionState state = SqlConnectionClass.getConn().State;
+                if (!(state == System.Data.ConnectionState.Open))
+                {
+                    Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Sorry no Db Connection !!!!!!! ", true);
+                    handler.hasErrors = true;
+                    return handler;
+                }
 
-            return command;
+                handler.command.ExecuteNonQuery();
+            }
+            catch(System.Exception em)
+            {
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage(em.ToString(), true);
+                handler.hasErrors = true;
+            }
+            return handler;
         }
         public static void SettingDbConnection(String connectionString)
         {
             SqlConnectionClass.setConn(connectionString);
 
         }
-        public static SqlCommand GlobalPerformQuery(string query)
+        public static SqlDataBaseOjectHandler GlobalPerformQuery(string query)
         {
-            SqlCommand command = new SqlCommand(query, SqlConnectionClass.getConn());
-            SqlConnectionClass.getConn().Open();
-            System.Data.ConnectionState state = SqlConnectionClass.getConn().State;            
-            if (!(state == System.Data.ConnectionState.Open))
+            SqlDataBaseOjectHandler handler = new SqlDataBaseOjectHandler();
+            try
             {
-                Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Sorry no Db Connection !!!!!!! ", true);
-                return null;
-            }
+                handler.command = new SqlCommand(query, SqlConnectionClass.getConn());
+                SqlConnectionClass.getConn().Open();
+                System.Data.ConnectionState state = SqlConnectionClass.getConn().State;
+                if (!(state == System.Data.ConnectionState.Open))
+                {
+                    Helper_Classes_namespace.ErrorMessages.setErrorMessage(" Sorry no Db Connection !!!!!!! ", true);
+                    handler.hasErrors = true;
+                    return handler;
+                }
 
-            command.ExecuteNonQuery();
-            return command;
+                handler.command.ExecuteNonQuery();
+            }
+            catch (System.Exception em)
+            {
+                Helper_Classes_namespace.ErrorMessages.setErrorMessage(em.ToString(), true);
+                handler.hasErrors = true;
+            }
+            return handler;
         }
         public static void ClosePerformQuery()
         {            
@@ -53,6 +75,16 @@ namespace Helper_Classes_namespace
             static SqlConnection con = new SqlConnection();
             public static void setConn(String connectionString) {  con.ConnectionString = connectionString; }
             public static SqlConnection getConn() { return con; }            
+        }
+        public class SqlDataBaseOjectHandler
+        {
+            public bool hasErrors;
+            public SqlCommand command; 
+            public SqlDataBaseOjectHandler()
+            {
+                hasErrors = false;
+                command = null;
+            }
         }
     }
     public static class PerformWriteToFileAction 
