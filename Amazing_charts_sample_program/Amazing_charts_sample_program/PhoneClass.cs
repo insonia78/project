@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace Amazing_charts_sample_program
 {
-    class PhoneClass: Helper_Classes_namespace.DataBaseHelperClass
+    public class PhoneClass: Helper_Classes_namespace.DataBaseHelperClass
     {
         public PhoneClass() { }        
         public string PhoneNumber { get; set; }

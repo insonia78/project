@@ -86,7 +86,7 @@ namespace Amazing_charts_sample_program
             }
             
             if (!selectedFromDatgaSet)
-            {
+            {                
                 dataSet = _firstNameClass.getFirstName(new List<Amazing_charts_sample_program_Patient_Format>(), getTextBoxData(new Patient()));
                 if (dataSet.Count == 0 && Helper_Classes_namespace.ErrorMessages.getErrorMessage().CompareTo("") != 0)
                 {

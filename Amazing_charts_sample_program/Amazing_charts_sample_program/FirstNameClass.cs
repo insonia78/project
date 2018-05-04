@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace Amazing_charts_sample_program
 {
-    class FirstNameClass : Helper_Classes_namespace.DataBaseHelperClass
+    public class FirstNameClass : Helper_Classes_namespace.DataBaseHelperClass
     {
         public FirstNameClass() { }
         public string FirstName { get; set; }
@@ -23,15 +23,14 @@ namespace Amazing_charts_sample_program
                 query += " AND date_of_birth like '" + _patient.DateOfBirth + "%'";
             var response = this.PerformQuery(query);
             if (response.hasErrors == true) return dataSet;
-            SqlDataReader reader = response.command.ExecuteReader();
             int index = 0;
-            while (reader.Read())
+            while (response.reader.Read())
             {
                 Patient patient = new Patient();
-                patient.FirstName = reader["first_name"].ToString();
-                patient.LastName = reader["last_name"].ToString();
-                patient.DateOfBirth = reader["date_of_birth"].ToString();
-                patient.PhoneNumber = reader["phone"].ToString();
+                patient.FirstName = response.reader["first_name"].ToString();
+                patient.LastName = response.reader["last_name"].ToString();
+                patient.DateOfBirth = response.reader["date_of_birth"].ToString();
+                patient.PhoneNumber = response.reader["phone"].ToString();
                 string[] tempDate = Helper_Classes_namespace.HelperClass.getSystemDateTime().Date.ToString().Split(' ');
                 patient.Age = Helper_Classes_namespace.HelperClass.getTotAge(patient.DateOfBirth, tempDate[0]);
                 dataSet.Insert(index, patient);
@@ -39,6 +38,32 @@ namespace Amazing_charts_sample_program
             }
             Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
             return QuickSortNow(dataSet,0,dataSet.Count - 1);
+
+        }
+        public static List<Amazing_charts_sample_program_Patient_Format> getFirstName1(List<Amazing_charts_sample_program_Patient_Format> dataSet, Patient _patient)
+        {
+            string query = "SELECT * from credentials where first_name  like '" + _patient.FirstName + "%'";
+            if (_patient.LastName.Length > 0)
+                query += " AND last_name like '" + _patient.LastName + "%'";
+            if (_patient.DateOfBirth.Length > 0)
+                query += " AND date_of_birth like '" + _patient.DateOfBirth + "%'";
+            var response = new FirstNameClass().PerformQuery(query);
+            if (response.hasErrors == true) return dataSet;
+            int index = 0;
+            while (response.reader.Read())
+            {
+                Patient patient = new Patient();
+                patient.FirstName = response.reader["first_name"].ToString();
+                patient.LastName = response.reader["last_name"].ToString();
+                patient.DateOfBirth = response.reader["date_of_birth"].ToString();
+                patient.PhoneNumber = response.reader["phone"].ToString();
+                string[] tempDate = Helper_Classes_namespace.HelperClass.getSystemDateTime().Date.ToString().Split(' ');
+                patient.Age = Helper_Classes_namespace.HelperClass.getTotAge(patient.DateOfBirth, tempDate[0]);
+                dataSet.Insert(index, patient);
+                index++;
+            }
+            Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
+            return new FirstNameClass().QuickSortNow(dataSet, 0, dataSet.Count - 1);
 
         }
         public bool testFirstName(string  firstName)

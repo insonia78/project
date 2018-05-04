@@ -16,8 +16,8 @@ namespace Helper_Classes_namespace
             SqlDataBaseOjectHandler handler = new SqlDataBaseOjectHandler();
             try
             {
-               
-                handler.command = new SqlCommand(query, SqlConnectionClass.getConn());
+
+                SqlCommand command  = new SqlCommand(query, SqlConnectionClass.getConn());
                 SqlConnectionClass.getConn().Open();
                 System.Data.ConnectionState state = SqlConnectionClass.getConn().State;
                 if (!(state == System.Data.ConnectionState.Open))
@@ -27,7 +27,8 @@ namespace Helper_Classes_namespace
                     return handler;
                 }
 
-                handler.command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+                handler.reader = command.ExecuteReader();
             }
             catch(System.Exception em)
             {
@@ -46,7 +47,7 @@ namespace Helper_Classes_namespace
             SqlDataBaseOjectHandler handler = new SqlDataBaseOjectHandler();
             try
             {
-                handler.command = new SqlCommand(query, SqlConnectionClass.getConn());
+                SqlCommand command = new SqlCommand(query, SqlConnectionClass.getConn());
                 SqlConnectionClass.getConn().Open();
                 System.Data.ConnectionState state = SqlConnectionClass.getConn().State;
                 if (!(state == System.Data.ConnectionState.Open))
@@ -56,7 +57,8 @@ namespace Helper_Classes_namespace
                     return handler;
                 }
 
-                handler.command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+                handler.reader = command.ExecuteReader();
             }
             catch (System.Exception em)
             {
@@ -79,7 +81,8 @@ namespace Helper_Classes_namespace
         public class SqlDataBaseOjectHandler
         {
             public bool hasErrors;
-            public SqlCommand command; 
+            public SqlCommand command;
+            public SqlDataReader reader;
             public SqlDataBaseOjectHandler()
             {
                 hasErrors = false;

@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace Amazing_charts_sample_program
 {
-    class DateOfBirth : Helper_Classes_namespace.DataBaseHelperClass
+    public class DateOfBirth : Helper_Classes_namespace.DataBaseHelperClass
     {
         private string year;
         private string month;
@@ -32,16 +32,41 @@ namespace Amazing_charts_sample_program
             if (_patient.LastName.Length > 0)
                 query += " AND date_of_birth like '" + _patient.LastName + "%'";
             var response = this.PerformQuery(query);
-            if (response.hasErrors == true) return dataSet;
-            SqlDataReader reader  = response.command.ExecuteReader();
+            if (response.hasErrors == true) return dataSet;          
             int index = 0;
-            while (reader.Read())
+            while (response.reader.Read())
             {
                 Patient patient = new Patient();
-                patient.FirstName = reader["first_name"].ToString();
-                patient.LastName = reader["last_name"].ToString();
-                patient.DateOfBirth = reader["date_of_birth"].ToString();
-                patient.PhoneNumber = reader["phone"].ToString();
+                patient.FirstName = response.reader["first_name"].ToString();
+                patient.LastName = response.reader["last_name"].ToString();
+                patient.DateOfBirth = response.reader["date_of_birth"].ToString();
+                patient.PhoneNumber = response.reader["phone"].ToString();
+                string[] tempDate = Helper_Classes_namespace.HelperClass.getSystemDateTime().Date.ToString().Split(' ');
+                patient.Age = Helper_Classes_namespace.HelperClass.getTotAge(patient.DateOfBirth, tempDate[0]);
+                dataSet.Insert(index, patient);
+                index++;
+            }
+            Helper_Classes_namespace.DataBaseHelperClass.ClosePerformQuery();
+            return dataSet;
+
+        }
+        public static List<Amazing_charts_sample_program_Patient_Format> getDateOfBirth1(List<Amazing_charts_sample_program_Patient_Format> dataSet, Patient _patient)
+        {
+            string query = "SELECT * from credentials where date_of_birth like '" + _patient.DateOfBirth + "%'";
+            if (_patient.FirstName.Length > 0)
+                query += " AND first_name like '" + _patient.FirstName + "%'";
+            if (_patient.LastName.Length > 0)
+                query += " AND date_of_birth like '" + _patient.LastName + "%'";
+            var response = new DateOfBirth().PerformQuery(query);
+            if (response.hasErrors == true) return dataSet;
+            int index = 0;
+            while (response.reader.Read())
+            {
+                Patient patient = new Patient();
+                patient.FirstName = response.reader["first_name"].ToString();
+                patient.LastName = response.reader["last_name"].ToString();
+                patient.DateOfBirth = response.reader["date_of_birth"].ToString();
+                patient.PhoneNumber = response.reader["phone"].ToString();
                 string[] tempDate = Helper_Classes_namespace.HelperClass.getSystemDateTime().Date.ToString().Split(' ');
                 patient.Age = Helper_Classes_namespace.HelperClass.getTotAge(patient.DateOfBirth, tempDate[0]);
                 dataSet.Insert(index, patient);
