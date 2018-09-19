@@ -1,0 +1,14 @@
+{
+  "name": "ge-nodejs-sample-project",
+  "version": "1.0.0",
+  "description": "sample project for ge ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/*.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
