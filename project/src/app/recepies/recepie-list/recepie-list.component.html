@@ -5,9 +5,9 @@
 </div>
 <div class="row">
   <div class="col-xs-12">    
-    <app-recepie-item *ngFor="let recipeEl of recepies"
+    <app-recepie-item *ngFor="let recipeEl of recepies;let i = index"
     [recipe]="recipeEl" 
-    (recipeSelected)="onRecipeSelected(recipeEl)"></app-recepie-item>
+    [index] = 'i'></app-recepie-item>
   </div>
 </div>
 
