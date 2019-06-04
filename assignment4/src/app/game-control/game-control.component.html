@@ -1,0 +1,8 @@
+
+<div class="row">
+  <div class="col-md-12">
+     <button [disabled]='buttonDisabled' (click)="onGetTimeStamp()" class="btn btn-success">Start!</button>
+     <button class="btn btn-danger" (click)="onStopGame()">Stop!</button>
+  </div>
+  <p>time stamp : {{ timeStamp }}</p>
+</div>
