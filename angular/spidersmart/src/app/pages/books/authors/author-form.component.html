@@ -1,0 +1,19 @@
+<ng-container>
+    <form [formGroup]="form">
+        <div class="mat-typography">
+            <h1>Authors Information</h1>
+
+            <div fxLayout="row">
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Author</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="form.get('name').invalid">{{apiErrors('name')}}</mat-error>
+                </mat-form-field>                
+            </div>
+        </div>
+        <sm-form-actions>
+            <sm-form-action [action]="save" type="primary">Save</sm-form-action>
+            <sm-form-action [action]="backRoute" type="tertiary">Cancel</sm-form-action>
+        </sm-form-actions>
+    </form>
+</ng-container>

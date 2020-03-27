@@ -1,0 +1,92 @@
+<ng-container>
+    <form [formGroup]="form">
+        <div class="mat-typography">
+            <ng-container *ngIf="pageService.isMode(PageMode.CREATE) || editMode === StudentFormAction.DETAILS">
+                <h1>Login Information</h1>
+                <div fxLayout="row">
+                    <mat-form-field appearance="outline" fxFlex="50">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="email">
+                        <mat-error *ngIf="form.get('email').invalid">{{apiErrors('email')}}</mat-error>
+                    </mat-form-field>
+                    <div fxFlex="50">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Password</mat-label>
+                            <input [type]="(showPassword)? 'text' : 'password'" matInput #password formControlName="password" (blur)="hidePassword()">
+                            <mat-icon (click)="togglePassword()" class="password-toggle" [class.activated]="showPassword">remove_red_eye</mat-icon>
+                            <mat-hint align="end" aria-live="polite">{{password.value.length}}/25</mat-hint>
+                            <mat-error *ngIf="form.get('password').invalid">{{apiErrors('password')}}</mat-error>
+                        </mat-form-field>
+                        <mat-password-strength #passwordComponent [password]="password.value"></mat-password-strength>
+                    </div>
+                    <!-- <mat-password-strength-info [passwordComponent]="passwordComponent"></mat-password-strength-info> -->
+                </div>
+
+                <h1>General Information</h1>
+                <div fxLayout="row">
+                    <mat-form-field appearance="outline" fxFlex="10">
+                        <mat-label>Prefix</mat-label>
+                        <input matInput formControlName="prefix">
+                        <mat-error *ngIf="form.get('prefix').invalid">{{apiErrors('prefix')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="30">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName">
+                        <mat-error *ngIf="form.get('firstName').invalid">{{apiErrors('firstName')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="20">
+                        <mat-label>Middle Name</mat-label>
+                        <input matInput formControlName="middleName">
+                        <mat-error *ngIf="form.get('middleName').invalid">{{apiErrors('middleName')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="30">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName">
+                        <mat-error *ngIf="form.get('lastName').invalid">{{apiErrors('lastName')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="10">
+                        <mat-label>Suffix</mat-label>
+                        <input matInput formControlName="suffix">
+                        <mat-error *ngIf="form.get('suffix').invalid">{{apiErrors('suffix')}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field appearance="outline" fxFlex="10">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender" [value]="student?.gender">
+                            <mat-option *ngFor="let gender of genders" [value]="gender.value">{{gender.label}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="form.get('gender').invalid">{{apiErrors('gender')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="70">
+                        <mat-label>School</mat-label>
+                        <input matInput formControlName="school">
+                        <mat-error *ngIf="form.get('school').invalid">{{apiErrors('school')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="20">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput formControlName="dateOfBirth" [matDatepicker]="dateOfBirth">
+                        <mat-datepicker-toggle matSuffix [for]="dateOfBirth"></mat-datepicker-toggle>
+                        <mat-datepicker #dateOfBirth></mat-datepicker>
+                        <mat-error *ngIf="form.get('dateOfBirth').invalid">{{apiErrors('dateOfBirth')}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="pageService.isMode(PageMode.CREATE) || editMode === StudentFormAction.CONTACTS">
+                <h1>Contact Information</h1>
+                <sm-contacts [contacts]="student?.contacts" mode="EDIT" (valueChange)="updateContacts($event)"></sm-contacts>
+            </ng-container>
+
+            <ng-container *ngIf="pageService.isMode(PageMode.CREATE) || editMode === StudentFormAction.ENROLLMENTS">
+                <h1>Enrollment Information</h1>
+                <sm-enrollments *inContext="ContextType.ALL_CENTERS" [canChangeCenter]="true" [enrollments]="student?.enrollments" mode="EDIT" (valueChange)="updateEnrollments($event)"></sm-enrollments>
+                <sm-enrollments *inContext="ContextType.SPECIFIC_CENTER" [enrollments]="student?.enrollments" mode="EDIT" (valueChange)="updateEnrollments($event)"></sm-enrollments>
+            </ng-container>
+        </div>
+        <sm-form-actions>
+            <sm-form-action [action]="save" type="primary">Save</sm-form-action>
+            <sm-form-action [action]="backRoute" type="tertiary">Cancel</sm-form-action>
+        </sm-form-actions>
+    </form>
+</ng-container>

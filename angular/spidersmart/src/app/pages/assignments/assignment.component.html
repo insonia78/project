@@ -1,0 +1,8 @@
+<sm-datatable [dataSource]="assignments" defaultSortColumn="label">
+  <sm-datatable-column name="label">
+    <ng-container *smDatatableCell="let data">
+      <a [routerLink]="['/center', data.id, 'view']">{{data.label}}</a>
+    </ng-container>
+  </sm-datatable-column>
+  <sm-datatable-column name="streetAddress"></sm-datatable-column>
+</sm-datatable>

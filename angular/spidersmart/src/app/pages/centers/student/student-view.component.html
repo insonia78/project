@@ -1,0 +1,107 @@
+<div *ngIf="student && false" class="mat-typography">
+    <section>
+        <sm-contacts [contacts]="student.contacts"></sm-contacts>
+    </section>
+
+    <section style="margin-top: 2rem; margin-bottom: 2rem;">
+        <h2 class="no-bottom-margin" style="border-bottom: 1px #aaa solid">Enrollments</h2>
+        <sm-enrollments [enrollments]="student.enrollments" mode="VIEW" layout="TABLE"></sm-enrollments>
+    </section>
+
+    <section fxLayout="row wrap" fxFill style="margin-top: 2rem">
+        <div fxFlex="100%">
+            <h2 class="no-bottom-margin" style="border-bottom: 1px #aaa solid">General Information</h2>
+        </div>
+        <div fxFlex="50%" fxFlex.gt-sm="33%">
+            <h3 style="color: #666; text-transform: uppercase; font-weight: bold">Username</h3>
+            {{student.email}}
+        </div>
+        <div fxFlex="50%" fxFlex.gt-sm="33%">
+            <h3>Password</h3>
+            <a href="#">Change Password</a>
+        </div>
+        <div fxFlex="50%" fxFlex.gt-sm="33%">
+            <h3>Gender</h3>
+            {{student.gender}}
+        </div>
+    </section>
+</div>
+
+<div fxLayout="row wrap" fxFill *ngIf="student && true" class="no-outer-padding mat-typography">
+    <div fxFlex="100%" fxFlex.gt-sm="80%" fxFill class="mat-drawer-container" style="padding: 1rem;">
+        <!--
+        <h1 class="no-bottom-margin">{{student.firstName}} {{student.middleName}} {{student.lastName}}</h1>
+        <p>
+            Student since: {{student.dateFrom|date}}
+        </p>
+
+        <h2 class="no-bottom-margin" style="padding-top: 2rem">Contact Information</h2> -->
+        <sm-contacts [contacts]="student.contacts"></sm-contacts>
+
+        <style>
+            .data-display{
+                padding: 1rem;                
+            }
+
+            .data-label{
+                color: #666;
+                font-weight: bold;
+                display: block;
+            }
+        </style>
+
+        <section fxLayout="row wrap" fxFill style="margin-top: 2rem; padding-left: 16px;">
+            <div fxFlex="50%" fxFlex.gt-sm="25%" class="data-display">
+                <span class="data-label">Username</span>
+                {{student.email}}
+            </div>
+            <div fxFlex="50%" fxFlex.gt-sm="25%" class="data-display">
+                <span class="data-label">Password</span>
+                <a href="#">Change Password</a>
+            </div>
+            <div fxFlex="50%" fxFlex.gt-sm="25%" class="data-display">
+                <span class="data-label">Gender</span>
+                {{student.gender}}
+            </div>
+            <div fxFlex="50%" fxFlex.gt-sm="25%" class="data-display">
+                <span class="data-label">Grade</span>
+                {{student.dateOfBirth|grade}}
+            </div>
+            <div fxFlex="50%" fxFlex.gt-sm="25%" class="data-display">
+                <span class="data-label">Date of Birth</span>
+                {{student.dateOfBirth|date}} ({{student.dateOfBirth|age}})
+            </div>
+            <div fxFlex="50%" fxFlex.gt-sm="25%" class="data-display">
+                <span class="data-label">Joined</span>
+                {{student.dateFrom|date}}
+            </div>
+            <div fxFlex="100%" fxFlex.gt-sm="50%" class="data-display">
+                <span class="data-label">School</span>
+                {{student.school}}
+            </div>
+        </section>
+
+        <h2 class="no-bottom-margin" style="margin-top: 3rem">Progress</h2>
+        <p>
+            No progress report available
+        </p>
+
+        <br /><br /><br /><br /><br /><br /><br />
+
+    </div>
+
+    <div fxFlex="100%" fxFlex.gt-sm="20%" fxFill style="padding: 1rem;">
+        <h2 class="no-bottom-margin">Current Enrollments</h2>
+        <sm-enrollments [enrollments]="student.enrollments" mode="VIEW"></sm-enrollments>
+
+
+        <h2 class="no-bottom-margin" style="margin-top: 3rem">Recent Assignments</h2>
+        <p>
+            No recent assignments
+        </p>
+        <!-- <mat-list>
+            <mat-list-item>Assignment 1</mat-list-item>
+            <mat-list-item>Assignment 2</mat-list-item>
+        </mat-list> -->
+    </div>
+</div>

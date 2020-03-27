@@ -1,0 +1,21 @@
+<header>
+  <div id="topBar">
+    <a [routerLink]="['/']" id="home">Home</a>
+    <h1>{{pageService?.getTitle()|async}}</h1>
+    <app-global-search></app-global-search>
+    <app-user-menu></app-user-menu>
+    <app-top-nav></app-top-nav>    
+  </div>
+  <app-content-header></app-content-header>
+</header>
+<main>  
+  <div class="container">
+    <router-outlet>
+      <sm-page-loading-indicator></sm-page-loading-indicator>      
+    </router-outlet>
+  </div>
+</main>
+<footer>
+  <hr>
+  Copyright SpiderSmart &copy; {{today | date:'y'}}
+</footer>

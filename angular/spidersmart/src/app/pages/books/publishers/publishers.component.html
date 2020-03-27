@@ -1,0 +1,8 @@
+<sm-datatable [dataSource]="publishers" defaultSortColumn="name">
+    <sm-datatable-column name="name">
+      <ng-container *smDatatableCell="let data">
+        <a [routerLink]="['/publishers', data.id, 'view']">{{data.name}}</a>
+      </ng-container>
+    </sm-datatable-column>   
+  </sm-datatable>
+  

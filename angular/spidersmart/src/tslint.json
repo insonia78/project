@@ -1,0 +1,31 @@
+{
+    "extends": "../tslint.json",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            [
+                "sm",
+                "app",
+                ""
+            ],
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            [
+                "sm",
+                "app"
+            ],
+            "kebab-case"
+        ],
+        "max-line-length": [
+            false
+        ],
+        "one-line": [
+            true,
+            "check-open-brace"
+        ]
+    }
+}

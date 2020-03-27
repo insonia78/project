@@ -1,0 +1,26 @@
+<div id="content_header">
+  <div fxLayout="row" fxLayoutAlign="space-between end">
+    <h1 fxShow fxHide.xs>{{pageService.getTitle() | async}}</h1>
+
+    <nav class="page-actions">
+      <ul>
+        <li *ngIf="(pageService.getActions()|async).length > 0" class="page-actions-label">Actions:</li>
+        <li *ngFor="let action of (pageService.getActions()|async)">
+          <ng-container [ngSwitch]="action.type">
+            <a *ngSwitchCase="'icon'" 
+              (click)="pageService.triggerAction(action)"
+              [matTooltip]="action?.text"
+              matTooltipShowDelay="500"
+              matTooltipHideDelay="300"
+              matTooltipPosition="above"
+              [ngClass]="['button', 'icon']">            
+                <mat-icon>{{action?.icon}}</mat-icon>
+            </a>
+            <a *ngSwitchCase="'tertiary'" (click)="pageService.triggerAction(action)" [ngClass]="['button', action.type]">{{action?.text}}</a>
+            <button *ngSwitchDefault mat-flat-button (click)="pageService.triggerAction(action)" [ngClass]="action.type">{{action?.text}}</button>
+          </ng-container>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

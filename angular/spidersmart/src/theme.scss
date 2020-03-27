@@ -1,0 +1,90 @@
+@import './palettes.scss';
+
+/** Define breakpoints **/
+$breakpoints: (
+    'xs': 600px,
+    'sm': 960px,
+    'md': 1280px,
+    'lg': 1920px,
+);
+
+/** Define theme color variables **/
+$color-white: rgb(255,255,255);
+$color-offwhite: #eee;
+$color-lightgray: #ccc;
+$color-mediumgray: #aaa;
+$color-darkgray: #666;
+$color-darkgreen: rgb(58, 144, 82);
+$color-mediumdarkgreen: #4caf50;
+$color-mediumgreen: rgb(89, 178, 114);
+$color-lightgreen: rgb(0, 203, 102);
+$color-orange: rgb(241, 169, 72);
+$color-peach: rgb(238, 185, 115);
+
+$form-grid-layout-gap: 10px;
+$page-margin: 15px;
+
+$button-primary-color: $color-darkgreen;
+$button-secondary-color: $color-mediumgray;
+
+.mat-flat-button.primary{
+    background: $button-primary-color;
+    color: $color-white;
+
+    &:hover{
+        background: lighten($button-primary-color, 10%);
+    }
+}
+
+.mat-flat-button.secondary {
+    background: $button-secondary-color;
+}
+
+.button.tertiary{
+    color: $color-darkgreen;
+    cursor: pointer;
+    padding: 0 1rem;
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+
+@mixin respond-to($breakpoint) {
+    // handle special case for desktop and mobile
+    @if $breakpoint == 'mobile' {
+        @media only screen and (max-width: map-get($breakpoints, 'xs') - 1) and (orientation: portrait), only screen and (max-width: map-get($breakpoints, 'sm') - 1) and (orientation: landscape) {
+            @content;
+        }
+    }
+    @else if $breakpoint == 'desktop' {
+        @media only screen and (min-width: map-get($breakpoints, 'xs')) and (orientation: portrait), only screen and (min-width: map-get($breakpoints, 'sm')) {
+            @content;
+        }
+    }
+    // if it's not one of the special breakpoints
+    @else{
+        // Retrieves the value from the key
+        $value: map-get($breakpoints, $breakpoint);
+
+        // If the key exists in the map
+        @if $value != null {
+            // Prints a media query based on the value
+            @media (min-width: $value) {
+                @content;
+            }
+        }
+
+        // If the key doesn't exist in the map
+        @else {
+            @warn "No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.";
+        }
+    }
+}
+/* 
+
+$theme-primary: mat-palette($mat-green);
+$theme-accent: mat-palette($mat-amber);
+$theme-warn: mat-palette($mat-red); */

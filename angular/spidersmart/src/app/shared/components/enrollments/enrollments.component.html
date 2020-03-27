@@ -1,0 +1,67 @@
+<ng-container *ngIf="mode === 'VIEW'">
+    <table mat-table [dataSource]="currentEnrollments" *ngIf="layout === 'TABLE'" style="width: 100%">
+        <ng-container matColumnDef="center">
+            <th mat-header-cell *matHeaderCellDef>Center</th>
+            <td mat-cell *matCellDef="let enrollment">{{enrollment.center.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="subject">
+            <th mat-header-cell *matHeaderCellDef>Subject</th>
+            <td mat-cell *matCellDef="let enrollment">{{enrollment.subject.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="level">
+            <th mat-header-cell *matHeaderCellDef>Level</th>
+            <td mat-cell *matCellDef="let enrollment">{{enrollment.level.name}}</td>
+        </ng-container>            
+        <ng-container matColumnDef="dateFrom">
+            <th mat-header-cell *matHeaderCellDef>Since</th>
+            <td mat-cell *matCellDef="let enrollment">{{enrollment.dateFrom|date}}</td>
+        </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="['center','subject','level','dateFrom']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['center','subject','level','dateFrom'];"></tr>
+    </table>
+
+    <mat-list fxLayout="column wrap" *ngIf="layout === 'LIST'">
+        <mat-list-item fxFlex *ngFor="let enrollment of currentEnrollments">
+            <h3 matLine>{{enrollment.subject.name}} Lv {{enrollment.level.name}}</h3>
+            <p matLine>since {{enrollment.dateFrom|date}} in {{enrollment.center.name}}</p>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</ng-container>
+<ng-container *ngIf="mode === 'EDIT'">
+    <form [formGroup]="form" *ngIf="currentEnrollments">
+        <div fxLayout="row" formArrayName="enrollments" *ngFor="let enrollment of form.get('enrollments').controls; let i = index">
+            <ng-container [formGroupName]="i">
+                <mat-form-field appearance="outline" fxFlex="10" *ngIf="canChangeCenter">
+                    <mat-label>Center</mat-label>
+                    <mat-select formControlName="center" [required]="true">
+                        <mat-option *ngFor="let center of availableCenters" [value]="center">{{center.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="20" *ngIf="enrollment.get('center').value">
+                    <mat-label>Subject</mat-label>
+
+                    <mat-select formControlName="subject" [required]="true">
+                        <mat-option *ngFor="let subject of enrollment.get('center').value.availableSubjects" [value]="subject">{{subject.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="20" *ngIf="enrollment.get('center').value && enrollment.get('subject').value">
+                    <mat-label>Level</mat-label>
+
+                    <mat-select formControlName="level" [required]="true">
+                        <mat-option *ngFor="let level of enrollment.get('subject').value.availableLevels" [value]="level">{{level.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div fxFlex="10">
+                    <button mat-button (click)="removeEnrollment(i)" [ngClass]="['button', 'icon']">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+        <button mat-button (click)="addEnrollment()" [ngClass]="['button', 'icon']">
+            <mat-icon>person_add</mat-icon> Add Enrollment
+        </button>
+    </form>
+</ng-container>

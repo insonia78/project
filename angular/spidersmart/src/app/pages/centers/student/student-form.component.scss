@@ -1,0 +1,13 @@
+@import './theme.scss';
+
+.password-toggle{
+    position: absolute; 
+    right: 0; 
+    top: 0.25em;
+    color: $color-lightgray;
+    cursor: pointer;
+
+    &.activated{
+        color: $color-mediumgreen;
+    }
+}

@@ -1,0 +1,99 @@
+<ng-container>
+    <form [formGroup]="form">
+        <div class="mat-typography">
+            <h1>General Information</h1>
+
+            <div fxLayout="row">
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name">
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Label</mat-label>
+                    <input matInput formControlName="label">
+                </mat-form-field>
+            </div>
+
+            <h1>Contact Information</h1>
+            <div fxLayout="row">
+                <mat-form-field appearance="outline" fxFlex="100">
+                    <mat-label>Street Address</mat-label>
+                    <input matInput formControlName="streetAddress">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row">
+                <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>City</mat-label>
+                    <input matInput formControlName="city">
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="25">
+                    <mat-label>State</mat-label>
+                    <input matInput formControlName="state">
+                    <mat-error *ngIf="form.get('state').invalid">{{apiErrors('state')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="20">
+                    <mat-label>Postal Code</mat-label>
+                    <input matInput formControlName="postalCode">
+                    <mat-error *ngIf="form.get('postalCode').invalid">{{apiErrors('postalCode')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="25">
+                    <mat-label>Country</mat-label>
+                    <input matInput formControlName="country">
+                    <mat-error *ngIf="form.get('country').invalid">{{apiErrors('country')}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row">
+                <mat-form-field appearance="outline" fxFlex="40">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email">
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>Phone</mat-label>
+                    <input matInput type="tel" formControlName="phone">
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>Fax</mat-label>
+                    <input matInput type="tel" formControlName="fax">
+                </mat-form-field>
+            </div>
+
+
+            <h1>Hours of Operation</h1>
+
+            <!-- 
+                NOTE THAT THIS DATETIME PICKER BREAKS IF WE CHOOSE APPEARANCE OUTLINE - PERHAPS A DIFFERENT LIBRARY SUCH AS
+                https://agranom.github.io/ngx-material-timepicker/ MIGHT WORK BETTER FOR THIS??
+            -->
+            <!--  <div fxLayout="row">
+                <mat-label fxFlex="20">Monday</mat-label>
+                <mat-form-field fxFlex="30">
+                    <mat-label>Open</mat-label>
+                    <mat-datetimepicker-toggle [for]="mondayOpen" matPrefix></mat-datetimepicker-toggle>
+                    <mat-datetimepicker #mondayOpen type="time" openOnFocus="true" timeInterval="5"></mat-datetimepicker>
+                    <input matInput formControlName="start" [matDatetimepicker]="mondayOpen" required autocomplete="false">
+                </mat-form-field>
+                <div fxFlex="5">-</div>
+                <mat-form-field fxFlex="30">
+                    <mat-label>Close</mat-label>
+                    <mat-datetimepicker-toggle [for]="mondayClose" matPrefix></mat-datetimepicker-toggle>
+                    <mat-datetimepicker #mondayClose type="time" openOnFocus="true" timeInterval="5"></mat-datetimepicker>
+                    <input matInput formControlName="start" [matDatetimepicker]="mondayClose" required autocomplete="false">
+                </mat-form-field>
+            </div> -->
+
+
+
+            <p>
+                <label></label>
+            </p>
+
+            <h1>Social Media</h1>
+            <p>
+            </p>
+        </div>
+        <sm-form-actions>
+            <sm-form-action [action]="save" type="primary">Save</sm-form-action>
+            <sm-form-action [action]="backRoute" type="tertiary">Cancel</sm-form-action>
+        </sm-form-actions>
+    </form>
+</ng-container>

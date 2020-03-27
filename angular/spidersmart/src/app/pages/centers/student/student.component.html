@@ -1,0 +1,9 @@
+<sm-datatable [dataSource]="students" defaultSortColumn="lastName" #studentTable>
+  <sm-datatable-column name="lastName" label="Name">
+    <ng-container *smDatatableCell="let data">
+      <a [routerLink]="['/student', data.id, 'view']">{{data.lastName}}, {{data.firstName}}</a>
+    </ng-container>
+  </sm-datatable-column>
+  <sm-datatable-column name="email"></sm-datatable-column>
+  <sm-datatable-column name="center" label="Center"></sm-datatable-column>
+</sm-datatable>

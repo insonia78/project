@@ -1,0 +1,36 @@
+.datatable-header-sort {
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    > mat-icon{
+        opacity: 0;
+        position: absolute;
+        bottom: -30px;
+        transform: rotate(-90deg) scaleX(.9);
+        font-size: 12ps
+    }
+
+    &:not(.datatable-header-sort-asc):not(.datatable-header-sort-desc):hover > mat-icon{
+        transition: opacity 0.2s linear, bottom 0.1s linear;
+        bottom: 30%;
+        opacity: 0.4;
+    }
+
+    &.datatable-header-sort-asc > mat-icon,
+    &.datatable-header-sort-desc > mat-icon{
+        opacity: 0.8;
+        bottom: 30%;
+    }
+
+    &.datatable-header-sort-asc > mat-icon{
+        transition: transform 0.1s linear;
+        transform: rotate(-90deg);
+        transform: rotate(-90deg) scaleX(.9);
+    }
+
+    &.datatable-header-sort-desc > mat-icon{
+        transition: transform 0.1s linear;
+        transform: rotate(90deg) scaleX(.9);
+    }
+}
