@@ -14,10 +14,11 @@
 */
 
 $router->get('/', function () use ($router) {    
-    return $router->app->version();
+    //return $router->app->version();    
+    return view('login');
 });
 
-$router->group(['prefix' => 'api'],function() use ($router){
+$router->group(['prefix' => 'api'],function() use ($router){   
    $router->post('register','AuthController@register');
    $router->post('login', 'AuthController@login');
 });
