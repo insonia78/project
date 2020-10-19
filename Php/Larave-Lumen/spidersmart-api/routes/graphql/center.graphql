@@ -1,0 +1,159 @@
+enum CenterType {
+  LOCAL @enum(value: "local")
+  ONLINE @enum(value: "online")
+}
+
+enum CenterBookCheckoutFrequency {
+  WEEKLY @enum(value: "weekly")
+  BI_WEEKLY @enum(value: "bi_weekly")
+  SEMI_MONTHLY @enum(value: "semi_monthly")
+  MONTHLY @enum(value: "monthly")
+  BI_MONTHLY @enum(value: "bi_monthly")
+  QUARTERLY @enum(value: "quarterly")
+}
+
+# Primary entity type
+type Center implements Resource {
+  id: Int!
+  label: String!
+  name: String!
+  type: CenterType!
+  streetAddress: String
+  city: String
+  state: String
+  postalCode: String
+  country: String
+  phone: String
+  email: String!
+  latitude: String
+  longitude: String
+  timezone: String
+  visible: Boolean
+  useInventory: Boolean
+  bookCheckoutLimit: Int
+  bookCheckoutFrequency: CenterBookCheckoutFrequency
+  subjects: [Subject]
+  hours: [CenterHourRange]
+  books: [Book]
+  students: [Student]
+  dateFrom: DateTime
+  dateTo: DateTime
+  __typename: String
+}
+
+input CenterInput {
+  id: Int
+  label: String
+  name: String
+  type: CenterType
+  streetAddress: String
+  city: String
+  state: String
+  postalCode: String
+  country: String
+  phone: String
+  email: String
+  latitude: String
+  longitude: String
+  timezone: String
+  visible: Boolean
+  useInventory: Boolean
+  bookCheckoutLimit: Int
+  bookCheckoutFrequency: CenterBookCheckoutFrequency
+  hours: [CenterHourRangeInput]
+  books: [CenterBookInput]
+  subjects: [SubjectInput]
+  __typename: String
+}
+
+type CenterHourRange implements Resource {
+  id: Int!
+  day: String!
+  startTime: String!
+  endTime: String!
+  dateFrom: DateTime
+  dateTo: DateTime
+  __typename: String
+}
+
+input CenterHourRangeInput {
+  day: String!
+  startTime: String!
+  endTime: String!
+  __typename: String
+}
+
+type CenterBook {
+  book: Book
+  quantity: Int
+  dateFrom: DateTime
+  dateTo: DateTime
+  __typename: String
+}
+
+input CenterBookInput {
+  book: BookInput
+  quantity: Int
+}
+
+type CenterResponse implements ResponsePayload {
+  success: Boolean
+  data: Center
+  errors: [String]
+}
+
+extend type Query {
+  centers(filter: [QueryFilter]): [Center!]!
+    @route(resolver: "Center@getAll", operation: "retrieve")
+  center(id: Int!): Center!
+    @route(resolver: "Center@get", operation: "retrieve")
+}
+
+extend type Mutation {
+  createCenter(
+    label: String!
+    name: String!
+    type: String!
+    streetAddress: String!
+    city: String!
+    state: String!
+    postalCode: String!
+    country: String!
+    phone: String!
+    email: String!
+    latitude: String
+    longitude: String
+    timezone: String
+    visible: Boolean
+    useInventory: Boolean
+    bookCheckoutLimit: Int
+    bookCheckoutFrequency: CenterBookCheckoutFrequency
+    hours: [CenterHourRangeInput],
+    subjects: [SubjectInput]
+  ): CenterResponse @route(resolver: "Center@create", operation: "create")
+
+  updateCenter(
+    id: Int!
+    label: String
+    name: String
+    type: CenterType
+    streetAddress: String
+    city: String
+    state: String
+    postalCode: String
+    country: String
+    phone: String
+    email: String
+    latitude: String
+    longitude: String
+    timezone: String
+    visible: Boolean
+    useInventory: Boolean
+    bookCheckoutLimit: Int
+    bookCheckoutFrequency: CenterBookCheckoutFrequency
+    hours: [CenterHourRangeInput]
+  ): CenterResponse @route(resolver: "Center@update", operation: "update")
+
+  deleteCenter(id: Int!): CenterResponse
+    @route(resolver: "Center@delete", operation: "delete")
+}

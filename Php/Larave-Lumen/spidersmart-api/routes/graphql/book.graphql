@@ -1,0 +1,77 @@
+"""
+something
+"""
+type Book implements RelateableResource {
+  id: Int!
+  title: String!
+  description: String
+  isbn: String!
+  coverImage: String   
+  active: Boolean
+  assignment: Assignment
+  authors: [Author]
+  genres: [Genre]
+  publishers: [Publisher]
+  dateFrom: DateTime
+  dateTo: DateTime
+  quantity: Int
+  relatedFrom: DateTime
+  relatedTo: DateTime
+  __typename: String
+}
+
+input BookInput {
+  id: Int
+  title: String
+  description: String
+  isbn: String
+  coverImage: String
+  assignment: AssignmentInput
+  authors: [AuthorInput]
+  genres: [GenreInput]
+  publishers: [PublisherInput]
+  __typename: String
+}
+
+type BookResponse implements ResponsePayload {
+  success: Boolean
+  data: Book
+  errors: [String]
+}
+
+extend type Query {
+  books: [Book!]! @route(resolver: "Book@getAll", operation: "retrieve")
+  book(id: Int!): Book! @route(resolver: "Book@get", operation: "retrieve")
+}
+
+extend type Mutation {
+  createBook(
+    title: String!
+    description: String
+    isbn: String!
+    coverImage: String
+    file: Upload
+    active: Boolean
+    assignment: AssignmentInput
+    authors: [AuthorInput]
+    genres: [GenreInput]
+    publishers: [PublisherInput]
+  ):BookResponse @route(resolver: "Book@create", operation: "create")
+
+  updateBook(
+    id: Int!
+    title: String!
+    description: String
+    isbn: String!
+    coverImage: String
+    file:Upload
+    active: Boolean
+    assignment: AssignmentInput
+    authors: [AuthorInput]
+    genres: [GenreInput]
+    publishers: [PublisherInput]
+  ): BookResponse @route(resolver: "Book@update", operation: "update")
+
+  deleteBook(id: Int!): BookResponse
+    @route(resolver: "Book@delete", operation: "delete")
+}

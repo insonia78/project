@@ -1,0 +1,3 @@
+extend type Mutation {  
+  uploadFile(file: Upload, description:String): String
+}

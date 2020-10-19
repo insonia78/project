@@ -1,0 +1,53 @@
+type Level implements Resource {
+  id: Int!
+  subject: Subject
+  name: String!
+  dateFrom: DateTime
+  dateTo: DateTime
+  active: Boolean
+  description: String
+  enrollments: [Enrollment]
+  __typename: String
+}
+
+input LevelInput {
+  id: Int
+  subject: SubjectInput
+  name: String
+  description: String
+  enrollments: [EnrollmentInput]
+  __typename: String
+}
+
+type LevelResponse implements ResponsePayload {
+  success: Boolean
+  data: Level
+  errors: [String]
+}
+
+extend type Query {
+  levels: [Level!]! @route(resolver: "Level@getAll", operation: "retrieve")
+  level(id: Int!): Level! @route(resolver: "Level@get", operation: "retrieve")
+}
+
+extend type Mutation {
+  createLevel(
+    subject: [SubjectInput]
+    name: String!
+    active: Boolean
+    description: String
+    enrollments: [EnrollmentInput]
+  ): LevelResponse @route(resolver: "Level@create", operation: "create")
+
+  updateLevel(
+    id: Int!
+    subject: [SubjectInput]
+    name: String!
+    active: Boolean
+    description: String
+    enrollments: [EnrollmentInput]
+  ): LevelResponse @route(resolver: "Level@update", operation: "update")
+
+  deleteLevel(id: Int!): LevelResponse
+    @route(resolver: "Level@delete", operation: "delete")
+}

@@ -1,0 +1,53 @@
+#import ./center.graphql
+#import ./user.graphql
+#import ./assignment.graphql
+#import ./enrollment.graphql
+#import ./author.graphql
+#import ./publisher.graphql
+#import ./genre.graphql
+#import ./level.graphql
+#import ./subject.graphql
+#import ./book.graphql
+#import ./teacher.graphql
+#import ./uploadFile.graphql
+
+scalar DateTime @scalar(class: "DateTime")
+scalar Any @scalar(class: "Any")
+scalar Upload @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+
+interface Resource {
+  id: Int!
+  dateFrom: DateTime
+  dateTo: DateTime
+  __typename: String
+}
+
+interface RelateableResource {
+  id: Int!
+  dateFrom: DateTime
+  dateTo: DateTime
+  relatedFrom: DateTime
+  relatedTo: DateTime
+  __typename: String
+}
+
+interface ResponsePayload {
+  success: Boolean
+  data: Any
+}
+
+type Query {
+  healthcheck: Boolean
+}
+
+type Mutation {
+  healthcheck: Boolean
+}
+
+
+input QueryFilter {
+  field: String!
+  comparison: String
+  value: String
+  values: [String]
+}

@@ -1,0 +1,92 @@
+type Student implements Resource {
+  id: Int!
+  type: UserType!
+  email: String
+  prefix: String
+  firstName: String!
+  middleName: String
+  lastName: String!
+  suffix: String
+  dateOfBirth: DateTime!
+  gender: String!
+  school: String!
+  verified: Boolean
+  dateFrom: DateTime
+  dateTo: DateTime
+  active: Boolean
+  addresses: [UserAddress]!
+  contacts: [UserContact]!
+  enrollments: [Enrollment]
+  __typename: String
+}
+
+type StudentResponse implements ResponsePayload {
+  success: Boolean
+  data: Student
+  errors: [String]
+}
+
+extend type Query {
+  students(filter: [QueryFilter]): [Student!]!
+    @route(resolver: "Student@getAll", operation: "retrieve")
+  student(id: Int!): Student!
+    @route(resolver: "Student@get", operation: "retrieve")
+}
+input StudentInput{
+    id: Int!
+    email: String
+    prefix: String
+    firstName: String
+    middleName: String
+    lastName: String
+    suffix: String
+    verified: Boolean
+    active: Boolean
+    #       dateOfBirth: DateTime
+    gender: String
+    school: String
+    addresses: [UserAddressInput]
+    contacts: [UserContactInput]
+    enrollments: [EnrollmentInput]
+
+}
+extend type Mutation {
+  createStudent(
+    email: String!
+    password: String!
+    prefix: String
+    firstName: String!
+    middleName: String
+    lastName: String!
+    suffix: String
+    verified: Boolean
+    active: Boolean
+    #       dateOfBirth: DateTime
+    gender: String
+    school: String
+    addresses: [UserAddressInput]
+    contacts: [UserContactInput]
+    enrollments: [EnrollmentInput]
+  ): StudentResponse @route(resolver: "Student@create", operation: "create")
+
+  updateStudent(
+    id: Int!
+    email: String
+    prefix: String
+    firstName: String
+    middleName: String
+    lastName: String
+    suffix: String
+    verified: Boolean
+    active: Boolean
+    #       dateOfBirth: DateTime
+    gender: String
+    school: String
+    addresses: [UserAddressInput]
+    contacts: [UserContactInput]
+    enrollments: [EnrollmentInput]
+  ): StudentResponse @route(resolver: "Student@update", operation: "update")
+
+  deleteStudent(id: Int!): StudentResponse
+    @route(resolver: "Student@delete", operation: "delete")
+}

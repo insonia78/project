@@ -1,0 +1,64 @@
+type Teacher implements Resource {
+  id: Int!
+  prefix: String
+  firstName: String!
+  middleName: String
+  lastName: String!
+  suffix: String
+  verified: Boolean
+  dateFrom: DateTime
+  dateTo: DateTime
+  active: Boolean
+  students: [Student]
+  addresses: [UserAddress]
+  contacts: [UserContact]
+  __typename: String
+
+}
+type TeacherResponse implements ResponsePayload {
+  success: Boolean
+  data: Teacher
+  errors: [String]
+}
+
+extend type Query {
+  teachers(filter: [QueryFilter]): [Teacher!]!
+  @route(resolver: "Teacher@getAll", operation: "retrieve")
+  teacher(id: Int!): Teacher!
+  @route(resolver: "Teacher@get", operation: "retrieve")
+}
+
+extend type Mutation {
+  createTeacher(
+    prefix: String
+    firstName: String!
+    middleName: String
+    lastName: String!
+    suffix: String
+    verified: Boolean
+    active: Boolean
+    students:[StudentInput]
+    addresses: [UserAddressInput]
+    contacts: [UserContactInput]
+  ): TeacherResponse @route(resolver: "Teacher@create", operation: "create")
+
+  updateTeacher(
+    id: Int!
+    email: String
+    password: String
+    prefix: String
+    firstName: String
+    middleName: String
+    lastName: String
+    suffix: String
+    verified: Boolean
+    active: Boolean
+    students:[StudentInput]
+    addresses: [UserAddressInput]
+    contacts: [UserContactInput]
+  ): TeacherResponse @route(resolver: "Teacher@update", operation: "update")
+
+
+  deleteTeacher(id: Int!): TeacherResponse
+  @route(resolver: "Teacher@delete", operation: "delete")
+}

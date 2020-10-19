@@ -1,0 +1,21 @@
+# Primary entity type
+type Enrollment implements Resource {
+  id: Int!
+  user: User
+  center: Center
+  level: Level
+  tuitionRate: String
+  dateFrom: DateTime
+  dateTo: DateTime
+  __typename: String
+}
+
+input EnrollmentInput {
+  id: Int
+  user: UserInput
+  center: CenterInput
+  level: LevelInput
+  tuitionRate: String
+  dateFrom: String
+  __typename: String
+}

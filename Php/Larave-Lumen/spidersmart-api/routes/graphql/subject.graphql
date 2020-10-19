@@ -1,0 +1,55 @@
+type Subject implements Resource {
+  id: Int!
+  name: String!
+  description: String
+  dateFrom: DateTime
+  dateTo: DateTime
+  active: Boolean
+  centers: [Center]
+  levels: [Level]
+  __typename: String
+}
+
+input SubjectInput {
+  id: Int
+  name: String!
+  description: String
+  centers: [CenterInput]
+  levels: [LevelInput]
+  __typename: String
+}
+
+type SubjectResponse implements ResponsePayload {
+  success: Boolean
+  data: Subject
+  errors: [String]
+}
+
+extend type Query {
+  subjects: [Subject!]!
+    @route(resolver: "Subject@getAll", operation: "retrieve")
+  subject(id: Int!): Subject!
+    @route(resolver: "Subject@get", operation: "retrieve")
+}
+
+extend type Mutation {
+  createSubject(
+    name: String!
+    description: String
+    active: Boolean
+    centers: [CenterInput]
+    levels: [LevelInput]
+  ): SubjectResponse @route(resolver: "Subject@create", operation: "create")
+
+  updateSubject(
+    id: Int!
+    name: String!
+    description: String
+    active: Boolean
+    centers: [CenterInput]
+    levels: [LevelInput]
+  ): SubjectResponse @route(resolver: "Subject@update", operation: "update")
+
+  deleteSubject(id: Int!): SubjectResponse
+    @route(resolver: "Subject@delete", operation: "delete")
+}
