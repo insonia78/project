@@ -1,0 +1,58 @@
+type Characteristics {
+	id: Int!
+    first_name: String!
+	middle_name: String
+    last_name:String!,
+    gender:String!	
+    age:Int
+    hair_color:String
+    eye_color:String
+    height:String
+    weight:String
+    etnicity:String
+    message:String
+    photos:[Photos]
+}
+type Photos {
+	id: Int!
+	photo_path:[String]
+}
+
+# Root
+type Query {
+	findAllCharacteristcs: Characteristics    	
+}
+
+# Root
+type Mutation {
+	
+    createPhotos(photo_path:[String]):Photos!
+    updatePhotos(id:Int!,photo_path:[String]):Photos!
+    deletePhotos(id:Int!):Boolean
+    
+    createCharacteristics(first_name: String!,
+    middle_name:String, 
+    last_name:String!,
+    age:Int!,
+    hair_color:String,
+    eye_color:String,
+    height:String,
+    weight:String,
+    etnicity:String,
+    message:String ):Characteristics!
+    
+    updateCharacteristics(id:Int!,
+    first_name: String!,
+    middle_name:String, 
+    last_name:String!,
+    age:Int!,
+    gender:String,
+    hair_color:String,
+    eye_color:String,
+    height:Number,
+    weight:Number,
+    etnicity:String,
+    message:String ):Characteristics!
+    
+    deleteCharacteristics(id:Int!):Boolean
+}
