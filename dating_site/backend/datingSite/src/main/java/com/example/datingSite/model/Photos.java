@@ -14,6 +14,10 @@ public class Photos {
     
     @Column(name="photo_path")
     private ArrayList<String> photo_path;
+     
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "characteristics_id")
+    private Characteristics characteristics;
 
     public Long getId() {
         return id;
@@ -33,9 +37,17 @@ public class Photos {
 
     public Photos() {
     }
+    public Characteristics getCharacteristics() {
+        return characteristics;
+    }
 
-    public Photos(ArrayList<String> photo_path) {
+    public void setCharacteristics(Characteristics characteristics) {
+        this.characteristics = characteristics;
+    }
+
+    public Photos(ArrayList<String> photo_path, Characteristics characteristics) {
         this.photo_path = photo_path;
-    }   
+        this.characteristics = characteristics;
+    }
 
 }

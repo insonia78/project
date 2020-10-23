@@ -1,9 +1,9 @@
 type Characteristics {
 	id: Int!
-    first_name: String!
+    first_name: String
 	middle_name: String
-    last_name:String!,
-    gender:String!	
+    last_name:String,
+    gender:String	
     age:Int
     hair_color:String
     eye_color:String
@@ -17,40 +17,60 @@ type Photos {
 	id: Int!
 	photo_path:[String]
 }
-
+type ReturnMember{
+    email:String
+}
+type Member{    
+    email:String!
+    password:String!
+}
+type MemberResponse{
+    success: Boolean
+    data: Member
+    errors: [String]
+}
+type ReturnCharacteristics{
+    id:Int
+}
 # Root
 type Query {
-	findAllCharacteristcs: Characteristics    	
+	findAllCharacteristics: [Characteristics]    	
 }
 
 # Root
 type Mutation {
 	
+    createMember(email:String!,password:String!):ReturnMember
+    updateMember(email:String!,password:String!):ReturnMember
+    deleteMember(email:String!):Boolean
+
     createPhotos(photo_path:[String]):Photos!
     updatePhotos(id:Int!,photo_path:[String]):Photos!
     deletePhotos(id:Int!):Boolean
     
-    createCharacteristics(first_name: String!,
+    createCharacteristics(
+    first_name: String!,
     middle_name:String, 
     last_name:String!,
+    gender:String!,
     age:Int!,
     hair_color:String,
     eye_color:String,
     height:String,
     weight:String,
     etnicity:String,
-    message:String ):Characteristics!
+    message:String ):Characteristics
     
     updateCharacteristics(id:Int!,
     first_name: String!,
     middle_name:String, 
     last_name:String!,
-    age:Int!,
     gender:String,
+    age:Int!,    
     hair_color:String,
     eye_color:String,
-    height:Number,
-    weight:Number,
+    height:String,
+    weight:String,
     etnicity:String,
     message:String ):Characteristics!
     

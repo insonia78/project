@@ -1,4 +1,10 @@
 package com.example.datingSite.model;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
 
 import javax.persistence.*;
 
@@ -6,31 +12,15 @@ import javax.persistence.*;
 public class Member {
 
     @Id
-    @GeneratedValue
-    @Column(name = "id", nullable = false)
-    private Long id;
-
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)    
     private String email;
-
-    @Column(name = "password")
-    private String password;
-
-    @OneToOne 
-    @JoinColumn(name="characteristics_id", nullable = false, updatable = false)
+       
+    @Column(name = "password", nullable = false)
+    private String password;    
+    @OneToOne(fetch = FetchType.LAZY,cascade =  CascadeType.ALL, mappedBy = "member") 
     private Characteristics characteristics;
     
     public Member() {
-    }
-
-    
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getEmail() {

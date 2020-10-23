@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Characteristics{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="characteristics_id")
     private Long id;
 
@@ -36,17 +36,20 @@ public class Characteristics{
     private String eye_color;
 
     @Column(name = "height", nullable = false)
-    private Double height;
+    private String height;
 
     @Column(name = "weight", nullable = false)
-    private Double weight;
+    private String weight;
 
-    @Column(name = "message", nullable = false)
+    @Column(name = "message", nullable = true)
     private String message;
 
-   @OneToMany
-   @JoinColumn(name="photos_id", nullable = false, updatable = false ) 
-   private List<Photos> photos;
+    @OneToOne 
+    @JoinColumn(name="email") 
+    private Member member;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade =  CascadeType.ALL, mappedBy = "characteristics") 
+    private List<Photos> photos;
     
     public Characteristics(){}
 
@@ -92,19 +95,19 @@ public class Characteristics{
         this.eye_color = eye_color;
     }
 
-    public Double getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(Double height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
-    public Double getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(Double weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
@@ -148,9 +151,24 @@ public class Characteristics{
         this.etnicity = etnicity;
     }
 
+    public void setPhotos(List<Photos> photos) {
+        this.photos = photos;
+    }
+
+    public List<Photos> getPhotos() {
+        return photos;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
     public Characteristics(String first_name, String middle_name, String last_name, String gender, String etnicity,
-            Integer age, String hair_color, String eye_color, Double height, Double weight, String message,
-            List<Photos> photos) {
+            Integer age, String hair_color, String eye_color, String height, String weight, String message) {
         this.first_name = first_name;
         this.middle_name = middle_name;
         this.last_name = last_name;
@@ -162,14 +180,7 @@ public class Characteristics{
         this.height = height;
         this.weight = weight;
         this.message = message;
-        this.photos = photos;
     }
 
-    public void setPhotos(List<Photos> photos) {
-        this.photos = photos;
-    }
-
-    public List<Photos> getPhotos() {
-        return photos;
-    }
+    
 }
