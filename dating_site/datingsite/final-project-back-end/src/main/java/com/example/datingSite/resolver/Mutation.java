@@ -140,26 +140,48 @@ public class Mutation implements GraphQLMutationResolver {
     photosRepository.deleteById(id);
     return true;
   }
+  public Member registerMember(String email,String confirmEmail,String password,String confirmPassword){
+    Optional<Member> member = memberRepository.findByEmail(email);
+    if(member.isPresent())
+       throw new GraphQLException("Email Already exists");
 
-  public Member createMember(String email, String password) throws Exception {
     Member m = new Member();
+    if(email == null || confirmEmail == null || password == null || confirmPassword == null)
+       throw new GraphQLException("Values must not be empty");
     if (email != null) {
       String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
-      Pattern pattern = Pattern.compile(regex);
-      if (!pattern.matcher(email).matches())
+      
+      if (!email.matches(regex))
         throw new GraphQLException("Email not valid");
-
+      if(!email.equals(confirmEmail))
+          throw new GraphQLException("Email don't match");
       m.setEmail(email);
     }
     if (password != null) {
-      String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$";
-      Pattern pattern = Pattern.compile(regex);
-      if (!pattern.matcher(email).matches())
+      String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$";
+      
+      if (!password.matches(regex))
         throw new GraphQLException("Password not valid");
+      if(!password.equals(confirmPassword))
+        throw new GraphQLException("Password don't match");  
       m.setPassword(password);
     }
     this.memberRepository.save(m);
     return m;
+
+  }
+  public Member validateMember(String email, String password) throws Exception {
+    Optional<Member> member = memberRepository.findByEmail(email);
+    if(member.isPresent())
+    {
+      Member m = member.get();
+      if(!m.getPassword().equals(password))
+        throw new GraphQLException("Password don't match");
+      return m;
+        
+    }
+     throw new GraphQLException("Email not found");
+    
   }
 
   public Member updateMember(String email, String password) throws Exception {
