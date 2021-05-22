@@ -45,42 +45,9 @@ const Sort = (sort,array) =>{
 const FilterByAge = (to,from,array) =>{
     let ar = [];
     array.sort((a,b) => parseInt(a.age) - parseInt(b.age)   )
-    let toIndex = -1;
-    let fromIndex = -1;
     to = parseInt(to);
-    from = parseInt(from);
-    for(let i = 0 ; i < array.length; i++)
-    {
-        if( to  <= parseInt(array[i].age))
-        {     
-            toIndex = i                   
-            break;                        
-        }
-        
-        
-
-    }
-    for(let i = 0 ; i < array.length; i++)
-    {
-        if( from < parseInt(array[0].age))
-           break;
-        
-        if( from < parseInt(array[i].age)) //|| from.localeCompare(array[i].age) === 0)
-        {            
-            break;
-        }
-        else{
-            fromIndex = i;
-        }        
-
-    }  
-   
-    for(let i = toIndex ; i <= fromIndex; i++)
-    {
-        ar.push(array[i]);
-
-    }
-    return{code:200,message:ar};
+    from = parseInt(from);  
+    return{ code:200, message:array.filter(element => element.age >= to && element.age <= from )};
 }
 
 
@@ -91,61 +58,65 @@ const SearchEmployer = (name , data) =>{
         
         let lenght_of_the_name_to_search = name.trim().length;
         let it_matches = true;
-
-        data.forEach((value) => {                        
-            let first_name = value.first_name.toLowerCase();
-            let last_name = value.last_name.toLowerCase();
-            let v=`${value.first_name} , ${(value.middle_name !== '' ? (value.middle_name + ',') : "")} ${value.last_name}, ${value.title}, ${value.age}`;
             
-            if ((v.localeCompare(name) === 0)) {
-                 ar.push(value);                             
-                 return {code:200, message:ar};
-            }
-            
-            if ((first_name.localeCompare(name.toLowerCase()) === 0) && value.first_name.length === name.length) {
-                ar.push(value);
-
-            }
-
-            if (last_name.localeCompare(name.toLowerCase()) === 0 && value.last_name.length === name.length) {
-                ar.push(value);
-
-            }
-
-
-            for (let i = 0; i < lenght_of_the_name_to_search && (value.first_name.length > name.length || value.first_name.length < name.length); i++) {
-                if (first_name[i] !== name.toLowerCase()[i]) {
-                    it_matches = false;
-                    break;
-                }
-                if (first_name[i] === name.toLowerCase()[i]) {
-                    it_matches = true;
+            data.forEach((value) => {                        
+                let first_name = value.first_name.toLowerCase();
+                let last_name = value.last_name.toLowerCase();
+                let v=`${value.first_name} , ${(value.middle_name !== '' ? (value.middle_name + ',') : "")} ${value.last_name}, ${value.title}, ${value.age}`;
+                
+                if ((v.localeCompare(name) === 0)) {
+                     ar.push(value);                             
+                     return {code:200, message:ar};
                 }
                 
-            }
-
-            if (it_matches && (value.first_name.length > name.length || value.first_name.length < name.length)) {
-                ar.push(value);
-                
-            }
-            it_matches = true;
-
-            for (let i = 0; i < lenght_of_the_name_to_search && (value.last_name.length > name.length || value.last_name.length < name.length); i++) {
-                if (last_name[i] !== name.toLowerCase()[i]) {
-                    it_matches = false;
-                    break;
+                if ((first_name.localeCompare(name.toLowerCase()) === 0) && value.first_name.length === name.length) {
+                    ar.push(value);
+    
                 }
-                if (last_name[i] === name.toLowerCase()[i]) {
-                    it_matches = true;
+    
+                if (last_name.localeCompare(name.toLowerCase()) === 0 && value.last_name.length === name.length) {
+                    ar.push(value);
+    
                 }
-            }
+    
+                 
+                for (let i = 0; i < lenght_of_the_name_to_search && (value.first_name.length > name.length || value.first_name.length < name.length); i++) {
+                    if (first_name[i] !== name.toLowerCase()[i]) {
+                        it_matches = false;
+                        break;
+                    }
+                    if (first_name[i] === name.toLowerCase()[i]) {
+                        it_matches = true;
+                    }
+                    
+                }
+    
+                if (it_matches && (value.first_name.length > name.length || value.first_name.length < name.length)) {
+                    ar.push(value);
+                    
+                }
+                it_matches = true;
+    
+                for (let i = 0; i < lenght_of_the_name_to_search && (value.last_name.length > name.length || value.last_name.length < name.length); i++) {
+                   
+                    if (last_name[i] !== name.toLowerCase()[i]) {
+                        it_matches = false;
+                        break;
+                    }
+                    if (last_name[i] === name.toLowerCase()[i]) {
+                        it_matches = true;
+                    }
+                }
+    
+                if (it_matches && (value.last_name.length > name.length || value.last_name.length < name.length)) {
+                    ar.push(value);
+                }
+    
+    
+            });
 
-            if (it_matches && (value.last_name.length > name.length || value.last_name.length < name.length)) {
-                ar.push(value);
-            }
-
-
-        });
+        
+       
     }
     catch (e) {
         console.log(e);

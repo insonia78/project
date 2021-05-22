@@ -6,52 +6,13 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import styles from './../../styles/ResultsAndFilters.module.css';
-import { gql, useMutation } from '@apollo/client';
+import styles from  './css/ResultsAndFilters.module.css';
+import { useMutation } from '@apollo/client';
 import { useEffect, useState } from 'react';
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
+import  graphqlRequest  from '../../components/graphqlRequest/ResultsAndFilters';
+import functions from '../../components/functions/ResultsAndFilters';
 
-const SORT_EMPLOYEES_BY = gql`
-mutation sortEmployeeBy($sort:String,$to:String,$from:String,$name:String)
-{
-    sortEmployeeBy(sort:$sort,to:$to,from:$from,name:$name)
-   {
-       code
-       message
-       {
-            first_name
-            middle_name
-            last_name
-            age
-            email
-            id
-            start_date
-            title
-       }
-   }
-}
-`;
-const FILTER_EMPLOYEES_BY_AGE = gql`
-mutation filterEmployeeByAge($to:String,$from:String,$sort:String,$name:String)
-{
-    filterEmployeeByAge(to:$to,from:$from,sort:$sort,name:$name)
-   {
-       code
-       message
-       {
-            first_name
-            middle_name
-            last_name
-            age
-            email
-            id
-            start_date
-            title
-       }
-   }
-}
-`;
 
 
 const useStyles = makeStyles({
@@ -61,19 +22,21 @@ const useStyles = makeStyles({
 });
 const ResultsAndFilters = ({ resetPage, setResetPage, data = [], setSearchByName, setAgeFilter, setSortBy, searchInputValue }) => {
 
-    const [defaultToValue, setDefaultToValue] = useState('');
-    const [defaultFromValue, setDefaultFromValue] = useState('');
-    const [sortValue, setSortValue] = useState('choose_sort');
-    const [defaultSortValue, setDefaultSortValue] = useState('choose_sort');
+    const [defaultToValue, setDefaultToValue] = useState<string>('');
+    const [defaultFromValue, setDefaultFromValue] = useState<string>('');
+    const [sortValue, setSortValue] = useState<string>('choose_sort');
+    const [defaultSortValue, setDefaultSortValue] = useState<string>('choose_sort');
+    const classes = useStyles();
     let p = 'pick_age';
     let ageTo = [];
     ageTo.push(<option key={'a' + 0} value={'pick_age'} >Pick Age</option>);
     for (let i = 1; i <= 100; i++) {
         ageTo.push(<option key={'a' + i} value={i} >{i}</option>);
     }
+      
+     
 
-
-    const [_filterEmployeeByAge] = useMutation(FILTER_EMPLOYEES_BY_AGE, {
+    const [_filterEmployeeByAge] = useMutation(graphqlRequest.FILTER_EMPLOYEES_BY_AGE, {
         onError(err) {
             console.log(err);
             alert(err);
@@ -89,7 +52,9 @@ const ResultsAndFilters = ({ resetPage, setResetPage, data = [], setSearchByName
         }
 
     });
-    const [sortEmploeesBy, { loading: mutationLoading, error: mutationError },] = useMutation(SORT_EMPLOYEES_BY, {
+   
+
+    const [sortEmploeesBy] = useMutation(graphqlRequest.SORT_EMPLOYEES_BY, {
         onError(err) {
             console.log(err);
             alert(err);
@@ -104,70 +69,10 @@ const ResultsAndFilters = ({ resetPage, setResetPage, data = [], setSearchByName
         }
 
     });
-    const resetSelect = () => {
-        setDefaultToValue('pick_age');
-        setDefaultFromValue('pick_age');
-
-    }
-    const sortEmployees = (e) => {
-        if (e.target.value === sortValue)
-            return;
-        setDefaultSortValue(e.target.value);
-        setSortValue(e.target.value);
-        setSortBy(e.target.value);
-        sortEmploeesBy({
-            variables: {
-                name: searchInputValue,
-                sort: e.target.value,
-                to: (defaultToValue === 'pick_age' ? '' : defaultToValue),
-                from: (defaultFromValue === 'pick_age' ? '' : defaultFromValue)
-            }
-        });
-
-
-    }
-    const resetComponents = () => {
-        resetSelect();
-        setDefaultSortValue('choose_sort');
-    }
-
-    const setToAge = (e) => {
-
-        if (isNaN(e.target.value)) {
-            alert('is not a value');
-            return;
-        }
-
-
-        setDefaultToValue(e.target.value);
-
-    }
-    const setFromAge = (e) => {
-        if (isNaN(e.target.value)) {
-
-            return;
-        }
-
-        if (isNaN(parseInt(defaultToValue))) {
-            alert("please select To");
-            return;
-        }
-        setDefaultFromValue(e.target.value);
-        if (parseInt(e.target.value) < parseInt(defaultToValue)) {
-            alert('wrong range');
-            return;
-        }
-        console.log('defaultToValue', defaultToValue);
-        setAgeFilter({ to: defaultToValue, from: defaultFromValue });
-        _filterEmployeeByAge({ variables: { name: searchInputValue, to: defaultToValue, from: e.target.value, sort: sortValue } });
-
-
-    }
-
-    const classes = useStyles();
+    
     useEffect(() => {
         if (resetPage) {
-            resetComponents();
+            functions.resetComponents(setDefaultToValue,setDefaultFromValue,setDefaultSortValue);
             setResetPage(false);
         }
 
@@ -182,14 +87,19 @@ const ResultsAndFilters = ({ resetPage, setResetPage, data = [], setSearchByName
                     <fieldset className={styles.age}>
                         <legend>AGE</legend>
                         <label>To:</label>
-                        <select value={defaultToValue} onFocus={resetSelect} onChange={setToAge}>
+                        <select value={defaultToValue} onFocus={()=>functions.resetSelect(setDefaultToValue,setDefaultFromValue) } onChange={(e:any)=>functions.setToAge(e.target.value,setDefaultToValue)}>
                             {
                                 ageTo
                             }
                         </select>
                         <label>From:</label>
 
-                        <select onChange={setFromAge} value={defaultFromValue}>
+                        <select onChange={(e:any)=>{
+                            console.log(e.target.value);
+                            functions.setFromAge(
+                                setDefaultFromValue,
+                                setAgeFilter,_filterEmployeeByAge,searchInputValue,
+                                e.target.value,defaultToValue,defaultFromValue,sortValue)}} value={defaultFromValue}>
                             {
                                 ageTo
                             }
@@ -201,7 +111,12 @@ const ResultsAndFilters = ({ resetPage, setResetPage, data = [], setSearchByName
             <div className={styles.results}>
                 <div className={styles.select_container}>
                     <label>{'Sort By:   '}</label>
-                    <select value={defaultSortValue} onChange={sortEmployees} >
+                    <select value={defaultSortValue} onChange={(e:any)=>
+                        functions.sortEmployees(e,setDefaultSortValue,setSortValue,
+                            setSortBy,sortEmploeesBy,
+                            searchInputValue,defaultToValue,
+                            defaultFromValue,sortValue)
+                        } >
                         <option key='1aa' value='choose_sort'>Choose Sort</option>
                         <option key='1a' value='first_name' >First Name</option>
                         <option key='1b' value='last_name' >Last Name</option>
