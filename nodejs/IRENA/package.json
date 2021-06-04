@@ -24,7 +24,7 @@
     "mysql": "^2.14.0",
     "open": "0.0.5",
     "portfinder": "^1.0.13",
-    "pug": "~2.0.0-beta11",
+    "pug": "~3.0.1",
     "request": "^2.83.0",
     "serve-favicon": "~2.4.2",
     "sweetalert": "^1.1.3",
