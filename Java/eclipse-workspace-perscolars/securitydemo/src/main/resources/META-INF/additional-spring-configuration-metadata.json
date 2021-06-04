@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "role.admin",
+  "type": "java.lang.String",
+  "description": "A description for 'role.admin'"
+}]}

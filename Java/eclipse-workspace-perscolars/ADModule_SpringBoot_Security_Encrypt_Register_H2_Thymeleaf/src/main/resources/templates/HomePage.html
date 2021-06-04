@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hello</title>
+</head>
+<body>
+	<h1>Hello Spring Security</h1>
+	<div th:insert="fragments/nav_bar.html :: navigation_menu"></div>
+	<h2 th:text="'Welcome ' + ${currentUser}"></h2>
+</body>
+</html>

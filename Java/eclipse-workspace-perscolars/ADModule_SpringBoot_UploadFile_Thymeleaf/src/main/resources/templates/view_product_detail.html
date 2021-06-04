@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View Product Detail</title>
+</head>
+<body>
+	<div>
+		<h4>The product has been saved.</h4>
+		<h5>Details:</h5>
+		<p>Product Name: <span th:text="${product.name}"></span></p>
+		<p>Description: <span th:text="${product.description}"></span></p>
+		<p>The following files are uploaded successfully.</p>
+		<ol th:each="image: ${product.images}">
+			<li><p th:text="${image.originalFilename}"></p><img th:src="@{'/images/'+${image.originalFilename}}" /></li>
+		</ol>
+	</div>
+</body>
+</html>

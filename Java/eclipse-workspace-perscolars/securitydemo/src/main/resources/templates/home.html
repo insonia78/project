@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+<body>
+<h1><span sec:authentication="name" /></h1>
+
+
+
+ <div sec:authorize="hasRole('ROLE_ADMIN')" >
+ <a th:href="@{/newuser}">New User</a>
+ </div>
+ 
+ 
+ 
+<a th:href="@{/newcourse}">New Course</a>
+
+</body>
+</html>

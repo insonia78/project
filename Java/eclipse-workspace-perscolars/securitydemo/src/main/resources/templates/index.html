@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+
+	<p>Welcome To My Application</p>
+
+	<a th:href="@{/login}">Login</a>
+
+
+	<br>
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Username</th>
+				<th>Email</th>
+				<th>Role</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user: ${listUser}">
+				<td th:text="${user.uID}"></td>
+				<td th:text="${user.uName}"></td>
+				<td th:text="${user.uEmail} "></td>
+				<td th:text="${user.uRole}"></td>
+				<td th:text="${user.uPassword}"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Course ID</th>
+				<th>Course Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="course: ${listCourse}">
+				<td th:text="${course.cID}"></td>
+				<td th:text="${course.cName}"></td>
+		
+			</tr>
+		</tbody>
+	</table>
+
+
+</body>
+</html>

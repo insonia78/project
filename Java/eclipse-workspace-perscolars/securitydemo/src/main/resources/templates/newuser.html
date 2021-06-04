@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/saveuser}" method="post" >
+		
+          
+       
+
+				<div>
+
+					<input id="uName" th:field="${newUser.uName}" type="text"
+						class="validate" /> <label for="uName">Name</label> <span
+						th:if="${#fields.hasErrors('newUser.uName')}"
+						th:errors="*{newUser.uName}" class="error">Name Error</span>
+				</div>
+					<div>
+
+					<input id="uEmail" th:field="${newUser.uEmail}" type="text"
+						class="validate" /> <label for="uEmail">User Email</label> <span
+						th:if="${#fields.hasErrors('newUser.uEmail')}"
+						th:errors="*{newUser.uEmail}" class="error">Name Error</span>
+				</div>
+					<div>
+
+					<input id="uPassword" th:field="${newUser.uPassword}" type="text"
+						class="validate" /> <label for="uPassword">User Password</label> <span
+						th:if="${#fields.hasErrors('newUser.uPassword')}"
+						th:errors="*{newUser.uPassword}" class="error">Name Error</span>
+				</div>
+				<div>
+					<input id="uRole" th:field="${newUser.uRole}" type="text"
+						class="validate" /> <label for="uRole">User Role</label> <span
+						th:if="${#fields.hasErrors('newUser.uRole')}"
+						th:errors="*{newUser.uRole}" class="error">Name Error</span>
+				</div>
+				<div>
+					<input id="uEnabled" th:field="${newUser.uEnabled}" type="text"
+						class="validate" /> <label for="uEnabled">User Enabled</label> <span
+						th:if="${#fields.hasErrors('newUser.uEnabled')}"
+						th:errors="*{newUser.uEnabled}">Name Error</span>
+				</div>
+				
+
+			
+
+
+
+
+
+		
+
+
+
+				
+					<button 
+						type="submit" name="action">
+						Submit 
+					</button>
+
+			
+
+			</form>
+</body>
+</html>
